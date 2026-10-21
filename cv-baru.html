@@ -174,60 +174,60 @@ footer {
   }
   section { break-inside: avoid; }
 }
-
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
+aside .social-links {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch;
   width: 100%;
+  gap: 9px;
 }
 
-.social-links a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 10px;
+aside .social-links a {
+  display: grid !important;
+  grid-template-columns: 25px minmax(0, 1fr) auto !important;
+  grid-template-rows: 1fr !important;
+  align-items: center !important;
+  column-gap: 10px;
   width: 100%;
   min-width: 0;
-  padding: 10px 11px;
+  padding: 9px 8px;
+  box-sizing: border-box;
   border: 1px solid #ffffff25;
   border-radius: 8px;
-  color: #f5f7fb;
-  font-size: 12px;
+  color: #ffffff;
   text-decoration: none;
-  transition: background .25s, transform .25s;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
-.social-links a:hover {
-  background: #ffffff16;
-  transform: translateX(4px);
-}
-
-.social-icon {
-  display: grid;
-  place-items: center;
+aside .social-links .social-icon {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 25px;
   height: 25px;
-  flex: 0 0 25px;
+  box-sizing: border-box;
   border-radius: 6px;
   background: #ffffff18;
   color: #e0c69c;
-  font-size: 14px;
   font-weight: bold;
 }
 
-.social-links a > span:nth-child(2) {
-  flex: 1;
+aside .social-links .social-name {
+  grid-column: 2;
+  grid-row: 1;
   min-width: 0;
   white-space: nowrap;
 }
 
-.social-arrow {
-  flex: 0 0 auto;
-  margin-left: auto;
+aside .social-links .social-arrow {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  white-space: nowrap;
   color: #d5c4a7;
-  font-size: 15px;
 }
 </style>
 </head>
@@ -293,21 +293,21 @@ footer {
   <a href="https://www.instagram.com/username"
      target="_blank" rel="noopener noreferrer">
     <span class="social-icon">◎</span>
-    <span>Instagram</span>
+    <span class="social-name">Instagram</span>
     <span class="social-arrow">↗</span>
   </a>
 
-<a href="https://www.tiktok.com/@username"
-   target="_blank" rel="noopener noreferrer">
-  <span class="social-icon">♪</span>
-  <span>TikTok</span>
-  <span class="social-arrow">↗</span>
-</a>
+  <a href="https://www.tiktok.com/@username"
+     target="_blank" rel="noopener noreferrer">
+    <span class="social-icon">♪</span>
+    <span class="social-name">TikTok</span>
+    <span class="social-arrow">↗</span>
+  </a>
 
   <a href="https://www.facebook.com/username"
      target="_blank" rel="noopener noreferrer">
     <span class="social-icon">f</span>
-    <span>Facebook</span>
+    <span class="social-name">Facebook</span>
     <span class="social-arrow">↗</span>
   </a>
 </div>
