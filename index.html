@@ -43,8 +43,7 @@
       min-height: 260px; border-radius: 28px; padding: 24px; display: grid; place-items: center;
       background: linear-gradient(145deg, #ded7ff, #fbdaea); text-align: center;
     }
-    .avatar { width: 112px; height: 112px; border-radius: 50%; display: grid; place-items: center; background: white; color: var(--accent); font-size: 2.4rem; font-weight: 800; border: 5px solid rgba(255,255,255,.7); }
-    .profile p { margin: 12px 0 0; font-weight: 750; }
+    .avatar {width: 112px;height: 112px;border-radius: 50%;object-fit: cover;object-position: center;display: block;margin: 0 auto;border: 5px solid rgba(255,255,255,.7);}
     section { padding: 26px 0; }
     .section-head { margin-bottom: 18px; }
     h2 { font-size: 1.65rem; letter-spacing: -.03em; margin: 0 0 6px; }
@@ -81,7 +80,7 @@
         <a href="#tentang">Tentang</a>
         <a href="#keahlian">Keahlian</a>
         <a href="#pengalaman">Pengalaman</a>
-        <a href="#karya">Pendidikan</a>
+        <a href="#pendidikan">Pendidikan</a>
         <a href="#kontak">Kontak</a>
       </div>
     </nav>
@@ -101,7 +100,10 @@
       </div>
       <aside class="profile" aria-label="Profil singkat">
         <div>
-          <div class="avatar">AA</div>
+         <img
+  class="avatar"
+  src="foto-profil.jpg"
+  alt="Foto profil Mila"/>
           <p>Aracheli Arjuna</p>
           <span>Administrasi · HR · Desain Web</span>
         </div>
@@ -150,24 +152,26 @@
       </div>
     </section>
 
-    <section id="karya">
-      <div class="section-head">
-        <h2>Proyek Pilihan</h2>
-        <p class="sub">Untuk portofolio jasa website, isi dengan demo yang kamu buat sendiri.</p>
-      </div>
-      <div class="grid2">
-        <article class="card project">
-          <div class="project-mark">PROJECT 01</div>
-          <h3>Landing Page Profil</h3>
-          <p>Contoh halaman profil responsif untuk profesional atau freelancer.</p>
-        </article>
-        <article class="card project">
-          <div class="project-mark">PROJECT 02</div>
-          <h3>CV Online</h3>
-          <p>CV digital sederhana dengan bagian tentang diri, keahlian, pengalaman, dan kontak.</p>
-        </article>
-      </div>
-    </section>
+    <section id="pendidikan">
+  <div class="section-head">
+    <h2>Pendidikan</h2>
+    <p class="sub">Riwayat pendidikan saya.</p>
+  </div>
+
+  <div class="card">
+    <div class="item">
+      <h3>Universitas Indonesia</h3>
+      <div class="meta">Matematika · 2018 – 2021</div>
+      <p>Jelaskan bidang studi atau pencapaian akademik yang relevan.</p>
+    </div>
+
+    <div class="item">
+      <h3>SMA Negeri 1 Indonesia</h3>
+      <div class="meta">IPA · 2015 – 2018</div>
+      <p>Tambahkan informasi pendidikan sebelumnya jika diperlukan.</p>
+    </div>
+  </div>
+</section>
 
     <section id="kontak">
       <div class="contact">
