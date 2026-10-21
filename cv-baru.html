@@ -174,60 +174,60 @@ footer {
   }
   section { break-inside: avoid; }
 }
-aside .social-links {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch;
-  width: 100%;
+
+.social-links {
+  display: flex;
+  flex-direction: column;
   gap: 9px;
+  width: 100%;
 }
 
-aside .social-links a {
-  display: grid !important;
-  grid-template-columns: 25px minmax(0, 1fr) auto !important;
-  grid-template-rows: 1fr !important;
-  align-items: center !important;
-  column-gap: 10px;
+.social-links a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
   width: 100%;
   min-width: 0;
-  padding: 9px 8px;
-  box-sizing: border-box;
+  padding: 10px 11px;
   border: 1px solid #ffffff25;
   border-radius: 8px;
-  color: #ffffff;
-  text-decoration: none;
+  color: #f5f7fb;
   font-size: 12px;
-  line-height: 1.4;
+  text-decoration: none;
+  transition: background .25s, transform .25s;
 }
 
-aside .social-links .social-icon {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.social-links a:hover {
+  background: #ffffff16;
+  transform: translateX(4px);
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
   width: 25px;
   height: 25px;
-  box-sizing: border-box;
+  flex: 0 0 25px;
   border-radius: 6px;
   background: #ffffff18;
   color: #e0c69c;
+  font-size: 14px;
   font-weight: bold;
 }
 
-aside .social-links .social-name {
-  grid-column: 2;
-  grid-row: 1;
+.social-links a > span:nth-child(2) {
+  flex: 1;
   min-width: 0;
   white-space: nowrap;
 }
 
-aside .social-links .social-arrow {
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: end;
-  white-space: nowrap;
+.social-arrow {
+  flex: 0 0 auto;
+  margin-left: auto;
   color: #d5c4a7;
+  font-size: 15px;
 }
 </style>
 </head>
