@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | CV Profesional</title>
+<style>
+:root {
+  --navy: #182d49;
+  --cream: #f7f2e9;
+  --gold: #b69a72;
+  --ink: #273447;
+  --muted: #718096;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: #e8eaf0;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 7%;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #e4e7ed;
+}
+.brand { color: var(--navy); font-weight: 800; }
+.navlinks { display: flex; gap: 18px; font-size: 13px; }
+.download {
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 15px;
+  color: white;
+  background: var(--navy);
+}
+.page {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  max-width: 1050px;
+  margin: 35px auto;
+  background: white;
+  box-shadow: 0 15px 55px #182d4918;
+}
+aside {
+  padding: 34px 25px;
+  color: white;
+  background: var(--navy);
+}
+.avatar {
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  background: #344966;
+  color: #fff;
+  font-size: 38px;
+}
+.name { text-align: center; font-size: 27px; margin: 0; }
+.role {
+  text-align: center;
+  color: #d5c4a7;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin: 10px 0 28px;
+}
+.side-title {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #d5c4a7;
+  margin: 25px 0 12px;
+}
+.contact, .skill {
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.skill { margin-bottom: 13px; }
+.track {
+  height: 4px;
+  margin-top: 5px;
+  background: #ffffff35;
+  border-radius: 9px;
+}
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 9px;
+}
+main { padding: 42px 42px; min-width: 0; }
+.eyebrow {
+  color: #9b8058;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+h2 { color: var(--navy); font-size: 23px; margin: 9px 0 18px; }
+section { margin-bottom: 34px; scroll-margin-top: 85px; }
+p { font-size: 13px; line-height: 1.9; color: #5c6879; }
+.job {
+  border-left: 2px solid var(--gold);
+  padding: 0 0 6px 19px;
+  margin: 23px 0;
+  position: relative;
+}
+.job:before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.job h3 { margin: 0 0 6px; font-size: 15px; }
+.meta { color: #9b8058; font-size: 11px; }
+ul { padding-left: 17px; }
+li { color: #5c6879; font-size: 12px; line-height: 1.9; }
+.education {
+  padding: 17px;
+  background: var(--cream);
+  border-radius: 8px;
+}
+footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 11px;
+  color: var(--muted);
+}
+@media(max-width:700px) {
+  nav { padding: 13px 4%; flex-wrap: wrap; }
+  .navlinks { order: 3; width: 100%; overflow-x: auto; padding: 8px 0; }
+  .page { grid-template-columns: 1fr; margin: 12px; }
+  aside { padding: 28px 24px; }
+  main { padding: 30px 23px; }
+  .avatar { width: 95px; height: 95px; }
+}
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: white; }
+  nav, footer { display: none !important; }
+  .page { margin: 0; max-width: none; box-shadow: none; }
+  aside { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .education, .track, .job:before {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="brand">MY PORTFOLIO.</a>
+  <div class="navlinks">
+    <a href="#about">Tentang</a>
+    <a href="#experience">Pengalaman</a>
+    <a href="#education">Pendidikan</a>
+  </div>
+  <button class="download" onclick="window.print()">
+    Cetak / PDF ↓
+  </button>
+</nav>
+
+<div class="page" id="home">
+  <aside>
+    <div class="avatar">AA</div>
+    <h1 class="name">Arachelli Arjuna</h1>
+    <div class="role">HR & ADMINISTRATION</div>
+
+    <div class="side-title">KONTAK</div>
+    <div class="contact">
+      <p>✉ arachelliarjuna@gmail.com</p>
+      <p>☎ 082143513272</p>
+      <p>⌖ Lumajang, Jawa Timur</p>
+      <p>↗ linkedin.com/in/AracheliArjuna</p>
+    </div>
+
+    <div class="side-title">KETERAMPILAN</div>
+    <div class="skill">
+      Microsoft Excel
+      <div class="track"><span style="width:90%"></span></div>
+    </div>
+    <div class="skill">
+      Administrasi & Dokumen
+      <div class="track"><span style="width:90%"></span></div>
+    </div>
+    <div class="skill">
+      Payroll & Reporting
+      <div class="track"><span style="width:85%"></span></div>
+    </div>
+    <div class="skill">
+      Google Workspace
+      <div class="track"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="side-title">KOMPETENSI</div>
+    <div class="contact">
+      • Komunikasi<br>
+      • Manajemen waktu<br>
+      • Problem solving<br>
+      • Ketelitian dan tanggung jawab
+    </div>
+  </aside>
+
+  <main>
+    <section id="about">
+      <div class="eyebrow">PROFIL PROFESIONAL</div>
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya merupakan profesional administrasi dengan pengalaman
+        dalam pengelolaan dokumen, penyusunan laporan, pengolahan
+        data, payroll, serta dukungan operasional perusahaan.
+        Memiliki kemampuan analisis yang baik, teliti, disiplin,
+        dan mampu bekerja secara mandiri maupun dalam tim.
+      </p>
+    </section>
+
+    <section id="experience">
+      <div class="eyebrow">PERJALANAN KARIER</div>
+      <h2>Pengalaman Kerja</h2>
+
+      <div class="job">
+        <h3>Koordinator Bagian Umum</h3>
+        <div class="meta">Nama Perusahaan · Tahun — Sekarang</div>
+        <ul>
+          <li>Mengoordinasikan administrasi dan kebutuhan operasional.</li>
+          <li>Menyusun laporan rutin serta mengelola dokumen perusahaan.</li>
+          <li>Memastikan pekerjaan selesai sesuai tenggat waktu.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Staff Administrasi / HR</h3>
+        <div class="meta">Nama Perusahaan · Tahun — Tahun</div>
+        <ul>
+          <li>Mengelola data karyawan, dokumen, dan surat-menyurat.</li>
+          <li>Membantu perhitungan payroll dan penyusunan laporan.</li>
+          <li>Mendukung proses rekrutmen serta administrasi personalia.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="eyebrow">LATAR BELAKANG AKADEMIK</div>
+      <h2>Pendidikan</h2>
+      <div class="education">
+        <h3>S1 Matematika</h3>
+        <p>Fakultas MIPA · Universitas Jember</p>
+        <div class="meta">Tahun masuk — Tahun lulus</div>
+      </div>
+    </section>
+
+    <section id="achievement">
+      <div class="eyebrow">NILAI TAMBAH</div>
+      <h2>Pencapaian & Keahlian</h2>
+      <div class="job">
+        <h3>Best Employee 2023</h3>
+        <p>
+          Tuliskan alasan penghargaan, kontribusi, atau pencapaian
+          terukur yang paling relevan dengan posisi yang dilamar.
+        </p>
+      </div>
+      <p>
+        <b>Tools:</b> Microsoft Word, Excel, PowerPoint,
+        Google Sheets, Google Forms, dan Google Drive.
+      </p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  © <span id="year"></span> Nama Kamu · Professional Portfolio
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+</body>
+</html>
