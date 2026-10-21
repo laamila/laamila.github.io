@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Content Creator | Gold & Black</title>
+<style>
+:root{
+  --bg:#090909; --panel:#121212; --panel2:#191714; --gold:#D6B15E;
+  --gold-light:#F2D98D; --text:#F5F1E8; --muted:#AAA49A; --line:#30291C;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;letter-spacing:2px;color:var(--gold);font-size:1.15rem}
+.logo span{color:var(--text)}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{font-size:.86rem;color:var(--muted);transition:.2s}
+nav a:hover,nav a.active{color:var(--gold-light)}
+.hero{padding:86px 0 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.eyebrow{color:var(--gold);font-size:.76rem;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:.99;letter-spacing:-2px;margin:18px 0 24px}
+h1 em{font-style:normal;color:var(--gold)}
+.hero p{max-width:600px;color:var(--muted);font-size:1.03rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:1px solid var(--gold);border-radius:3px;font-weight:800;font-size:.88rem;cursor:pointer}
+.btn.primary{background:var(--gold);color:#111}
+.btn.secondary:hover{background:#211c12}
+.hero-card{position:relative;min-height:360px;background:linear-gradient(145deg,#282116,#111 62%);border:1px solid #554526;padding:26px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.hero-card:before{content:"";position:absolute;width:250px;height:250px;border:1px solid #705a2c;border-radius:50%;right:-65px;top:-65px;box-shadow:0 0 0 24px #d6b15e08,0 0 0 50px #d6b15e06}
+.hero-card:after{content:"";position:absolute;width:140px;height:140px;border:1px solid #705a2c;transform:rotate(45deg);right:55px;top:82px}
+.hero-card>*{position:relative;z-index:1}
+.monogram{font-size:5rem;font-weight:900;letter-spacing:-5px;color:var(--gold-light);line-height:1}
+.hero-card .small{color:var(--muted);font-size:.85rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.stat{border-top:1px solid var(--line);padding-top:14px}
+.stat strong{display:block;color:var(--gold-light);font-size:1.45rem}
+.stat span{font-size:.75rem;color:var(--muted)}
+section{padding:70px 0;border-top:1px solid #201d18}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+.kicker{color:var(--gold);font-size:.73rem;letter-spacing:2.5px;font-weight:800;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1;margin:8px 0 0;letter-spacing:-.8px}
+.section-head p{color:var(--muted);max-width:450px;margin:0;font-size:.92rem}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.filter{background:transparent;border:1px solid #393126;color:var(--muted);padding:8px 13px;border-radius:2px;cursor:pointer;font-size:.82rem}
+.filter.active,.filter:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{background:var(--panel);border:1px solid #29251e;transition:transform .2s,border-color .2s;overflow:hidden}
+.project:hover{transform:translateY(-4px);border-color:#8c7139}
+.project[hidden]{display:none}
+.thumb{height:225px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#252016}
+.thumb .shape{position:absolute;width:150px;height:190px;border:1px solid #d6b15e88;transform:rotate(12deg)}
+.thumb .shape:before,.thumb .shape:after{content:"";position:absolute;border:1px solid #d6b15e66;inset:14px;transform:rotate(18deg)}
+.thumb .poster{position:relative;z-index:1;width:65%;height:78%;border:1px solid #d6b15e88;background:linear-gradient(160deg,#262117,#080808);padding:16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:10px 10px 0 #0006}
+.poster small{font-size:.55rem;color:var(--gold);letter-spacing:2px}
+.poster b{font-family:Georgia,serif;font-size:1.6rem;line-height:1.05;color:#f7e8bd}
+.poster span{font-size:.55rem;color:#d0c7b4;letter-spacing:1px}
+.thumb.reels{background:linear-gradient(135deg,#332719,#111)}
+.thumb.reels .poster{width:40%;height:90%;border-radius:10px;border:4px solid #eee5d0}
+.thumb.reels .poster b{font-size:1.2rem}
+.thumb.product{background:radial-gradient(circle at center,#4a3921,#111 65%)}
+.thumb.product .poster{width:48%;height:68%;transform:rotate(-5deg)}
+.thumb.brand{background:linear-gradient(135deg,#19201e,#111)}
+.thumb.brand .poster{background:linear-gradient(145deg,#283b32,#101412);border-color:#92aa83}
+.thumb.brand .poster b{color:#d9e4c8}
+.thumb.campaign{background:linear-gradient(135deg,#312b1c,#12100d)}
+.thumb.campaign .poster{width:75%;height:65%;transform:rotate(3deg)}
+.thumb.campaign .poster b{font-size:1.3rem}
+.thumb.edit{background:linear-gradient(135deg,#292929,#131313)}
+.thumb.edit .poster{width:58%;height:75%;border:1px solid #aaa}
+.thumb.edit .poster b{color:#eee;font-family:Arial,sans-serif}
+.thumb.story{background:linear-gradient(135deg,#382b20,#111)}
+.thumb.story .poster{width:50%;height:78%;transform:rotate(6deg)}
+.project-info{padding:19px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:.67rem;text-transform:uppercase;letter-spacing:.8px;color:var(--gold-light);border:1px solid #4d3e24;padding:4px 7px}
+.project h3{font-size:1.08rem;margin:0 0 7px}
+.project p{font-size:.84rem;color:var(--muted);margin:0 0 15px}
+.project-link{font-size:.82rem;color:var(--gold);font-weight:800}
+.project-link:hover{color:var(--gold-light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--panel);border:1px solid #29251e;padding:27px}
+.panel h3{margin:0 0 14px;color:var(--gold-light)}
+.panel p{color:var(--muted);margin:0}
+.skill-list{display:flex;gap:9px;flex-wrap:wrap}
+.skill-list span{padding:9px 12px;border:1px solid #403521;color:#ded6c5;font-size:.83rem}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{padding:20px;border-top:2px solid var(--gold);background:var(--panel)}
+.step b{color:var(--gold);font-size:.8rem;letter-spacing:1px}
+.step h3{margin:9px 0;font-size:1rem}
+.step p{margin:0;color:var(--muted);font-size:.82rem}
+.contact{background:linear-gradient(120deg,#211b10,#111 65%);border:1px solid #594726;padding:35px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.contact p{color:var(--muted);margin:10px 0 0}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+footer{padding:26px 0;color:#777167;font-size:.78rem}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:28px;padding-top:60px}.hero-card{min-height:280px}.projects{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.process{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.nav{align-items:flex-start;padding:17px 0;flex-direction:column}.nav nav{gap:13px}.nav nav a{font-size:.78rem}.projects,.about-grid{grid-template-columns:1fr}.thumb{height:240px}.stats{gap:8px}.stat strong{font-size:1.2rem}.contact{align-items:flex-start;flex-direction:column;padding:25px}.process{grid-template-columns:1fr 1fr}section{padding:52px 0}h1{letter-spacing:-1.4px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home">PORTO<span>FOLIO.</span></a>
+    <nav aria-label="Navigasi utama">
+      <a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow">Content Creator · Creative Portfolio</div>
+      <h1>Ideas into<br><em>impactful</em> content.</h1>
+      <p>Halo, saya <strong>[Nama Lengkap]</strong> — content creator yang menggabungkan ide, storytelling, dan visual untuk menciptakan konten yang menarik, relevan, dan punya tujuan.</p>
+      <div class="actions"><a class="btn primary" href="#projects">Lihat Project ↘</a><a class="btn secondary" href="#contact">Hubungi Saya</a></div>
+      <div class="stats">
+        <div class="stat"><strong>06+</strong><span>Featured Projects</span></div>
+        <div class="stat"><strong>03</strong><span>Content Formats</span></div>
+        <div class="stat"><strong>100%</strong><span>Creative Mindset</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="small">SELECTED WORKS / 2024—2026</div>
+      <div class="monogram">[NC.]</div>
+      <div><div class="eyebrow">Create with purpose.</div><div class="small">Concept · Shoot · Edit · Publish</div></div>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Portfolio / 01</div><h2>Selected Projects</h2></div><p>Beberapa karya pilihan yang menampilkan proses kreatif, visual, dan kemampuan membuat konten untuk berbagai kebutuhan brand.</p></div>
+      <div class="filters" role="group" aria-label="Filter project">
+        <button class="filter active" data-filter="all">Semua Project</button>
+        <button class="filter" data-filter="video">Video & Reels</button>
+        <button class="filter" data-filter="design">Design & Campaign</button>
+        <button class="filter" data-filter="branding">Branding</button>
+      </div>
+      <div class="projects">
+        <article class="project" data-category="video">
+          <div class="thumb reels"><div class="shape"></div><div class="poster"><small>REELS / 01</small><b>THE<br>NEW<br>DROP</b><span>FASHION FILM · 00:30</span></div></div>
+          <div class="project-info"><div class="tags"><span class="tag">Video & Reels</span><span class="tag">Fashion</span></div><h3>Fashion Product Reels</h3><p>Konsep video pendek untuk menonjolkan detail produk, styling, dan daya tarik visual dalam format vertikal.</p><a class="project-link" href="https://www.instagram.com/" target="_blank" rel="noopener">Lihat Project ↗</a></div>
+        </article>
+        <article class="project" data-category="design">
+          <div class="thumb campaign"><div class="shape"></div><div class="poster"><small>CAMPAIGN / 02</small><b>GOLDEN<br>HOUR<br>SALE</b><span>CAMPAIGN VISUALS</span></div></div>
+          <div class="project-info"><div class="tags"><span class="tag">Campaign</span><span class="tag">Social Media</span></div><h3>Promotional Campaign</h3><p>Rangkaian visual promosi dengan hierarki informasi yang jelas untuk mendukung campaign penjualan.</p><a class="project-link" href="https://www.behance.net/" target="_blank" rel="noopener">Lihat Project ↗</a></div>
+        </article>
+        <article class="project" data-category="branding">
+          <div class="thumb brand"><div class="shape"></div><div class="poster"><small>BRAND ID / 03</small><b>PURE<br>FORM</b><span>IDENTITY · VISUAL SYSTEM</span></div></div>
+          <div class="project-info"><div class="tags"><span class="tag">Branding</span><span class="tag">Visual</span></div><h3>Brand Visual Identity</h3><p>Eksplorasi moodboard, tone warna, dan gaya visual untuk menjaga konsistensi identitas brand.</p><a class="project-link" href="https://www.behance.net/" target="_blank" rel="noopener">Lihat Project ↗</a></div>
+        </article>
+        <article class="project" data-category="video">
+          <div class="thumb edit"><div class="shape"></div><div class="poster"><small>EDIT / 04</small><b>STORY<br>IN MOTION</b><span>EDITING · SOUND · PACING</span></div></div>
+          <div class="project-info"><div class="tags"><span class="tag">Video Editing</span><span class="tag">Storytelling</span></div><h3>Storytelling Video</h3><p>Editing video dengan ritme, transisi, musik, dan sound effect yang mendukung alur cerita.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noopener">Lihat Project ↗</a></div>
+        </article>
+        <article class="project" data-category="design">
+          <div class="thumb product"><div class="shape"></div><div class="poster"><small>PRODUCT / 05</small><b>DETAILS<br>MATTER.</b><span>PRODUCT CONTENT</span></div></div>
+          <div class="project-info"><div class="tags"><span class="tag">Product</span><span class="tag">Content Plan</span></div><h3>Product Content Series</h3><p>Ide konten produk yang mengangkat fitur, manfaat, dan detail melalui pendekatan visual yang konsisten.</p><a class="project-link" href="https://www.instagram.com/" target="_blank" rel="noopener">Lihat Project ↗</a></div>
+        </article>
+        <article class="project" data-category="video">
+          <div class="thumb story"><div class="shape"></div><div class="poster"><small>STORY / 06</small><b>BEHIND<br>THE<br>SCENES</b><span>SHORT FORM VIDEO</span></div></div>
+          <div class="project-info"><div class="tags"><span class="tag">Behind the Scenes</span><span class="tag">Reels</span></div><h3>Behind-the-Scenes Content</h3><p>Konten proses produksi yang terasa lebih dekat, autentik, dan membangun koneksi dengan audiens.</p><a class="project-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">Lihat Project ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">About / 02</div><h2>Creative with strategy.</h2></div><p>Bukan sekadar membuat konten yang terlihat bagus, tetapi menyusun pesan yang sesuai dengan audiens dan tujuan brand.</p></div>
+      <div class="about-grid">
+        <div class="panel"><h3>About Me</h3><p>Saya tertarik pada proses kreatif dari awal hingga akhir: mencari insight, mengembangkan ide, membuat konsep visual, mengambil footage, melakukan editing, hingga mengevaluasi hasil konten. Saya senang berkolaborasi dan belajar hal baru untuk menghasilkan karya yang terus berkembang.</p></div>
+        <div class="panel"><h3>My Creative Approach</h3><p>Setiap project dimulai dengan memahami tujuan, audiens, dan pesan utama. Setelah itu saya mengembangkan konsep, menentukan format, memproduksi konten, lalu memastikan hasil akhirnya tetap konsisten dengan karakter brand.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Capabilities / 03</div><h2>Skills & Workflow</h2></div><p>Area kerja yang bisa disesuaikan dengan pengalaman, tools, dan jenis project yang benar-benar pernah dikerjakan.</p></div>
+      <div class="panel"><div class="skill-list"><span>Content Planning</span><span>Creative Ideation</span><span>Scriptwriting</span><span>Video Shooting</span><span>Video Editing</span><span>CapCut</span><span>Canva</span><span>Social Media Content</span><span>Copywriting</span><span>Storytelling</span><span>Basic Analytics</span><span>Team Collaboration</span></div></div>
+      <div class="process" style="margin-top:18px">
+        <div class="step"><b>01 / DISCOVER</b><h3>Research</h3><p>Memahami brief, audiens, tren, dan tujuan konten.</p></div>
+        <div class="step"><b>02 / DEVELOP</b><h3>Concept</h3><p>Menyusun ide, angle, script, dan storyboard.</p></div>
+        <div class="step"><b>03 / CREATE</b><h3>Production</h3><p>Produksi visual, editing, audio, dan finishing.</p></div>
+        <div class="step"><b>04 / DELIVER</b><h3>Review</h3><p>Final check, publikasi, dan evaluasi hasil.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact"><div><div class="kicker">Contact / 04</div><h2>Let's create something<br>remarkable.</h2><p>Terbuka untuk peluang kerja, freelance, dan kolaborasi kreatif.</p></div><div class="contact-actions"><a class="btn primary" href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp ↗</a><a class="btn secondary" href="mailto:emailanda@example.com">Email Saya ↗</a></div></div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;color:var(--muted);font-size:.85rem"><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-inner"><span>© 2026 [Nama Lengkap]. All rights reserved.</span><span>Designed with intention · Gold / Black Edition</span></div></footer>
+<script>
+const filters=document.querySelectorAll('.filter');
+const projects=document.querySelectorAll('.project');
+filters.forEach(button=>button.addEventListener('click',()=>{
+  filters.forEach(item=>item.classList.remove('active'));
+  button.classList.add('active');
+  const filter=button.dataset.filter;
+  projects.forEach(project=>project.hidden=!(filter==='all'||project.dataset.category===filter));
+}));
+const navLinks=document.querySelectorAll('nav a');
+navLinks.forEach(link=>link.addEventListener('click',()=>{
+  navLinks.forEach(item=>item.classList.remove('active'));
+  link.classList.add('active');
+}));
+</script>
+</body>
+</html>
