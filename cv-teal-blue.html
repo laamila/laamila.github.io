@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Professional resume and portfolio">
+<title>Professional CV | Teal & Sky Blue</title>
+<style>
+:root{
+ --navy:#123B46;--navy2:#176B72;--blue:#BFEAF0;--blue2:#EAF8FA;
+ --rose:#19A7A1;--rose-light:#DDF6F3;--ink:#20313A;--muted:#60727C;
+ --paper:#fff;--bg:#F3F8F9;--line:#DDE8EA;--white:#fff;
+ --shadow:0 12px 34px rgba(18,59,70,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 Inter,"Segoe UI",Arial,sans-serif}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1160px;margin:auto;padding:13px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{text-decoration:none;font-size:1rem;font-weight:850;letter-spacing:.08em;color:var(--navy)}
+.brand span{color:var(--rose)}
+nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;color:#4A626A;font-size:.86rem;font-weight:650;padding:8px 11px;border-radius:6px}
+nav a:hover,nav a:focus-visible{background:var(--blue2);color:var(--navy);outline:none}
+.wrap{max-width:1100px;width:calc(100% - 36px);margin:34px auto 60px}
+.hero{background:var(--navy);color:white;display:grid;grid-template-columns:1fr 255px;gap:30px;padding:clamp(28px,5vw,58px);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:120px;top:-150px;width:360px;height:360px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.02);pointer-events:none}
+.hero-copy,.hero-side{position:relative;z-index:1}
+.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:#8FE5DF}
+h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.03;letter-spacing:-.055em;margin:17px 0 13px}
+.hero-role{font-size:1.08rem;font-weight:650;color:#BFEAF0;margin:0 0 19px}
+.hero-desc{color:#DCE9EB;max-width:610px;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:10px 15px;border-radius:5px;font-size:.88rem;font-weight:750;transition:.2s}
+.btn-light{background:white;color:var(--navy)}
+.btn-outline{border:1px solid rgba(255,255,255,.4);color:white}
+.btn:hover{transform:translateY(-2px)}
+.profile{align-self:center;border-left:1px solid rgba(255,255,255,.22);padding-left:25px}
+.monogram{width:104px;height:104px;border:1px solid rgba(255,255,255,.35);background:linear-gradient(140deg,#BFEAF0,#DDF6F3);color:var(--navy);display:grid;place-items:center;font-size:2rem;font-weight:850;letter-spacing:-.06em;margin-bottom:16px}
+.profile h2{font-size:1.05rem;margin:0 0 3px}
+.profile p{font-size:.87rem;color:#DCE9EB;margin:0}
+.profile .status{display:inline-block;margin-top:13px;padding:4px 8px;border:1px solid rgba(255,255,255,.24);color:#8FE5DF;font-size:.72rem;letter-spacing:.04em}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.metric{background:white;border:1px solid var(--line);padding:18px 20px;box-shadow:var(--shadow)}
+.metric strong{display:block;color:var(--navy);font-size:1.02rem}
+.metric span{color:var(--muted);font-size:.82rem}
+.section{margin-top:36px;scroll-margin-top:88px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;border-bottom:1px solid #cbd4e0;padding-bottom:12px;margin-bottom:18px}
+.kicker{color:var(--rose);font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.16em;margin:0 0 4px}
+h2.title{font-size:1.55rem;letter-spacing:-.035em;color:var(--navy);line-height:1.25;margin:0}
+.note{font-size:.83rem;color:var(--muted);margin:0}
+.panel{background:white;border:1px solid var(--line);padding:clamp(20px,3vw,30px);box-shadow:var(--shadow)}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+.about p{margin:0;color:#536075}
+.focus{border-left:3px solid var(--rose);padding:4px 0 4px 18px}
+.focus h3{font-size:.96rem;margin:0 0 10px;color:var(--navy)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{padding:5px 9px;background:var(--blue2);color:var(--navy2);font-size:.78rem;font-weight:700}
+.timeline{display:grid;gap:0}
+.job{display:grid;grid-template-columns:165px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.job:first-child{padding-top:0}
+.job:last-child{padding-bottom:0;border-bottom:0}
+.date{font-size:.83rem;font-weight:800;color:var(--navy);background:var(--blue2);padding:8px 10px;align-self:start}
+.job h3{font-size:1.08rem;margin:0;color:var(--ink)}
+.company{color:var(--rose);font-weight:750;font-size:.88rem;margin:2px 0 10px}
+.job ul{padding-left:19px;color:#596579;margin:0}
+.job li+li{margin-top:5px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.entry{border:1px solid var(--line);padding:20px;background:white}
+.entry-label{color:var(--rose);font-size:.72rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.entry h3{margin:8px 0 4px;color:var(--navy);font-size:1.02rem}
+.entry p{margin:0;color:var(--muted);font-size:.9rem}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.skills h3{font-size:.98rem;color:var(--navy);margin:0 0 12px}
+.skill-list{display:flex;flex-wrap:wrap;gap:8px}
+.skill{border:1px solid #D8E9EC;background:#F6FBFC;padding:7px 10px;color:#36535D;font-size:.84rem;font-weight:650}
+.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.social{display:flex;align-items:center;gap:12px;padding:16px;text-decoration:none;background:white;border:1px solid var(--line);transition:.2s;min-width:0}
+.social:hover{border-color:var(--rose);box-shadow:var(--shadow);transform:translateY(-2px)}
+.social-mark{width:39px;height:39px;display:grid;place-items:center;background:var(--rose-light);color:#126B68;font-weight:900;font-size:1rem;flex-shrink:0}
+.social:nth-child(2) .social-mark{background:var(--blue);color:var(--navy)}
+.social:nth-child(3) .social-mark{background:#DDF6F3;color:#126B68}
+.social strong{display:block;font-size:.9rem}
+.social small{display:block;color:var(--muted);font-size:.78rem;overflow-wrap:anywhere}
+.contact{background:var(--blue2);border:1px solid #dbe5f1;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.contact h2{margin:0;color:var(--navy);font-size:1.3rem}
+.contact p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.contact .btn{background:var(--navy);color:white}
+footer{text-align:center;color:#778195;font-size:.8rem;padding:25px}
+@media(max-width:800px){
+ .nav{align-items:flex-start;flex-direction:column;gap:8px;padding:12px 18px}
+ nav{justify-content:flex-start}
+ nav a{padding:7px 9px;font-size:.81rem}
+ .hero{grid-template-columns:1fr}
+ .profile{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding:20px 0 0;display:grid;grid-template-columns:auto 1fr;column-gap:15px}
+ .monogram{grid-row:span 3;width:76px;height:76px;font-size:1.6rem;margin:0}
+ .profile h2{align-self:end}
+ .profile .status{width:max-content}
+ .metrics{grid-template-columns:1fr}
+ .about{grid-template-columns:1fr}
+ .socials{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ .job{grid-template-columns:1fr;gap:10px}
+ .two-col,.skills{grid-template-columns:1fr}
+ .section-head{align-items:flex-start;flex-direction:column;gap:5px}
+ .contact{align-items:flex-start;flex-direction:column}
+ .wrap{margin-top:20px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="nav">
+  <a class="brand" href="#beranda">NAMA<span>ANDA</span> / CV</a>
+  <nav aria-label="Navigasi utama">
+   <a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#pengalaman">Pengalaman</a>
+   <a href="#pendidikan">Pendidikan</a><a href="#keahlian">Keahlian</a><a href="#sosial-media">Sosial Media</a>
+  </nav>
+ </div>
+</header>
+<main class="wrap">
+ <section class="hero" id="beranda">
+  <div class="hero-copy">
+   <div class="eyebrow">Curriculum Vitae & Professional Profile</div>
+   <h1>Nama<br>Lengkap Anda</h1>
+   <p class="hero-role">Human Resources · General Affairs · Administration</p>
+   <p class="hero-desc">Profesional administrasi yang teliti dan terorganisir, berpengalaman dalam pengelolaan dokumen, pelaporan, dukungan HR, serta proses operasional. Berkomitmen pada akurasi data, komunikasi yang efektif, dan penyelesaian pekerjaan sesuai target.</p>
+   <div class="actions">
+    <!-- Ganti cv-anda.pdf dengan nama file PDF CV yang benar -->
+    <a class="btn btn-light" href="cv-anda.pdf" target="_blank" rel="noopener">Lihat CV PDF ↗</a>
+    <a class="btn btn-outline" href="#pengalaman">Lihat Pengalaman ↓</a>
+   </div>
+  </div>
+  <aside class="profile">
+   <div class="monogram">NA</div>
+   <h2>Nama Lengkap Anda</h2>
+   <p>Lumajang, Jawa Timur</p>
+   <span class="status">TERBUKA UNTUK PELUANG</span>
+  </aside>
+ </section>
+
+ <div class="metrics" aria-label="Ringkasan profil">
+  <div class="metric"><strong>Administrasi</strong><span>Dokumen & laporan</span></div>
+  <div class="metric"><strong>Human Resources</strong><span>Data & proses karyawan</span></div>
+  <div class="metric"><strong>Operational Support</strong><span>Koordinasi & ketertiban kerja</span></div>
+ </div>
+
+ <section class="section" id="profil">
+  <div class="section-head"><div><p class="kicker">01 / Ringkasan</p><h2 class="title">Profil Profesional</h2></div><p class="note">Professional summary</p></div>
+  <div class="panel about">
+   <p>Sarjana Matematika dengan pengalaman di bidang administrasi umum, HR, dan dukungan akuntansi/operasional. Terbiasa mengelola data, surat-menyurat, dokumen transaksi, penggajian, serta laporan berkala. Memiliki kemampuan analitis, perhatian terhadap detail, manajemen waktu yang baik, dan sikap bertanggung jawab dalam mendukung kebutuhan perusahaan.</p>
+   <div class="focus"><h3>Area Kompetensi</h3><div class="tags"><span class="tag">HR Administration</span><span class="tag">General Affairs</span><span class="tag">Payroll</span><span class="tag">Reporting</span><span class="tag">Document Control</span><span class="tag">Office Administration</span></div></div>
+  </div>
+ </section>
+
+ <section class="section" id="pengalaman">
+  <div class="section-head"><div><p class="kicker">02 / Karier</p><h2 class="title">Pengalaman Kerja</h2></div><p class="note">Tuliskan pengalaman terbaru terlebih dahulu</p></div>
+  <div class="panel timeline">
+   <article class="job"><div class="date">2024 – Sekarang</div><div><h3>HR & General Affairs</h3><div class="company">Nama Perusahaan · Kota</div><ul><li>Mengelola administrasi karyawan, data kehadiran, dokumen personalia, dan pengarsipan.</li><li>Mendukung proses rekrutmen, pencatatan cuti, penggajian, serta koordinasi kebutuhan operasional kantor.</li><li>Menyusun rekap dan laporan berkala untuk pemeriksaan serta pengambilan keputusan manajemen.</li></ul></div></article>
+   <article class="job"><div class="date">2022 – 2024</div><div><h3>Staf Administrasi Umum</h3><div class="company">Nama Perusahaan Sebelumnya · Kota</div><ul><li>Membuat laporan penjualan, jurnal kas, invoice, dan dokumen transaksi.</li><li>Membantu administrasi pembayaran, pesanan, marketplace, serta koordinasi dengan bagian terkait.</li><li>Memastikan dokumen dan data tersusun akurat, rapi, dan mudah ditelusuri.</li></ul></div></article>
+  </div>
+ </section>
+
+ <section class="section" id="pendidikan">
+  <div class="section-head"><div><p class="kicker">03 / Akademik</p><h2 class="title">Pendidikan & Pencapaian</h2></div></div>
+  <div class="two-col">
+   <article class="entry"><div class="entry-label">Pendidikan formal</div><h3>S1 Matematika</h3><p>Fakultas MIPA · Universitas Jember<br>Tambahkan tahun kelulusan</p></article>
+   <article class="entry"><div class="entry-label">Penghargaan</div><h3>Best Employee 2023</h3><p>CV Azzata Jaya Kimia<br>Tambahkan keterangan singkat sesuai penghargaan.</p></article>
+  </div>
+ </section>
+
+ <section class="section" id="keahlian">
+  <div class="section-head"><div><p class="kicker">04 / Kompetensi</p><h2 class="title">Keahlian</h2></div></div>
+  <div class="panel skills">
+   <div><h3>Teknis</h3><div class="skill-list"><span class="skill">Microsoft Excel</span><span class="skill">XLOOKUP & IFERROR</span><span class="skill">Pivot Table</span><span class="skill">Google Sheets</span><span class="skill">Google Forms</span><span class="skill">Payroll</span><span class="skill">HR Administration</span><span class="skill">Reporting</span></div></div>
+   <div><h3>Profesional</h3><div class="skill-list"><span class="skill">Analytical Thinking</span><span class="skill">Attention to Detail</span><span class="skill">Time Management</span><span class="skill">Communication</span><span class="skill">Coordination</span><span class="skill">Problem Solving</span></div></div>
+  </div>
+ </section>
+
+ <section class="section" id="sosial-media">
+  <div class="section-head"><div><p class="kicker">05 / Online presence</p><h2 class="title">Sosial Media & Profil</h2></div><p class="note">Tautan terbuka di tab baru</p></div>
+  <div class="socials">
+   <a class="social" href="https://www.instagram.com/username" target="_blank" rel="noopener noreferrer"><span class="social-mark">◎</span><span><strong>Instagram ↗</strong><small>@username</small></span></a>
+   <a class="social" href="https://www.tiktok.com/@username" target="_blank" rel="noopener noreferrer"><span class="social-mark">♪</span><span><strong>TikTok ↗</strong><small>@username</small></span></a>
+   <a class="social" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener noreferrer"><span class="social-mark">in</span><span><strong>LinkedIn ↗</strong><small>Profil profesional</small></span></a>
+  </div>
+ </section>
+
+ <section class="section" id="kontak">
+  <div class="contact"><div><h2>Kontak Profesional</h2><p>Silakan hubungi saya untuk kesempatan kerja atau kolaborasi.</p></div><a class="btn" href="mailto:emailanda@example.com">Email Saya ↗</a></div>
+ </section>
+</main>
+<footer>© <span id="year"></span> Nama Lengkap Anda · Professional CV</footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(function(link){
+ link.addEventListener('click',function(event){
+  var target=document.querySelector(link.getAttribute('href'));
+  if(target){event.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'',link.getAttribute('href'));}
+ });
+});
+</script>
+</body>
+</html>
