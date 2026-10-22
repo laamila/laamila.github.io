@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Petal & Poetry — buket bunga dan hampers untuk momen istimewa.">
+  <title>Petal & Poetry | Flowers & Gifts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">LITTLE THINGS, BEAUTIFULLY GIFTED ✿ FREE GREETING CARD WITH EVERY ORDER</div>
+
+  <header class="header">
+    <a class="logo" href="#home">petal<span>& poetry</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#shop">Shop the Collection ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">FLOWERS FOR EVERY FEELING</p>
+        <h1>Say it with<br><em>flowers.</em></h1>
+        <p class="hero-description">Ada hal yang sulit diungkapkan dengan kata-kata. Biarkan rangkaian bunga dan hadiah penuh makna menyampaikan perasaanmu.</p>
+        <div class="hero-actions">
+          <a class="button button-green" href="#shop">Explore Collection ↗</a>
+          <a class="text-link" href="#story">Our little story ↓</a>
+        </div>
+        <div class="hero-caption">
+          <span class="flower-symbol">✿</span>
+          <p><strong>Thoughtfully arranged</strong><br>Made with love, wrapped with care.</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1100&q=85" alt="Rangkaian bunga pastel yang cantik">
+        <div class="hero-tag"><span>✿</span><div><strong>Made to make you smile</strong><small>Flowers, gifts & little joys</small></div></div>
+        <div class="hero-stamp">A LITTLE<br>LOVE NOTE</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>✿</span><p><strong>Made with love</strong><small>Setiap rangkaian dibuat penuh perhatian.</small></p></div>
+      <div><span>♡</span><p><strong>Personalized gifts</strong><small>Tambahkan pesan untuk orang tersayang.</small></p></div>
+      <div><span>❀</span><p><strong>For every occasion</strong><small>Rayakan setiap momen berharga.</small></p></div>
+    </section>
+
+    <section class="shop-section section" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">A GIFT FROM THE HEART</p><h2>Find your <em>something lovely.</em></h2></div>
+        <p>Buket bunga dan hampers pilihan untuk membuat hari biasa terasa luar biasa.</p>
+      </div>
+
+      <div class="shop-toolbar">
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">All Gifts</button>
+          <button class="filter" data-filter="bouquet">Bouquets</button>
+          <button class="filter" data-filter="flowerbox">Flower Boxes</button>
+          <button class="filter" data-filter="hampers">Hampers</button>
+        </div>
+        <div class="search-sort">
+          <input id="searchInput" type="search" placeholder="Cari hadiah..." aria-label="Cari produk">
+          <select id="sortSelect" aria-label="Urutkan produk">
+            <option value="featured">Featured</option>
+            <option value="low">Harga terendah</option>
+            <option value="high">Harga tertinggi</option>
+            <option value="name">Nama A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="results-count" id="resultsCount">Menampilkan 8 pilihan hadiah</p>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-results" id="emptyResults" hidden>
+        <span>❀</span><p>Belum ada produk yang cocok.</p><button class="text-link" id="resetSearch">Lihat semua produk</button>
+      </div>
+    </section>
+
+    <section class="occasion-section">
+      <div class="occasion-image">
+        <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1000&q=85" alt="Bunga untuk hadiah spesial">
+      </div>
+      <div class="occasion-copy">
+        <p class="eyebrow">FOR YOUR FAVOURITE PEOPLE</p>
+        <h2>Every occasion<br>deserves a little <em>magic.</em></h2>
+        <p>Ulang tahun, wisuda, anniversary, hari ibu, atau sekadar ingin bilang “aku ingat kamu”. Temukan hadiah yang sesuai dengan cerita kalian.</p>
+        <div class="occasion-tags"><span>Birthday</span><span>Anniversary</span><span>Graduation</span><span>Just Because</span></div>
+        <a class="button button-green" href="#shop">Find a perfect gift ↗</a>
+      </div>
+    </section>
+
+    <section class="story-section section" id="story">
+      <div class="story-copy">
+        <p class="eyebrow">A LITTLE ABOUT US</p>
+        <h2>Small gestures.<br><em>Big feelings.</em></h2>
+        <p>Petal & Poetry berawal dari keyakinan sederhana: hadiah terbaik bukan selalu yang paling besar, melainkan yang diberikan dengan penuh perhatian.</p>
+        <p>Kami merangkai bunga dan menyusun hampers dengan sentuhan personal, supaya setiap hadiah terasa istimewa bagi penerimanya.</p>
+        <a href="#shop" class="text-link">Discover our collection ↗</a>
+      </div>
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=900&q=85" alt="Bunga segar untuk rangkaian hadiah">
+        <div class="story-note">With love,<br><em>always.</em> ♡</div>
+      </div>
+    </section>
+
+    <section class="testimonial-section">
+      <p class="eyebrow">A NOTE FROM OUR CUSTOMERS</p>
+      <h2>Little gifts, lovely <em>memories.</em></h2>
+      <div class="testimonial-grid">
+        <article><div class="quote-stars">★★★★★</div><p>“Buketnya cantik sekali dan bungkusnya rapi. Cocok banget untuk hadiah ulang tahun sahabat!”</p><strong>— Customer Review</strong></article>
+        <article><div class="quote-stars">★★★★★</div><p>“Suka karena bisa request kartu ucapan sendiri. Hadiahnya jadi terasa lebih personal.”</p><strong>— Customer Review</strong></article>
+        <article><div class="quote-stars">★★★★★</div><p>“Hampersnya terlihat premium dan detailnya diperhatikan. Bakal pesan lagi untuk acara berikutnya.”</p><strong>— Customer Review</strong></article>
+      </div>
+      <p class="review-note">*Testimoni di atas adalah contoh untuk demo template dan perlu diganti dengan ulasan pelanggan asli.</p>
+    </section>
+
+    <section class="contact-section section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">LET'S MAKE SOMEONE SMILE</p>
+        <h2>A little note,<br>a lovely <em>gift.</em></h2>
+        <p>Sudah menemukan hadiah yang kamu suka? Pilih produk, masukkan ke keranjang, lalu kirim pesananmu melalui WhatsApp.</p>
+        <div class="contact-detail"><span>✿</span><p><strong>Made especially for you</strong><br>Personalized gifts for every occasion.</p></div>
+      </div>
+      <div class="cart-panel">
+        <div class="cart-heading"><h3>♡ Your gift basket</h3><span class="cart-count" id="cartCount">0</span><button id="clearCart" class="clear-cart" type="button">Clear all</button></div>
+        <div class="cart-items" id="cartItems"><div class="cart-empty"><span>❀</span><p>Your basket is waiting.</p><small>Add something lovely to get started.</small></div></div>
+        <div class="cart-total"><span>Estimated total</span><strong id="cartTotal">Rp0</strong></div>
+        <button class="button button-green checkout-button" id="checkoutButton" type="button">Order via WhatsApp ↗</button>
+        <p class="cart-note">Harga belum termasuk ongkir. Ketersediaan produk akan dikonfirmasi oleh admin.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo footer-logo" href="#home">petal<span>& poetry</span></a>
+    <p>Little things, beautifully gifted.</p>
+    <div class="footer-links"><a href="#shop">Shop</a><a href="#story">Our Story</a><a href="#contact">Contact</a></div>
+    <small>© <span id="year"></span> Petal & Poetry. Demo website template.</small>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
