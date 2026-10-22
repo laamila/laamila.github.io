@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JOURNEY Travel — temukan destinasi dan paket liburan impianmu.">
+  <meta name="theme-color" content="#123c3a">
+  <title>JOURNEY — Travel Beyond Ordinary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">YOUR NEXT ADVENTURE AWAITS <span>✳</span> LET'S EXPLORE THE WORLD</div>
+
+  <header class="header">
+    <a href="#home" class="brand">
+      <span class="brand-icon">J</span>
+      <span>JOURNEY<small>TRAVEL & EXPERIENCES</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Tour Packages</a>
+      <a href="#about">Our Story</a>
+      <a href="#contact" class="nav-cta">Plan My Trip ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <img class="hero-bg" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2000&q=85" alt="Pemandangan tropis Bali dengan laut dan pepohonan" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span>✳</span> TRAVEL MORE. WORRY LESS.</p>
+        <h1>The world is wide.<br><em>Let's get lost.</em></h1>
+        <p class="hero-desc">Dari pantai tropis hingga pegunungan yang menenangkan, temukan perjalanan yang membuat setiap momen terasa istimewa.</p>
+        <div class="hero-actions">
+          <a href="#packages" class="button button-light">Explore Our Trips <span>↗</span></a>
+          <a href="#destinations" class="hero-link">Discover destinations ↓</a>
+        </div>
+        <div class="hero-note"><span>✦</span> Curated journeys, made for you.</div>
+      </div>
+      <div class="hero-label"><span>01</span> BALI, INDONESIA <span class="label-line"></span> 08° 40' S</div>
+      <div class="hero-stamp"><span>GO</span><span>WHERE</span><span>YOU</span><span>FEEL</span><span>ALIVE</span></div>
+    </section>
+
+    <section class="quick-search" aria-label="Cari paket wisata">
+      <div class="quick-search-heading"><span class="search-symbol">⌕</span><div><strong>Find your getaway</strong><small>Start with the kind of trip you love.</small></div></div>
+      <div class="quick-field"><label for="destinationSearch">DESTINATION</label><input id="destinationSearch" type="search" placeholder="Where do you want to go?"></div>
+      <div class="quick-field"><label for="categoryFilter">TRIP STYLE</label><select id="categoryFilter"><option value="all">All experiences</option><option value="beach">Beach & Island</option><option value="nature">Nature & Adventure</option><option value="culture">Culture & City</option><option value="honeymoon">Honeymoon</option></select></div>
+      <button id="findTripButton" class="button button-dark" type="button">Find a Trip ↗</button>
+    </section>
+
+    <section class="destinations section" id="destinations">
+      <div class="section-head">
+        <div><p class="eyebrow">PLACES THAT STAY WITH YOU</p><h2>Where to <em>next?</em></h2></div>
+        <p>Tempat indah, pengalaman baru, dan cerita yang akan selalu kamu ingat.</p>
+      </div>
+      <div class="destination-grid">
+        <a href="#packages" class="destination-card destination-large" data-destination="Bali">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=85" alt="Destinasi tropis Bali" loading="lazy">
+          <span class="destination-number">01 / ISLAND LIFE</span>
+          <div class="destination-caption"><span>BALI, INDONESIA</span><strong>Island of the Gods ↗</strong><small>Beaches · Culture · Slow living</small></div>
+        </a>
+        <a href="#packages" class="destination-card" data-destination="Bromo">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=85" alt="Pegunungan dan pemandangan alam" loading="lazy">
+          <span class="destination-number">02 / ADVENTURE</span>
+          <div class="destination-caption"><span>EAST JAVA</span><strong>Chase the Sunrise ↗</strong><small>Mountains · Nature</small></div>
+        </a>
+        <a href="#packages" class="destination-card" data-destination="Yogyakarta">
+          <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=85" alt="Candi dan warisan budaya Indonesia" loading="lazy">
+          <span class="destination-number">03 / CULTURE</span>
+          <div class="destination-caption"><span>YOGYAKARTA</span><strong>Stories of Java ↗</strong><small>Heritage · Food · Art</small></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="packages section" id="packages">
+      <div class="section-head">
+        <div><p class="eyebrow">YOUR NEXT GREAT ESCAPE</p><h2>Trips worth <em>taking.</em></h2></div>
+        <p>Pilih pengalaman yang cocok untuk gaya liburanmu. Semua paket di bawah merupakan contoh demo yang bisa kamu sesuaikan.</p>
+      </div>
+
+      <div class="package-toolbar">
+        <div class="filter-pills" id="filterPills">
+          <button class="filter-pill active" type="button" data-category="all">All Trips</button>
+          <button class="filter-pill" type="button" data-category="beach">Beach</button>
+          <button class="filter-pill" type="button" data-category="nature">Adventure</button>
+          <button class="filter-pill" type="button" data-category="culture">Culture</button>
+          <button class="filter-pill" type="button" data-category="honeymoon">Honeymoon</button>
+        </div>
+        <div class="sort-wrap"><label for="sortSelect">Sort by</label><select id="sortSelect"><option value="featured">Featured</option><option value="low">Lowest price</option><option value="high">Highest price</option><option value="duration">Trip duration</option></select></div>
+      </div>
+
+      <p class="results-count" id="resultsCount">Menampilkan 8 paket wisata</p>
+      <div class="package-grid" id="packageGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>✳</span><h3>Belum menemukan perjalananmu?</h3>
+        <p>Coba kata pencarian atau kategori yang berbeda.</p>
+        <button type="button" class="button button-dark" id="resetFilters">Lihat Semua Paket</button>
+      </div>
+      <p class="demo-note">Harga, jadwal, fasilitas, dan ketersediaan pada katalog ini adalah data demo, bukan penawaran perjalanan yang terkonfirmasi.</p>
+    </section>
+
+    <section class="experience">
+      <div class="experience-image"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85" alt="Pemandangan pegunungan untuk petualangan alam" loading="lazy"><span>GO BEYOND THE ORDINARY</span></div>
+      <div class="experience-content"><p class="eyebrow">NOT JUST A TRIP</p><h2>Collect moments.<br><em>Not just miles.</em></h2><p>Liburan bukan hanya tentang pergi jauh. Ini tentang merasakan hal baru, bertemu orang baru, dan membawa pulang cerita yang berharga.</p><p>JOURNEY membantu merancang pengalaman perjalanan yang lebih mudah, nyaman, dan sesuai gaya liburanmu.</p><a href="#contact" class="text-link">Let's plan something beautiful ↗</a></div>
+    </section>
+
+    <section class="why-us section" id="about">
+      <div class="section-head"><div><p class="eyebrow">THE JOURNEY DIFFERENCE</p><h2>Good trips.<br><em>Great memories.</em></h2></div><p>Perjalanan yang menyenangkan dimulai dari perencanaan yang tepat.</p></div>
+      <div class="benefit-grid">
+        <article><span class="benefit-icon">✳</span><h3>Thoughtfully Curated</h3><p>Pilihan destinasi dan aktivitas yang dirancang untuk pengalaman liburan yang berkesan.</p></article>
+        <article><span class="benefit-icon">⌁</span><h3>Easy Planning</h3><p>Jelajahi paket, cek detail, dan tanyakan kebutuhan perjalanan dalam satu tempat.</p></article>
+        <article><span class="benefit-icon">♡</span><h3>Made for You</h3><p>Diskusikan kebutuhan perjalanan agar itinerary dapat disesuaikan dengan preferensimu.</p></article>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <div class="testimonial-mark">“</div>
+      <p class="eyebrow">A LITTLE TRAVEL PHILOSOPHY</p>
+      <blockquote>We travel not to escape life,<br>but for life not to escape us.</blockquote>
+      <span class="quote-line"></span><p class="quote-credit">MAKE ROOM FOR WONDER</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-copy"><p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p><h2>Somewhere new<br><em>is calling.</em></h2><p>Sudah punya destinasi impian? Atau masih mencari inspirasi? Ceritakan rencana liburanmu dan mari mulai merencanakannya.</p><a href="#" id="contactButton" class="button button-light">Let's Plan Your Trip ↗</a></div>
+      <div class="contact-art"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Pemandangan alam yang menginspirasi perjalanan" loading="lazy"><div class="art-sticker">YOUR<br>NEXT<br>ADVENTURE<br><span>✳</span></div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand footer-brand"><span class="brand-icon">J</span><span>JOURNEY<small>TRAVEL & EXPERIENCES</small></span></a>
+    <p>Take the scenic route.</p>
+    <div class="footer-links"><a href="#destinations">Destinations</a><a href="#packages">Packages</a><a href="#about">Our Story</a><a href="#contact">Contact</a></div>
+    <small>© <span id="year"></span> JOURNEY Travel. Demo website template.</small>
+  </footer>
+
+  <div class="modal-backdrop" id="packageModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Tutup detail">×</button>
+      <img class="modal-image" id="modalImage" src="" alt="">
+      <div class="modal-content">
+        <p class="eyebrow" id="modalCategory"></p>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-location" id="modalLocation"></p>
+        <p class="modal-price" id="modalPrice"></p>
+        <div class="modal-specs" id="modalSpecs"></div>
+        <p class="modal-description" id="modalDescription"></p>
+        <h3 class="itinerary-title">A little preview</h3>
+        <ul class="itinerary-list" id="modalItinerary"></ul>
+        <p class="modal-includes" id="modalIncludes"></p>
+        <button type="button" class="button button-dark modal-book" id="modalBook">Ask & Book via WhatsApp ↗</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
