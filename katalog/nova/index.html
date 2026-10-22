@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f8">
+  <meta name="description" content="NOVA Market — discover your next favorite.">
+  <title>NOVA Market — Find Your Everyday Favorites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <span>THE NOVA EDIT — GOOD DESIGN, EVERYDAY GOODS</span>
+    <a href="#produk">Discover the collection ↗</a>
+  </div>
+
+  <header class="header">
+    <a href="#beranda" class="brand">NOVA<span>®</span></a>
+    <nav id="navigation">
+      <a href="#beranda">Home</a>
+      <a href="#produk">Collection</a>
+      <a href="#tentang">Our Story</a>
+      <a href="#kontak">Contact</a>
+    </nav>
+    <a href="#produk" class="header-cta">Explore products <span>↗</span></a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Buka menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> CURATED FOR EVERYDAY LIVING</div>
+        <h1>Find your<br>next <span>favorite.</span></h1>
+        <p>Thoughtfully picked products for your everyday moments. Simple things, better living.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#produk">Shop the collection <span>↗</span></a>
+          <a class="underlined-link" href="#tentang">Get to know us</a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-icon">N.</div>
+          <div><strong>Small details. Better days.</strong><span>A collection made for you.</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-backdrop"></div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1100&q=85" alt="Produk pilihan NOVA">
+        </div>
+        <div class="hero-sticker"><span>THE</span><strong>GOOD<br>FIND</strong><span>NO. 001 / NOVA</span></div>
+        <div class="hero-caption"><span>01 / 03</span><span>Everyday essentials</span></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>✳</span> Carefully selected</div>
+      <div><span>↗</span> Easy to order</div>
+      <div><span>◉</span> Made for everyday</div>
+    </section>
+
+    <section class="catalog section-wrap" id="produk">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">THE COLLECTION / 2026</div>
+          <h2>Objects of <span>interest.</span></h2>
+          <p>Explore the pieces we think you'll love.</p>
+        </div>
+        <div class="collection-total"><strong id="productCount">20</strong><span>products<br>to discover</span></div>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="filters" id="categoryFilters">
+          <button class="filter active" data-category="Semua">All items</button>
+          <button class="filter" data-category="Lifestyle">Lifestyle</button>
+          <button class="filter" data-category="Skincare">Skincare</button>
+          <button class="filter" data-category="Fashion">Fashion</button>
+          <button class="filter" data-category="Accessories">Accessories</button>
+        </div>
+        <label class="search">
+          <span>⌕</span>
+          <input type="search" id="searchInput" placeholder="Search products..." aria-label="Cari produk">
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p id="emptyState" class="empty-state" hidden>Produk tidak ditemukan. Coba kata kunci lainnya.</p>
+    </section>
+
+    <section class="feature-banner">
+      <div class="feature-number">N° 001</div>
+      <div class="feature-content">
+        <div class="eyebrow">A NOTE FROM NOVA</div>
+        <h2>Less noise.<br><span>More good things.</span></h2>
+        <p>We believe the things around us should feel considered, useful, and a little bit special.</p>
+        <a class="btn btn-light" href="#produk">Find your thing ↗</a>
+      </div>
+      <div class="feature-orbit orbit-one"></div>
+      <div class="feature-orbit orbit-two"></div>
+      <div class="feature-mark">N</div>
+    </section>
+
+    <section class="about section-wrap" id="tentang">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1000&q=85" alt="Inspirasi gaya hidup minimalis">
+        <span class="image-note">MADE FOR YOUR EVERYDAY ↗</span>
+      </div>
+      <div class="about-copy">
+        <div class="eyebrow">A LITTLE ABOUT US</div>
+        <h2>Good things<br>make <span>good days.</span></h2>
+        <p>NOVA adalah ruang untuk menemukan pilihan produk yang menarik, praktis, dan cocok menemani keseharianmu.</p>
+        <p>Kami percaya pengalaman belanja yang baik dimulai dari pilihan yang jelas, informasi yang mudah dibaca, dan pelayanan yang ramah.</p>
+        <a class="underlined-link" href="#kontak">Let's talk about it ↗</a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontak">
+      <div class="eyebrow">HAVE SOMETHING IN MIND?</div>
+      <h2>Let's make it <span>happen.</span></h2>
+      <p>Need help choosing? Send us a message. We're happy to help.</p>
+      <a id="contactButton" class="btn btn-primary" href="#">Chat with us on WhatsApp ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#beranda" class="brand">NOVA<span>®</span></a>
+    <p>Curated with care. Made for everyday.</p>
+    <span>© <span id="year"></span> NOVA STUDIO</span>
+  </footer>
+
+  <dialog id="productDialog" class="product-dialog">
+    <button id="dialogClose" class="dialog-close" aria-label="Tutup">×</button>
+    <img id="dialogImage" src="" alt="">
+    <div class="dialog-content">
+      <span id="dialogCategory" class="dialog-tag"></span>
+      <h2 id="dialogName"></h2>
+      <p id="dialogDescription"></p>
+      <strong id="dialogPrice"></strong>
+      <a id="dialogOrder" class="btn btn-primary" href="#" target="_blank" rel="noopener">Order via WhatsApp ↗</a>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
