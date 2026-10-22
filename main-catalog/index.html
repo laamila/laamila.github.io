@@ -303,13 +303,13 @@ const GITHUB_BASE = "https://laamila.github.io/";
 // Path harus cocok dengan folder GitHub.
 // =======================================
 const templates = [
- {category:"CV Online",name:"Sage",style:"Professional & Clean",price:35000,path:"cv/template01.html/",image:"cv-template01.png"},
- {category:"CV Online",name:"Noir",style:"Bold & Elegant",price:50000,path:"cv/template02.html/",image:"cv-template02.png"},
- {category:"CV Online",name:"Ivory",style:"Minimal & Timeless",price:35000,path:"cv/template03.html/",image:"cv-template03.png"},
- {category:"CV Online",name:"Bloom",style:"Soft & Feminine",price:40000,path:"cv/template04.html/",image:"cv-template04.png"},
- {category:"CV Online",name:"Corporate",style:"Modern Business",price:50000,path:"cv/template05.html/",image:"cv-template05.png"},
- {category:"CV Online",name:"Goldline",style:"Premium & Refined",price:50000,path:"cv/template06.html/",image:"cv-template06.png"},
- {category:"CV Online",name:"Minimal",style:"Simple & Modern",price:35000,path:"cv/template07.html/",image:"cv-template07.png"},
+ {category:"CV Online",name:"Sage",style:"Professional & Clean",price:35000,path:"cv/template01.html",image:"cv-template01.png"},
+ {category:"CV Online",name:"Noir",style:"Bold & Elegant",price:50000,path:"cv/template02.html",image:"cv-template02.png"},
+ {category:"CV Online",name:"Ivory",style:"Minimal & Timeless",price:35000,path:"cv/template03.html",image:"cv-template03.png"},
+ {category:"CV Online",name:"Bloom",style:"Soft & Feminine",price:40000,path:"cv/template04.html",image:"cv-template04.png"},
+ {category:"CV Online",name:"Corporate",style:"Modern Business",price:50000,path:"cv/template05.html",image:"cv-template05.png"},
+ {category:"CV Online",name:"Goldline",style:"Premium & Refined",price:50000,path:"cv/template06.html",image:"cv-template06.png"},
+ {category:"CV Online",name:"Minimal",style:"Simple & Modern",price:35000,path:"cv/template07.html",image:"cv-template07.png"},
 
  {category:"Link in Bio",name:"Affliate Pick",style:"Personal Branding",price:30000,path:"link-bio/affiliate-pick/"},
  {category:"Link in Bio",name:"Blue",style:"Soft & Feminine",price:25000,path:"link-bio/blue-authority/"},
@@ -386,10 +386,21 @@ function render(){
    const palette = "c"+((index%11)+1);
    html += `<article class="card">
     <div class="cover ${palette}">
-     <span class="num">DESIGN ${num}</span>
-     <div class="sheet"><small>VELORA STUDIO</small>
-      <strong>${t.name}</strong><i></i><span>${t.category.toUpperCase()}</span>
-     </div>
+  <span class="num">DESIGN ${num}</span>
+  ${t.image
+    ? `<img
+         src="${t.image}"
+         alt="Preview ${t.name}"
+         loading="lazy"
+         style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:1;"
+       >`
+    : `<div class="sheet">
+         <small>VELORA STUDIO</small>
+         <strong>${t.name}</strong>
+         <i></i>
+         <span>${t.category.toUpperCase()}</span>
+       </div>`}
+       </div>
     </div>
     <div class="info">
      <div class="category">${t.category}</div>
