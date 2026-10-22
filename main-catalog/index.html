@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VELORA STUDIO — Digital Creative</title>
+<meta name="description" content="Jelajahi koleksi CV Online, Link in Bio, dan Katalog Digital dari Velora Studio.">
+<style>
+:root {
+  --bg:#faf7f4;
+  --paper:#fffdfb;
+  --ink:#302528;
+  --muted:#897b7d;
+  --accent:#a45e68;
+  --line:#eadfdb;
+  --soft:#f0e4e0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.6
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+nav{
+  position:sticky;top:0;z-index:10;background:#faf7f4ed;
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)
+}
+.nav-inner{
+  max-width:1180px;margin:auto;padding:17px 24px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px
+}
+.logo{font-family:Georgia,serif;font-size:25px;font-weight:bold;letter-spacing:2px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:24px;font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--accent)}
+.hero{
+  max-width:1180px;margin:auto;padding:92px 24px 76px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center
+}
+.eyebrow{font-size:11px;letter-spacing:3px;font-weight:bold;color:var(--accent)}
+h1,h2,h3,p{margin-top:0}
+h1,h2,.serif{font-family:Georgia,'Times New Roman',serif;font-weight:normal}
+h1{font-size:clamp(42px,5.5vw,72px);line-height:1.08;letter-spacing:-2px;margin:22px 0}
+h1 em{color:var(--accent);font-weight:normal}
+.hero p{color:var(--muted);max-width:470px;font-size:15px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  padding:13px 20px;border:1px solid var(--ink);
+  background:var(--ink);color:white;font-size:12px;letter-spacing:.4px;
+  border-radius:3px;transition:.2s
+}
+.btn:hover{opacity:.82;transform:translateY(-1px)}
+.btn.light{background:transparent;color:var(--ink)}
+.hero-art{
+  min-height:360px;background:var(--soft);position:relative;
+  display:flex;align-items:center;justify-content:center;overflow:hidden
+}
+.art-circle{
+  position:absolute;width:280px;height:280px;border:1px solid #c9a7a4;
+  border-radius:50%;right:-65px;top:-75px
+}
+.art-circle.two{width:210px;height:210px;right:auto;top:auto;left:-80px;bottom:-90px}
+.art-card{
+  background:var(--paper);padding:35px 28px;width:72%;max-width:290px;
+  box-shadow:0 18px 45px #593c3c17;transform:rotate(-4deg);z-index:1
+}
+.art-card small{letter-spacing:3px;font-size:9px;color:var(--accent)}
+.art-card h2{font-size:38px;line-height:1.05;margin:22px 0 12px}
+.art-card p{font-size:10px;letter-spacing:1px;color:var(--muted)}
+.art-line{height:1px;background:var(--line);margin:18px 0}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  max-width:1180px;margin:0 auto;padding:25px 24px;text-align:center
+}
+.stats strong{display:block;font:30px Georgia,serif}
+.stats span{font-size:11px;color:var(--muted);letter-spacing:1px}
+section{max-width:1180px;margin:auto;padding:85px 24px}
+.section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:30px}
+h2{font-size:clamp(30px,4vw,43px);line-height:1.2;margin-bottom:10px}
+.section-head p,.muted{color:var(--muted);font-size:13px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.search{
+  flex:1;min-width:200px;padding:12px 15px;border:1px solid var(--line);
+  background:var(--paper);outline:none;border-radius:3px
+}
+.search:focus{border-color:var(--accent)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{
+  background:transparent;border:1px solid var(--line);padding:10px 14px;
+  font-size:12px;color:var(--muted);border-radius:3px
+}
+.filter.active,.filter:hover{background:var(--ink);color:white;border-color:var(--ink)}
+.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.product-card{min-width:0}
+.product-cover{
+  min-height:250px;aspect-ratio:4/3;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;background:var(--soft)
+}
+.product-cover::before{
+  content:"";position:absolute;width:70%;height:115%;border:1px solid #ffffffa8;
+  border-radius:50%;transform:rotate(30deg)
+}
+.cover-sheet{
+  position:relative;width:57%;height:74%;background:#fffdfb;
+  padding:17px;box-shadow:0 12px 28px #34232818;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;transform:rotate(-3deg)
+}
+.cover-sheet small{font-size:7px;letter-spacing:2px;color:var(--accent)}
+.cover-sheet strong{font:clamp(20px,2.5vw,31px) Georgia,serif;line-height:1.12;margin:13px 0}
+.cover-sheet i{display:block;width:40%;height:1px;background:#c4a3a0;margin:6px auto}
+.cover-sheet span{font-size:8px;color:var(--muted);letter-spacing:1px}
+.product-number{
+  position:absolute;top:13px;left:13px;background:#fffdfbe8;
+  padding:5px 9px;font-size:10px;letter-spacing:1px
+}
+.product-info{padding:15px 0 5px}
+.product-info .category{font-size:10px;letter-spacing:1.5px;color:var(--accent)}
+.product-info h3{font-size:17px;margin:5px 0;font-weight:600}
+.product-info p{font-size:12px;color:var(--muted);margin-bottom:14px}
+.product-actions{display:flex;gap:8px}
+.product-actions a{
+  text-align:center;flex:1;padding:10px 7px;border:1px solid var(--line);
+  font-size:11px;border-radius:3px
+}
+.product-actions a:first-child{background:var(--ink);color:white;border-color:var(--ink)}
+.empty{grid-column:1/-1;text-align:center;padding:45px;color:var(--muted)}
+.custom{
+  background:#eee2de;padding:65px 35px;text-align:center
+}
+.custom p{color:#79686a;max-width:520px;margin:15px auto 25px;font-size:14px}
+.custom .btn{background:var(--accent);border-color:var(--accent)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:35px}
+.step{border-top:1px solid var(--line);padding-top:20px}
+.step b{font:30px Georgia,serif;color:var(--accent)}
+.step h3{font-size:15px;margin:12px 0 5px}
+.step p{font-size:12px;color:var(--muted)}
+.faq{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:19px 0}
+summary{cursor:pointer;font-size:14px}
+details p{font-size:13px;color:var(--muted);margin:12px 0 0}
+footer{background:var(--ink);color:#f9efeb;padding:45px 24px}
+.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer p{font-size:12px;color:#c8b8b8;margin:8px 0}
+footer a{color:#f0c6c3}
+@media(max-width:760px){
+  .nav-inner{padding:14px 18px}
+  .nav-links{gap:12px;font-size:11px}
+  .nav-links a:nth-child(3){display:none}
+  .hero{grid-template-columns:1fr;padding-top:58px;gap:32px}
+  .hero-art{min-height:300px}
+  .stats{padding:20px 8px}
+  .stats strong{font-size:25px}
+  .stats span{font-size:9px}
+  section{padding:60px 18px}
+  .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
+  .product-cover{min-height:170px}
+  .product-info h3{font-size:14px}
+  .product-info p{font-size:11px}
+  .product-actions{flex-direction:column}
+  .section-head{display:block}
+  .steps{grid-template-columns:1fr;gap:20px}
+  .custom{padding:48px 20px}
+}
+@media(max-width:380px){
+  .catalog-grid{grid-template-columns:1fr}
+  .product-cover{min-height:240px}
+  .nav-links{gap:9px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">VELORA<span>.</span></a>
+    <div class="nav-links">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#custom">Jasa Custom</a>
+      <a href="#cara-order">Cara Order</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">DIGITAL CREATIVE STUDIO · EST. 2026</div>
+    <h1>Your Digital Look,<br><em>Reimagined.</em></h1>
+    <p>Temukan tampilan digital yang sesuai dengan gayamu. Dari CV online yang profesional hingga katalog bisnis yang menarik, semua dimulai dari sini.</p>
+    <div class="actions">
+      <a class="btn" href="#koleksi">JELAJAHI KOLEKSI ↗</a>
+      <a class="btn light" href="#custom">JASA CUSTOM</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="art-circle"></div><div class="art-circle two"></div>
+    <div class="art-card">
+      <small>THE DIGITAL COLLECTION</small>
+      <h2>Make your<br>own story.</h2>
+      <div class="art-line"></div>
+      <p>CURATED WITH CARE · MADE FOR YOU</p>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div><strong>07</strong><span>CV ONLINE</span></div>
+  <div><strong>11</strong><span>LINK IN BIO</span></div>
+  <div><strong>11</strong><span>KATALOG DIGITAL</span></div>
+</div>
+
+<section id="koleksi">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">FIND YOUR STYLE</div>
+      <h2>Our Collection</h2>
+      <p>Pilih template favoritmu dan temukan tampilan yang paling sesuai.</p>
+    </div>
+    <div class="muted">29 DESIGNS TO EXPLORE</div>
+  </div>
+
+  <div class="toolbar">
+    <input id="search" class="search" type="search" placeholder="Cari template favoritmu..." aria-label="Cari template">
+    <div class="filters">
+      <button class="filter active" data-category="Semua">Semua</button>
+      <button class="filter" data-category="CV Online">CV Online</button>
+      <button class="filter" data-category="Link in Bio">Link in Bio</button>
+      <button class="filter" data-category="Katalog Digital">Katalog Digital</button>
+    </div>
+  </div>
+  <div id="catalogGrid" class="catalog-grid"></div>
+</section>
+
+<section id="custom" class="custom">
+  <div class="eyebrow">MADE JUST FOR YOU</div>
+  <h2>Something more personal?</h2>
+  <p>Punya referensi desain, warna favorit, atau kebutuhan khusus? Kamu bisa memesan desain custom yang disesuaikan dengan identitas dan kebutuhanmu.</p>
+  <a id="customOrder" class="btn" href="#" target="_blank" rel="noopener">KONSULTASI VIA WHATSAPP ↗</a>
+</section>
+
+<section id="cara-order">
+  <div class="eyebrow">SIMPLE & EASY</div>
+  <h2>How to Order</h2>
+  <p class="muted">Proses pemesanan yang praktis, dari memilih hingga menerima hasil.</p>
+  <div class="steps">
+    <div class="step"><b>01</b><h3>Pilih Template</h3><p>Jelajahi koleksi dan pilih desain yang kamu sukai.</p></div>
+    <div class="step"><b>02</b><h3>Hubungi Kami</h3><p>Klik tombol pesan untuk menanyakan harga, detail layanan, dan kebutuhanmu.</p></div>
+    <div class="step"><b>03</b><h3>Proses Pesanan</h3><p>Ikuti konfirmasi pesanan, kirim materi yang diperlukan, dan tunggu hasil sesuai kesepakatan.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">GOOD TO KNOW</div>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Apakah template bisa diubah sesuai kebutuhan?</summary><p>Ketersediaan perubahan tergantung paket yang dipilih. Silakan tanyakan detail revisi sebelum melakukan pemesanan.</p></details>
+    <details><summary>Bagaimana cara melihat demo template?</summary><p>Klik tombol Lihat Demo pada template. Tautan demo perlu diisi dengan link website yang sesuai oleh pemilik toko.</p></details>
+    <details><summary>Apakah bisa memesan desain custom?</summary><p>Bisa. Hubungi kami untuk konsultasi kebutuhan, referensi desain, harga, dan estimasi pengerjaan.</p></details>
+    <details><summary>Bagaimana cara mengetahui harga?</summary><p>Hubungi kami melalui WhatsApp untuk mendapatkan harga terbaru dan detail paket layanan.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="logo">VELORA<span>.</span></div>
+      <p>Your Ideas, Beautifully Online.</p>
+      <p>Digital templates designed with intention.</p>
+    </div>
+    <div>
+      <p>LET'S CONNECT</p>
+      <a id="footerWA" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+      <p>© <span id="year"></span> Velora Studio</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================
+   PENGATURAN TOKO — EDIT BAGIAN INI
+   ========================================= */
+
+// Ganti dengan nomor WhatsApp kamu.
+// Format: kode negara + nomor, tanpa +, spasi, atau tanda strip.
+const WHATSAPP = "6281234567890";
+
+// Isi harga jika sudah ditentukan.
+// Isi demoUrl dengan URL GitHub Pages masing-masing template.
+const templates = [
+  // 7 TEMPLATE CV ONLINE
+  {category:"CV Online",name:"Sage",style:"Professional & Clean",price:"Tanya harga",demoUrl:""},
+  {category:"CV Online",name:"Noir",style:"Bold & Elegant",price:"Tanya harga",demoUrl:""},
+  {category:"CV Online",name:"Ivory",style:"Minimal & Timeless",price:"Tanya harga",demoUrl:""},
+  {category:"CV Online",name:"Bloom",style:"Soft & Feminine",price:"Tanya harga",demoUrl:""},
+  {category:"CV Online",name:"Corporate",style:"Modern Business",price:"Tanya harga",demoUrl:""},
+  {category:"CV Online",name:"Goldline",style:"Premium & Refined",price:"Tanya harga",demoUrl:""},
+  {category:"CV Online",name:"Minimal",style:"Simple & Modern",price:"Tanya harga",demoUrl:""},
+
+  // 11 TEMPLATE LINK IN BIO
+  {category:"Link in Bio",name:"Muse",style:"Personal Branding",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Blush",style:"Soft & Feminine",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Creator",style:"Content Creator",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Aura",style:"Elegant & Personal",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Noir",style:"Dark & Modern",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Bloom",style:"Beauty & Lifestyle",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Studio",style:"Creative Portfolio",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Lavender",style:"Pastel & Sweet",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Business",style:"Professional Profile",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Folio",style:"Portfolio & Projects",price:"Tanya harga",demoUrl:""},
+  {category:"Link in Bio",name:"Socialite",style:"Social Media Hub",price:"Tanya harga",demoUrl:""},
+
+  // 11 TEMPLATE KATALOG DIGITAL
+  {category:"Katalog Digital",name:"Boutique",style:"Fashion & Apparel",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Beauty Studio",style:"Beauty & Nail Art",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Florist",style:"Flower & Hampers",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Noire",style:"Luxury & Elegant",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Sweet Table",style:"Food & Dessert",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Homely",style:"Home & Living",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Estate",style:"Property & Real Estate",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Wander",style:"Travel & Tour",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Modest",style:"Muslim Fashion",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Giftory",style:"Gift & Hampers",price:"Tanya harga",demoUrl:""},
+  {category:"Katalog Digital",name:"Market",style:"UMKM & General Store",price:"Tanya harga",demoUrl:""}
+];
+
+/* =========================================
+   SISTEM KATALOG
+   ========================================= */
+
+let activeCategory = "Semua";
+const grid = document.getElementById("catalogGrid");
+const searchInput = document.getElementById("search");
+
+function whatsappLink(message){
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
+}
+
+function renderCatalog(){
+  const keyword = searchInput.value.toLowerCase().trim();
+  const filtered = templates.filter(item =>
+    (activeCategory === "Semua" || item.category === activeCategory) &&
+    (item.name.toLowerCase().includes(keyword) ||
+     item.category.toLowerCase().includes(keyword) ||
+     item.style.toLowerCase().includes(keyword))
+  );
+
+  if(!filtered.length){
+    grid.innerHTML = '<div class="empty">Template tidak ditemukan. Coba kata kunci lain, ya.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(item => {
+    const originalIndex = templates.indexOf(item);
+    const number = String(originalIndex + 1).padStart(2,"0");
+    const orderMessage =
+      "Halo Velora Studio! Saya tertarik dengan template " +
+      item.name + " (" + item.category + "). Mohon informasi harga dan detailnya.";
+
+    const demoButton = item.demoUrl
+      ? `<a href="${item.demoUrl}" target="_blank" rel="noopener">Lihat Demo ↗</a>`
+      : `<a href="${whatsappLink("Halo Velora Studio! Saya ingin melihat demo template "+item.name+" ("+item.category+").")} " target="_blank" rel="noopener">Minta Demo ↗</a>`;
+
+    return `
+      <article class="product-card">
+        <div class="product-cover">
+          <span class="product-number">COLLECTION ${number}</span>
+          <div class="cover-sheet">
+            <small>VELORA STUDIO</small>
+            <strong>${item.name}</strong>
+            <i></i>
+            <span>${item.category.toUpperCase()}</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="category">${item.category}</div>
+          <h3>${item.name} Template</h3>
+          <p>${item.style}</p>
+          <div class="product-actions">
+            ${demoButton}
+            <a href="${whatsappLink(orderMessage)}" target="_blank" rel="noopener">Pesan ↗</a>
+          </div>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    activeCategory = button.dataset.category;
+    document.querySelectorAll(".filter").forEach(b =>
+      b.classList.toggle("active", b === button)
+    );
+    renderCatalog();
+  });
+});
+
+searchInput.addEventListener("input", renderCatalog);
+
+document.getElementById("customOrder").href =
+  whatsappLink("Halo Velora Studio! Saya ingin konsultasi jasa desain custom.");
+
+document.getElementById("footerWA").href =
+  whatsappLink("Halo Velora Studio! Saya ingin bertanya tentang layanan.");
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderCatalog();
+</script>
+</body>
+</html>
