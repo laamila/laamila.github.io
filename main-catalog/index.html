@@ -8,21 +8,21 @@
 <meta name="description" content="Velora Studio menyediakan template website profesional, CV online, link in bio, dan katalog digital untuk personal branding dan bisnis.">
 <title>VELORA STUDIO — Digital Template</title>
 
-<style>
-:root :root {
-  --bg: #faf5f5;
-  --surface: #ffffff;
-  --ink: #302124;
-  --muted: #827176;
+
+:root {
+  --bg: #fbf5f6;
+  --surface: #fffafb;
+  --ink: #35151f;
+  --muted: #876d76;
   --gold: #8b3448;
-  --gold-dark: #702438;
-  --gold-light: #f1e1e5;
-  --line: #eadde0;
+  --gold-dark: #682337;
+  --gold-light: #f1dce3;
+  --line: #e7cbd4;
   --dark: #451b29;
   --radius: 14px;
-  --shadow: 0 12px 35px rgba(69,27,41,.10);
+  --shadow: 0 12px 35px rgba(69,27,41,.13);
 }
-  
+
 * { box-sizing: border-box; }
 
 html {
@@ -42,14 +42,13 @@ body {
 a { color: inherit; text-decoration: none; }
 button, input { font: inherit; }
 button { cursor: pointer; }
-
 img { max-width: 100%; }
 
 nav {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(247,246,242,.96);
+  background: rgba(251,245,246,.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -71,7 +70,7 @@ nav {
   color: var(--dark);
 }
 
-.logo span { color: var(--gold); }
+.logo span { color: #a64d66; }
 
 .navlinks {
   display: flex;
@@ -81,7 +80,7 @@ nav {
 }
 
 .navlinks a { transition: color .2s; }
-.navlinks a:hover { color: var(--gold-dark); }
+.navlinks a:hover { color: var(--gold); }
 
 .hero {
   max-width: 1280px;
@@ -146,25 +145,25 @@ h1 em {
 }
 
 .btn:hover {
-  background: var(--gold-dark);
-  border-color: var(--gold-dark);
+  background: #702438;
+  border-color: #702438;
   transform: translateY(-1px);
 }
 
 .btn.outline {
-  background: transparent;
+  background: #f1dce3;
   color: var(--dark);
-  border-color: #c9c5ba;
+  border-color: #d9a9b8;
 }
 
 .btn.outline:hover {
-  background: var(--gold-light);
+  background: #e8c4cf;
   border-color: var(--gold);
 }
 
 .heroart {
   min-height: 350px;
-  background: linear-gradient(135deg, #f0dfe3, #c58b9a);
+  background: linear-gradient(135deg, #f1dce3, #b66b80, #702438);
   border-radius: 18px;
   display: flex;
   align-items: center;
@@ -175,7 +174,7 @@ h1 em {
 
 .orb {
   position: absolute;
-  border: 1px solid #ffffffa8;
+  border: 1px solid #ffffff80;
   border-radius: 50%;
 }
 
@@ -195,12 +194,12 @@ h1 em {
 
 .showcase {
   position: relative;
-  background: #fff;
+  background: #fffafb;
   padding: 28px;
   width: 72%;
   max-width: 330px;
   border-radius: 8px;
-  box-shadow: 0 18px 45px #451b2924;
+  box-shadow: 0 18px 45px #451b2930;
   transform: rotate(-2deg);
 }
 
@@ -280,15 +279,16 @@ h2 {
 .search {
   flex: 1;
   min-width: 220px;
-  background: white;
-  border: 1px solid #d9d5c9;
+  background: #fffafb;
+  border: 1px solid #dfbdc8;
   border-radius: 8px;
   padding: 12px 14px;
   font-size: 14px;
+  color: var(--ink);
 }
 
 .search:focus {
-  outline: 2px solid #d9c59d;
+  outline: 2px solid #d9a9b8;
   border-color: var(--gold);
 }
 
@@ -300,12 +300,12 @@ h2 {
 
 .filter {
   padding: 10px 13px;
-  border: 1px solid #d9d5c9;
-  background: white;
+  border: 1px solid #dfbdc8;
+  background: #f8eaf0;
   border-radius: 7px;
   font-size: 12px;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--dark);
   transition: .2s;
 }
 
@@ -317,15 +317,15 @@ h2 {
 }
 
 .cat {
-  background: white;
+  background: #fffafb;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 20px;
   margin: 22px 0;
 }
 
-.cat.bio { background: #fcf7f8; }
-.cat.digital { background: #f6eaed; }
+.cat.bio { background: #fcf2f5; }
+.cat.digital { background: #f5e4ea; }
 
 .cathead {
   display: flex;
@@ -353,13 +353,12 @@ h2 {
   font-size: 10px;
   letter-spacing: 1px;
   font-weight: 800;
-  color: var(--gold-dark);
-  background: var(--gold-light);
+  color: white;
+  background: var(--gold-dark);
   padding: 6px 9px;
   border-radius: 5px;
 }
 
-/* KARTU TEMPLATE KECIL BERBENTUK KOTAK */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -368,7 +367,7 @@ h2 {
 
 .card {
   min-width: 0;
-  background: white;
+  background: #fffafb;
   border: 1px solid var(--line);
   border-radius: 11px;
   overflow: hidden;
@@ -380,7 +379,6 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-/* Thumbnail sengaja dibuat kotak, bukan banner */
 .cover {
   width: 100%;
   height: 175px;
@@ -390,20 +388,20 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #eee9df;
+  background: #ead5dc;
 }
 
-.c1  { background: linear-gradient(135deg,#e9e4d8,#cfc1a4); }
-.c2  { background: linear-gradient(135deg,#512632,#855463); }
-.c3  { background: linear-gradient(135deg,#f4f0e8,#ddd5c4); }
-.c4  { background: linear-gradient(135deg,#f3e7e3,#dfc0b6); }
-.c5  { background: linear-gradient(135deg,#e5e7e4,#b9c1b8); }
-.c6  { background: linear-gradient(135deg,#eee2c7,#c4a66e); }
-.c7  { background: linear-gradient(135deg,#ecebe5,#d4d1c6); }
-.c8  { background: linear-gradient(135deg,#e8e4d9,#c9c1ae); }
-.c9  { background: linear-gradient(135deg,#e4e7e3,#bdc8bd); }
-.c10 { background: linear-gradient(135deg,#f0e5d6,#d5bca1); }
-.c11 { background: linear-gradient(135deg,#e6e0d7,#b8aa96); }
+.c1  { background: linear-gradient(135deg,#f1dce3,#b98293); }
+.c2  { background: linear-gradient(135deg,#451b29,#8b3448); }
+.c3  { background: linear-gradient(135deg,#f9edf1,#d9b4c0); }
+.c4  { background: linear-gradient(135deg,#f0d9e0,#bd788d); }
+.c5  { background: linear-gradient(135deg,#ead4dd,#a66b80); }
+.c6  { background: linear-gradient(135deg,#f2dfe5,#c08a9b); }
+.c7  { background: linear-gradient(135deg,#f8eaf0,#d7a8b7); }
+.c8  { background: linear-gradient(135deg,#ead1da,#9b596e); }
+.c9  { background: linear-gradient(135deg,#f5e3e9,#bd8496); }
+.c10 { background: linear-gradient(135deg,#efd9e1,#b9778b); }
+.c11 { background: linear-gradient(135deg,#f7e8ed,#c68fa1); }
 
 .cover img {
   position: absolute;
@@ -434,7 +432,7 @@ h2 {
   z-index: 1;
   width: 68%;
   height: 76%;
-  background: white;
+  background: #fffafb;
   border-radius: 4px;
   box-shadow: 0 8px 20px #451b2920;
   padding: 10px;
@@ -458,6 +456,7 @@ h2 {
   line-height: 1.1;
   margin: 9px 0;
   overflow-wrap: anywhere;
+  color: var(--dark);
 }
 
 .sheet i {
@@ -478,8 +477,8 @@ h2 {
   top: 8px;
   left: 8px;
   z-index: 3;
-  background: rgba(255,255,255,.95);
-  color: var(--dark);
+  background: var(--dark);
+  color: white;
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 9px;
@@ -502,6 +501,7 @@ h2 {
   line-height: 1.35;
   margin: 4px 0;
   overflow-wrap: anywhere;
+  color: var(--dark);
 }
 
 .info .style {
@@ -530,29 +530,42 @@ h2 {
   gap: 7px;
 }
 
+/* TOMBOL DEMO & WHATSAPP — BOX BURGUNDY */
 .cardactions a {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border: 1px solid var(--dark);
-  color: var(--dark);
+  color: white;
+  background: #7a293f;
   border-radius: 6px;
-  padding: 9px 4px;
+  padding: 10px 4px;
   font-size: 11px;
   font-weight: 800;
   transition: .2s;
+  min-height: 38px;
 }
 
 .cardactions a:first-child {
-  background: var(--dark);
+  background: #451b29;
+  border-color: #451b29;
   color: white;
 }
 
-.cardactions a:hover {
-  background: var(--gold-dark);
+.cardactions a:last-child {
+  background: #f0dce3;
+  border-color: #d5a4b3;
+  color: #451b29;
+}
+
+.cardactions a:hover,
+.cardactions a:first-child:hover,
+.cardactions a:last-child:hover {
+  background: #8b3448;
+  border-color: #8b3448;
   color: white;
-  border-color: var(--gold-dark);
+  transform: translateY(-1px);
 }
 
 .empty {
@@ -565,32 +578,31 @@ h2 {
 /* CUSTOM WEBSITE */
 .custom {
   max-width: none;
-  background: var(--dark);
+  background: linear-gradient(135deg,#451b29,#702438,#8b3448);
   color: white;
   text-align: center;
   padding: 60px 20px;
 }
 
-.custom .eyebrow { color: #e5b9c4; }
+.custom .eyebrow { color: #f0c7d3; }
 .custominner { max-width: 760px; margin: auto; }
-
 .custom h2 { color: white; }
 
 .custom p {
   font-size: 15px;
-  color: #d0cfc8;
+  color: #f0dce2;
   margin-bottom: 24px;
 }
 
 .custom .btn {
-  background: var(--gold);
-  color: #24231f;
-  border-color: var(--gold);
+  background: #f1dce3;
+  color: #451b29;
+  border-color: #f1dce3;
 }
 
 .custom .btn:hover {
-  background: #b65b72;
-  border-color: #b65b72;
+  background: #d9a9b8;
+  border-color: #d9a9b8;
 }
 
 /* CARA ORDER */
@@ -602,7 +614,7 @@ h2 {
 }
 
 .step {
-  background: white;
+  background: #fffafb;
   border: 1px solid var(--line);
   border-radius: 11px;
   padding: 22px;
@@ -632,6 +644,7 @@ summary {
   cursor: pointer;
   font-size: 15px;
   font-weight: 800;
+  color: var(--dark);
 }
 
 details p {
@@ -641,7 +654,7 @@ details p {
 
 /* FOOTER */
 footer {
-  background: #35131e;
+  background: #30111b;
   color: white;
   padding: 40px 28px;
 }
@@ -660,7 +673,7 @@ footer .logo { color: white; }
 
 footer p {
   font-size: 13px;
-  color: #c8c7c0;
+  color: #e0cbd2;
 }
 
 .socials {
@@ -670,7 +683,9 @@ footer p {
 }
 
 .socials a {
-  border: 1px solid #65645c;
+  border: 1px solid #a66b80;
+  background: #451b29;
+  color: white;
   border-radius: 6px;
   padding: 8px 11px;
   font-size: 12px;
@@ -678,9 +693,9 @@ footer p {
 }
 
 .socials a:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--dark);
+  background: #8b3448;
+  border-color: #d9a9b8;
+  color: white;
 }
 
 /* WHATSAPP */
@@ -695,11 +710,11 @@ footer p {
   padding: 12px 16px;
   font-size: 12px;
   font-weight: 800;
-  box-shadow: 0 7px 22px #0002;
-  border: 1px solid #8b3448;
+  box-shadow: 0 7px 22px #451b2940;
+  border: 1px solid #a64d66;
 }
 
-.floatwa:hover { background: var(--gold-dark); }
+.floatwa:hover { background: #8b3448; }
 
 /* DEMO PREVIEW */
 .modal {
@@ -718,7 +733,7 @@ footer p {
 .modalbox {
   width: min(1150px, 100%);
   height: 94vh;
-  background: #8B3448;
+  background: #451b29;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -727,7 +742,8 @@ footer p {
 
 .modalhead {
   padding: 12px 15px;
-  background: #f6eaed;
+  background: #ead0d9;
+  color: #451b29;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -738,7 +754,7 @@ footer p {
 .modalhead strong { font-size: 14px; }
 
 .modalhead button {
-  background: var(--dark);
+  background: #451b29;
   color: white;
   border: 0;
   border-radius: 6px;
@@ -748,9 +764,18 @@ footer p {
 }
 
 .modalhead a {
-  color: var(--gold-dark);
+  background: #f8eaf0;
+  color: #682337;
+  border: 1px solid #d9a9b8;
+  border-radius: 6px;
+  padding: 8px 10px;
   font-size: 12px;
   font-weight: 800;
+}
+
+.modalhead a:hover {
+  background: #8b3448;
+  color: white;
 }
 
 .modaltools {
@@ -763,7 +788,7 @@ footer p {
   width: 100%;
   flex: 1;
   border: 0;
-  background: white;
+  background: #fffafb;
 }
 
 #demoHelp {
@@ -846,7 +871,12 @@ footer p {
   .info .style { font-size: 11px; min-height: 18px; }
   .price { font-size: 15px; }
   .price small { font-size: 9px; }
-  .cardactions a { font-size: 10px; padding: 9px 2px; }
+
+  .cardactions a {
+    font-size: 10px;
+    padding: 9px 2px;
+    min-height: 36px;
+  }
 
   .custom { padding: 45px 18px; }
   .custom p { font-size: 13px; }
@@ -872,7 +902,6 @@ footer p {
     font-size: 11px;
   }
 }
-</style>
 </head>
 
 <body>
