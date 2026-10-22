@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temukan koleksi pilihan dari Shop Boutique.">
+  <title>Shop Boutique | Your Everyday Favorites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement">
+    ✦ WELCOME TO OUR STORE — Temukan favoritmu hari ini!
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#home">shop<span>.</span>boutique</a>
+    <a class="header-link" href="#produk">Lihat Koleksi ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR NEW FAVORITES</p>
+        <h1>Little things,<br><span>lovely finds.</span></h1>
+        <p class="hero-description">
+          Temukan koleksi pilihan dengan gaya yang cantik,
+          kualitas yang nyaman, dan harga yang bersahabat.
+        </p>
+        <a class="primary-button" href="#produk">Belanja Sekarang ↓</a>
+        <div class="hero-note">✦ Pilihan spesial, untuk setiap harimu.</div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <div class="hero-label">CURATED<br>WITH LOVE ♡</div>
+        <div class="hero-decoration">S</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div>♡ <span>Curated Collection</span></div>
+      <div>✦ <span>Easy Shopping</span></div>
+      <div>↗ <span>Order via Marketplace</span></div>
+    </section>
+
+    <section class="catalog" id="produk">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Find your <span>favorite.</span></h2>
+          <p class="section-description">
+            Koleksi pilihan yang siap menemani keseharianmu.
+          </p>
+        </div>
+        <p class="product-count" id="productCount">0 produk</p>
+      </div>
+
+      <div class="catalog-controls">
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Cari produk favorit..."
+            aria-label="Cari produk"
+          >
+        </label>
+
+        <div class="category-list" id="categoryList"></div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>
+        Produk tidak ditemukan. Coba kata kunci lain, ya.
+      </p>
+
+      <div class="catalog-bottom">
+        <p>Temukan lebih banyak pilihan di koleksi kami ♡</p>
+        <a href="#kontak">Tanya melalui WhatsApp ↗</a>
+      </div>
+    </section>
+
+    <section class="promo">
+      <p class="eyebrow">A LITTLE NOTE FOR YOU</p>
+      <h2>Good finds.<br><span>Good feelings.</span></h2>
+      <p>Terima kasih sudah mampir ke toko kami.</p>
+      <a class="primary-button" href="#produk">Explore Collection ↗</a>
+    </section>
+
+    <section class="contact" id="kontak">
+      <p class="eyebrow">NEED HELP?</p>
+      <h2>Let's talk, lovely!</h2>
+      <p>Ada pertanyaan mengenai produk? Hubungi kami.</p>
+      <a
+        class="contact-button"
+        href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20produk."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat WhatsApp ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home">shop<span>.</span>boutique</a>
+    <p>© 2026 Shop Boutique. Made with ♡</p>
+    <a href="#home">Kembali ke atas ↑</a>
+  </footer>
+
+  <script>
+    // ======================================
+    // DATA PRODUK
+    // Tambahkan produk baru di dalam array ini.
+    // ======================================
+
+    const products = [
+      {
+        id: 1,
+        name: "Blouse Daily Cream",
+        category: "Fashion",
+        price: 89000,
+        image: "assets/foto-1.jpg",
+        description: "Blouse simpel untuk gaya sehari-hari.",
+        link: "https://shopee.co.id/",
+        label: "BEST SELLER"
+      },
+      {
+        id: 2,
+        name: "Everyday Tote Bag",
+        category: "Aksesoris",
+        price: 65000,
+        image: "assets/foto-2.jpg",
+        description: "Tas praktis untuk menemani aktivitasmu.",
+        link: "https://shopee.co.id/",
+        label: ""
+      },
+      {
+        id: 3,
+        name: "Soft Pashmina",
+        category: "Fashion",
+        price: 45000,
+        image: "assets/foto-3.jpg",
+        description: "Pashmina lembut dengan warna pilihan.",
+        link: "https://shopee.co.id/",
+        label: "FAVORITE"
+      },
+      {
+        id: 4,
+        name: "Daily Pouch",
+        category: "Aksesoris",
+        price: 35000,
+        image: "assets/foto-4.jpg",
+        description: "Pouch minimalis untuk barang esensial.",
+        link: "https://shopee.co.id/",
+        label: ""
+      },
+      {
+        id: 5,
+        name: "Gentle Face Wash",
+        category: "Beauty",
+        price: 55000,
+        image: "assets/foto-5.jpg",
+        description: "Contoh produk perawatan wajah.",
+        link: "https://shopee.co.id/",
+        label: ""
+      },
+      {
+        id: 6,
+        name: "Ribbon Hair Clip",
+        category: "Aksesoris",
+        price: 25000,
+        image: "assets/foto-6.jpg",
+        description: "Aksesori manis untuk tampilan sehari-hari.",
+        link: "https://shopee.co.id/",
+        label: "NEW"
+      }
+    ];
+
+    const productGrid = document.getElementById("productGrid");
+    const searchInput = document.getElementById("searchInput");
+    const categoryList = document.getElementById("categoryList");
+    const productCount = document.getElementById("productCount");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    let activeCategory = "Semua";
+
+    function formatRupiah(price) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+      }).format(price);
+    }
+
+    function renderCategories() {
+      const categories = [
+        "Semua",
+        ...new Set(products.map(product => product.category))
+      ];
+
+      categoryList.innerHTML = categories.map(category => `
+        <button
+          class="category-button ${category === activeCategory ? "active" : ""}"
+          type="button"
+          data-category="${category}"
+        >${category}</button>
+      `).join("");
+    }
+
+    function renderProducts() {
+      const keyword = searchInput.value.trim().toLowerCase();
+
+      const filteredProducts = products.filter(product => {
+        const matchesKeyword =
+          product.name.toLowerCase().includes(keyword) ||
+          product.category.toLowerCase().includes(keyword) ||
+          product.description.toLowerCase().includes(keyword);
+
+        const matchesCategory =
+          activeCategory === "Semua" ||
+          product.category === activeCategory;
+
+        return matchesKeyword && matchesCategory;
+      });
+
+      productCount.textContent =
+        `${filteredProducts.length} produk`;
+
+      emptyMessage.hidden = filteredProducts.length > 0;
+
+      productGrid.innerHTML = filteredProducts.map(product => `
+        <article class="product-card">
+          <a
+            class="product-image-wrap"
+            href="${product.link}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Lihat ${product.name}"
+          >
+            <img
+              class="product-image"
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+            >
+            ${product.label
+              ? `<span class="product-label">${product.label}</span>`
+              : ""}
+          </a>
+
+          <div class="product-info">
+            <p class="product-category">${product.category}</p>
+            <h3>${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <div class="product-bottom">
+              <strong>${formatRupiah(product.price)}</strong>
+              <a
+                class="product-link"
+                href="${product.link}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Beli ${product.name}"
+              >Beli ↗</a>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    categoryList.addEventListener("click", event => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+
+      activeCategory = button.dataset.category;
+      renderCategories();
+      renderProducts();
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+
+    renderCategories();
+    renderProducts();
+  </script>
+
+</body>
+</html>
