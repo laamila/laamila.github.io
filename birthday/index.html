@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff4f2">
+  <meta name="description" content="Sebuah kejutan ulang tahun kecil yang dibuat khusus untukmu.">
+  <title>A Birthday Surprise ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home"><span>♡</span> A Birthday Surprise</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#reasons">Untukmu</a>
+      <a href="#letter">Surat</a>
+      <a href="#music">Musik</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">For someone special ♡</p>
+        <h1>Happy Birthday,<br><span id="recipientName">Sayang</span>! <span class="title-heart">♥</span></h1>
+        <p class="hero-text">Hari ini adalah hari yang istimewa, karena dunia beruntung punya kamu. Yuk, buka kejutan kecil dariku!</p>
+        <button class="primary-btn" id="surpriseBtn">♡ &nbsp; Buka Kejutan <span>→</span></button>
+        <p class="handwritten hint">ada sesuatu untukmu ✿</p>
+      </div>
+      <div class="hero-art">
+        <div class="photo-frame hero-photo">
+          <img src="assets/photo-main.svg" alt="Foto kenangan utama" id="mainPhoto">
+          <p>You are so special ♡</p>
+        </div>
+        <div class="paper-note">
+          <p>Terima kasih sudah hadir dan membuat banyak hal terasa lebih indah.</p>
+          <span>Happy Birthday<br>With love ♡</span>
+        </div>
+        <span class="doodle doodle-one">♡</span>
+        <span class="doodle doodle-two">✿</span>
+      </div>
+    </section>
+
+    <section class="gallery-section section-wrap soft-panel" id="gallery">
+      <div class="section-intro">
+        <p class="section-kicker">little moments</p>
+        <h2>Galeri Kenangan</h2>
+        <p>Beberapa momen indah yang ingin selalu kuingat. Semoga masih banyak cerita baik yang menunggu kita.</p>
+        <button class="outline-btn" id="galleryBtn">Lihat Pesan Foto →</button>
+      </div>
+      <div class="polaroid-grid">
+        <figure class="polaroid tilt-left">
+          <img src="assets/photo-1.svg" alt="Kenangan pertama">
+          <figcaption>Pertama kali kita tertawa ♡</figcaption>
+        </figure>
+        <figure class="polaroid tilt-right">
+          <img src="assets/photo-2.svg" alt="Kenangan kedua">
+          <figcaption>Hal sederhana yang berharga</figcaption>
+        </figure>
+        <figure class="polaroid tilt-left">
+          <img src="assets/photo-3.svg" alt="Kenangan ketiga">
+          <figcaption>Momen kecil, cerita besar ♡</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="reasons-section section-wrap" id="reasons">
+      <div class="reasons-heading">
+        <p class="section-kicker">a little reminder</p>
+        <h2>12 Hal yang Membuatmu Spesial</h2>
+        <p>Klik setiap kartu untuk membuka pesan kecil dariku.</p>
+      </div>
+      <div class="reasons-grid" id="reasonsGrid">
+        <button class="reason-card" data-message="Senyummu punya cara sendiri untuk membuat hari yang berat terasa lebih ringan."><span>01</span><strong>Senyummu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Aku suka caramu tetap berusaha, bahkan saat tidak semua hal berjalan mudah."><span>02</span><strong>Usahamu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Terima kasih sudah mendengarkan dan membuatku merasa dimengerti."><span>03</span><strong>Caramu mendengar</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Hal-hal kecil bersamamu sering berubah menjadi kenangan yang paling kusukai."><span>04</span><strong>Momen sederhana</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Kamu tidak harus selalu kuat. Kamu juga pantas mendapat ruang untuk beristirahat."><span>05</span><strong>Dirimu apa adanya</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Aku menghargai kebaikan yang kamu tunjukkan, bahkan saat tidak ada yang melihat."><span>06</span><strong>Kebaikanmu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Obrolan random denganmu bisa jadi bagian paling menyenangkan dari hariku."><span>07</span><strong>Cerita random</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Kamu punya cara unik melihat dunia, dan aku suka belajar dari sudut pandangmu."><span>08</span><strong>Cara berpikirmu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Terima kasih karena terus belajar dan bertumbuh, setahap demi setahap."><span>09</span><strong>Perjalananmu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Aku berharap kamu selalu dikelilingi orang-orang yang menghargai dan menyayangimu."><span>10</span><strong>Hatimu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Kamu layak merayakan pencapaian besar maupun langkah kecil yang sudah kamu ambil."><span>11</span><strong>Semua langkahmu</strong><small>klik untuk buka ♡</small></button>
+        <button class="reason-card" data-message="Dan yang paling penting: kamu berharga, bukan karena harus melakukan sesuatu, tapi karena kamu adalah kamu."><span>12</span><strong>Karena kamu</strong><small>klik untuk buka ♡</small></button>
+      </div>
+    </section>
+
+    <section class="letter-section section-wrap soft-panel" id="letter">
+      <div class="letter-art">
+        <div class="envelope"><span>♡</span></div>
+        <p class="handwritten">surat kecil untukmu</p>
+      </div>
+      <div class="letter-copy">
+        <p class="section-kicker">read when you're ready</p>
+        <h2>Surat Untukmu</h2>
+        <p>Ada beberapa hal yang ingin kusampaikan, dan hari ini terasa seperti waktu yang tepat untuk mengatakannya.</p>
+        <p class="letter-preview">Terima kasih sudah menjadi bagian dari cerita hidupku. Semoga tahun ini membawa lebih banyak alasan untuk tersenyum...</p>
+        <button class="primary-btn" id="readLetterBtn">Baca Surat <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="music-section section-wrap soft-panel" id="music">
+      <div class="music-copy">
+        <p class="section-kicker">our little soundtrack</p>
+        <h2>Musik Spesial Kita</h2>
+        <p>Putar lagu yang mengingatkanmu pada momen-momen manis.</p>
+        <p class="music-tip">Tambahkan file musik milikmu ke folder <code>assets</code>.</p>
+      </div>
+      <div class="music-player">
+        <div class="record" aria-hidden="true"><span>♡</span></div>
+        <div class="track-info"><strong id="trackTitle">Lagu Spesial Kita</strong><span id="trackSubtitle">Untuk kamu ♡</span>
+          <audio id="birthdayMusic" preload="none">
+            <source src="assets/birthday-music.mp3" type="audio/mpeg">
+          </audio>
+          <div class="player-controls">
+            <button id="musicToggle" class="play-btn" aria-label="Putar musik">▶</button>
+            <span id="musicStatus">Tekan untuk memutar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section-wrap">
+      <span class="closing-flower">✿</span>
+      <p>Semoga tahun barumu dipenuhi kebahagiaan, cinta, kesehatan, dan hal-hal baik yang kamu impikan.</p>
+      <h2>Happy Birthday <span id="closingName">Sayang</span> ♡</h2>
+      <p class="handwritten">— dibuat dengan penuh kasih —</p>
+    </section>
+  </main>
+
+  <footer><span>Made with ♡ just for you</span><span id="footerYear"></span></footer>
+
+  <div class="modal" id="messageModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" data-close aria-label="Tutup">×</button>
+      <p class="section-kicker" id="modalKicker">a little note</p>
+      <h2 id="modalTitle">Untukmu ♡</h2>
+      <p id="modalMessage"></p>
+      <button class="primary-btn" data-close>Peluk dari jauh ♡</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status">Kejutan kecil untukmu ♡</div>
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+</body>
+</html>
