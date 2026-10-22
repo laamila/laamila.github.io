@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temukan rekomendasi produk pilihan dan shopping favorites.">
+  <title>Affiliate Picks | My Favorite Finds</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="#home" class="brand">little<span>picks.</span></a>
+    <a href="#favorites" class="top-link">My Favorites ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <div class="profile-badge">♡ YOUR PERSONAL SHOPPING GUIDE</div>
+        <h1>Good finds,<br><span>good vibes.</span></h1>
+        <p class="hero-description">
+          Hai, welcome to my little corner! Aku berbagi produk
+          favorit, barang bermanfaat, dan temuan menarik yang
+          layak kamu cek.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#favorites" class="button primary">Explore My Picks ↓</a>
+          <a href="#about" class="button secondary">About Me</a>
+        </div>
+
+        <div class="social-proof">
+          <span class="sparkle">✦</span>
+          Carefully picked, shared with love.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card visual-card-back"></div>
+        <div class="visual-card visual-card-front">
+          <span class="visual-label">THE EDIT</span>
+          <div class="visual-flower">✳</div>
+          <p>Things I love.<br>Things you might love.</p>
+          <span class="visual-footer">FAVORITES COLLECTION · 2026</span>
+        </div>
+        <div class="sticker">little<br>joys ♡</div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <p>♡ Honest recommendations</p>
+      <p>✦ Curated with care</p>
+      <p>↗ Shop your favorites</p>
+    </section>
+
+    <section class="favorites section" id="favorites">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE GOOD STUFF</p>
+          <h2>My latest <span>favorites.</span></h2>
+          <p class="section-description">
+            Produk pilihan yang mungkin cocok untuk kamu.
+          </p>
+        </div>
+        <span class="count" id="productCount">0 picks</span>
+      </div>
+
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Cari produk favorit..."
+          aria-label="Cari rekomendasi produk"
+        >
+      </div>
+
+      <div class="category-tabs" id="categoryTabs"></div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <p class="empty-state" id="emptyState" hidden>
+        Belum ada produk yang cocok. Coba kata kunci lain, ya!
+      </p>
+
+      <p class="affiliate-note">
+        Beberapa tautan mungkin merupakan tautan affiliate.
+        Aku dapat menerima komisi jika kamu membeli melalui tautan tersebut,
+        tanpa biaya tambahan sesuai ketentuan program terkait.
+      </p>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-art">
+        <div class="about-symbol">♡</div>
+        <span>A LITTLE ABOUT ME</span>
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow">HELLO, LOVELY!</p>
+        <h2>Sharing little things that make life <span>better.</span></h2>
+        <p>
+          Aku suka menemukan produk yang menarik, fungsional,
+          dan punya nilai lebih. Di sini aku mengumpulkan
+          berbagai rekomendasi agar kamu lebih mudah menemukan
+          produk yang sesuai kebutuhan.
+        </p>
+        <a href="#favorites" class="text-link">Explore my collection ↗</a>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <p class="eyebrow">STAY CONNECTED</p>
+      <h2>Let's discover<br><span>something lovely.</span></h2>
+      <p>Ikuti update rekomendasi dan temuan terbaru dariku.</p>
+
+      <a
+        href="https://www.instagram.com/username"
+        class="button cta-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Follow My Instagram ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="brand">little<span>picks.</span></a>
+    <p>© 2026 Nama Kamu · Made with ♡</p>
+    <a href="#home" class="back-top">Back to top ↑</a>
+  </footer>
+
+  <script>
+    // =========================================
+    // DAFTAR REKOMENDASI PRODUK
+    // Tambahkan produk baru di dalam array ini.
+    // =========================================
+
+    const products = [
+      {
+        id: 1,
+        name: "Everyday Tote Bag",
+        category: "Fashion",
+        price: "Rp65.000",
+        image: "assets/pick-1.jpg",
+        description: "Tas simpel untuk menemani aktivitas harian.",
+        label: "TOP PICK",
+        link: "https://shopee.co.id/"
+      },
+      {
+        id: 2,
+        name: "Daily Sunscreen",
+        category: "Beauty",
+        price: "Rp45.000",
+        image: "assets/pick-2.jpg",
+        description: "Pilihan skincare untuk rutinitas sehari-hari.",
+        label: "BEAUTY",
+        link: "https://shopee.co.id/"
+      },
+      {
+        id: 3,
+        name: "Minimalist Watch",
+        category: "Lifestyle",
+        price: "Rp120.000",
+        image: "assets/pick-3.jpg",
+        description: "Aksesori simpel untuk tampilan lebih rapi.",
+        label: "",
+        link: "https://shopee.co.id/"
+      },
+      {
+        id: 4,
+        name: "Pretty Hair Clip",
+        category: "Fashion",
+        price: "Rp20.000",
+        image: "assets/pick-4.jpg",
+        description: "Aksesori rambut manis untuk daily look.",
+        label: "CUTE FIND",
+        link: "https://shopee.co.id/"
+      },
+      {
+        id: 5,
+        name: "Desk Organizer",
+        category: "Lifestyle",
+        price: "Rp39.000",
+        image: "assets/pick-5.jpg",
+        description: "Bantu meja kerja terlihat lebih rapi.",
+        label: "",
+        link: "https://shopee.co.id/"
+      },
+      {
+        id: 6,
+        name: "Lip Tint Favorite",
+        category: "Beauty",
+        price: "Rp35.000",
+        image: "assets/pick-6.jpg",
+        description: "Pilihan warna untuk tampilan sehari-hari.",
+        label: "BEAUTY PICK",
+        link: "https://shopee.co.id/"
+      }
+    ];
+
+    const productGrid = document.getElementById("productGrid");
+    const searchInput = document.getElementById("searchInput");
+    const categoryTabs = document.getElementById("categoryTabs");
+    const productCount = document.getElementById("productCount");
+    const emptyState = document.getElementById("emptyState");
+
+    let activeCategory = "All";
+
+    function renderCategories() {
+      const categories = [
+        "All",
+        ...new Set(products.map(product => product.category))
+      ];
+
+      categoryTabs.innerHTML = categories.map(category => `
+        <button
+          type="button"
+          class="category-tab ${category === activeCategory ? "active" : ""}"
+          data-category="${category}"
+        >${category}</button>
+      `).join("");
+    }
+
+    function renderProducts() {
+      const keyword = searchInput.value.trim().toLowerCase();
+
+      const filtered = products.filter(product => {
+        const matchesSearch = [
+          product.name,
+          product.category,
+          product.description
+        ].some(value => value.toLowerCase().includes(keyword));
+
+        const matchesCategory =
+          activeCategory === "All" ||
+          product.category === activeCategory;
+
+        return matchesSearch && matchesCategory;
+      });
+
+      productCount.textContent = `${filtered.length} picks`;
+      emptyState.hidden = filtered.length > 0;
+
+      productGrid.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <a
+            href="${product.link}"
+            class="product-image-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Lihat ${product.name}"
+          >
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              class="product-image"
+              loading="lazy"
+            >
+            ${product.label
+              ? `<span class="product-label">${product.label}</span>`
+              : ""}
+            <span class="image-arrow">↗</span>
+          </a>
+
+          <div class="product-details">
+            <p class="product-category">${product.category}</p>
+            <h3>${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+
+            <div class="product-bottom">
+              <strong>${product.price}</strong>
+              <a
+                href="${product.link}"
+                class="shop-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Check it out ↗</a>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    categoryTabs.addEventListener("click", event => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+
+      activeCategory = button.dataset.category;
+      renderCategories();
+      renderProducts();
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+
+    renderCategories();
+    renderProducts();
+  </script>
+
+</body>
+</html>
