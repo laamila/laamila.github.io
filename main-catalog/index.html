@@ -4,187 +4,889 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#252522">
+<meta name="description" content="Velora Studio menyediakan template website profesional, CV online, link in bio, dan katalog digital untuk personal branding dan bisnis.">
 <title>VELORA STUDIO — Digital Template</title>
-<meta name="theme-color" content="#7041b5">
+
 <style>
-:root{
-  --purple:#7041b5;
-  --deep:#321653;
-  --ink:#281637;
-  --lavender:#eee5ff;
-  --bg:#faf7ff;
-  --muted:#766982;
-  --line:#e4d8f5;
-  --white:#fff;
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --ink: #252522;
+  --muted: #77766f;
+  --gold: #b69a64;
+  --gold-dark: #927545;
+  --gold-light: #eee5d3;
+  --line: #e8e5dc;
+  --dark: #252522;
+  --radius: 14px;
+  --shadow: 0 12px 35px rgba(37,37,34,.07);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;background:var(--bg);color:var(--ink);
-font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:1.65}
-a{color:inherit;text-decoration:none}
-button,input{font:inherit}
-button{cursor:pointer}
-nav{position:sticky;top:0;z-index:20;background:#faf7fff2;
-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{max-width:1250px;margin:auto;padding:16px 25px;
-display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:25px;letter-spacing:3px;font-weight:900;color:var(--deep)}
-.logo span{color:#9866df}
-.navlinks{display:flex;gap:24px;font-size:15px;font-weight:700}
-.navlinks a:hover{color:var(--purple)}
-.hero{max-width:1250px;margin:auto;padding:72px 25px;
-display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.eyebrow{font-size:13px;letter-spacing:2.5px;color:var(--purple);font-weight:800}
-h1,h2{font-family:Georgia,"Times New Roman",serif}
-h1{font-size:clamp(45px,5.4vw,72px);line-height:1.1;letter-spacing:-1.5px;margin:20px 0}
-h1 em{color:var(--purple);font-weight:400}
-.hero p{font-size:19px;color:var(--muted)}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{display:inline-flex;align-items:center;justify-content:center;
-background:var(--purple);color:white;padding:13px 20px;border-radius:9px;
-font-size:15px;font-weight:800;border:2px solid var(--purple)}
-.btn.outline{background:transparent;color:var(--purple)}
-.heroart{min-height:370px;background:linear-gradient(140deg,#eee3ff,#c6a6f5,#8758c9);
-border-radius:25px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.orb{position:absolute;border:1px solid #ffffff90;border-radius:50%}
-.orb.one{width:330px;height:330px;right:-90px;top:-130px}
-.orb.two{width:240px;height:240px;left:-80px;bottom:-110px}
-.showcase{position:relative;background:white;padding:30px;width:73%;max-width:350px;
-border-radius:14px;box-shadow:0 20px 50px #32165335;transform:rotate(-3deg)}
-.showcase small{color:var(--purple);font-size:12px;font-weight:800;letter-spacing:2px}
-.showcase h2{font-size:42px;line-height:1.1;margin:20px 0}
-.showcase p{font-size:15px;color:var(--muted)}
-.stats{max-width:1200px;margin:0 auto 25px;padding:22px;
-display:grid;grid-template-columns:repeat(3,1fr);text-align:center;
-background:white;border:1px solid var(--line);border-radius:15px}
-.stats strong{display:block;font-size:34px;line-height:1.3;color:var(--purple)}
-.stats span{font-size:14px;font-weight:800;letter-spacing:1px}
-section{max-width:1250px;margin:auto;padding:65px 25px}
-h2{font-size:clamp(33px,4vw,45px);line-height:1.2;margin:8px 0}
-.muted,.intro{font-size:17px;color:var(--muted)}
-.toolbar{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
-.search{flex:1;min-width:230px;background:white;border:2px solid var(--line);
-border-radius:9px;padding:14px 16px;font-size:17px}
-.search:focus{outline:2px solid #c7a6ff}
-.filters{display:flex;flex-wrap:wrap;gap:8px}
-.filter{padding:11px 14px;border:2px solid var(--line);background:white;
-border-radius:8px;font-size:14px;font-weight:800;color:var(--deep)}
-.filter.active,.filter:hover{background:var(--purple);border-color:var(--purple);color:white}
-.cat{background:white;border:1px solid var(--line);border-radius:18px;padding:23px;margin:28px 0}
-.cat.bio{background:#f6f0ff}
-.cat.digital{background:#f0eafb}
-.cathead{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:22px}
-.cathead h3{font-size:27px;margin:0;color:var(--deep)}
-.cathead p{font-size:16px;color:var(--muted);margin:5px 0 0}
-.count{font-size:14px;font-weight:800;color:var(--purple)}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
-.card{min-width:0;background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden;transition:.2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #32165312}
-.cover{aspect-ratio:4/3;min-height:170px;position:relative;overflow:hidden;
-display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eee3ff,#c4a4f2)}
-.c2{background:linear-gradient(135deg,#342144,#7752a5)}
-.c3{background:linear-gradient(135deg,#eee8ff,#d5c4f7)}
-.c4{background:linear-gradient(135deg,#e1f1ff,#abcbed)}
-.c5{background:linear-gradient(135deg,#f5e5ff,#d9b6ef)}
-.c6{background:linear-gradient(135deg,#e9ddff,#aa8bd9)}
-.c7{background:linear-gradient(135deg,#f8e9ff,#eac7e8)}
-.c8{background:linear-gradient(135deg,#e7e1ff,#b3a1e8)}
-.c9{background:linear-gradient(135deg,#e7e5ff,#aaa5dc)}
-.c10{background:linear-gradient(135deg,#e5f3ed,#acd4c5)}
-.c11{background:linear-gradient(135deg,#fff0e8,#edc6b4)}
-.cover:before{content:"";position:absolute;width:100%;height:160%;
-border:1px solid #ffffffa0;border-radius:50%;transform:rotate(30deg)}
-.sheet{position:relative;width:61%;height:76%;background:white;border-radius:4px;
-box-shadow:0 10px 24px #27133a22;padding:12px;display:flex;flex-direction:column;
-justify-content:center;align-items:center;text-align:center;transform:rotate(-2deg)}
-.sheet small{font-size:9px;letter-spacing:1.5px;color:var(--purple);font-weight:800}
-.sheet strong{font:clamp(20px,2vw,29px) Georgia,serif;line-height:1.1;margin:12px 0}
-.sheet i{width:45%;height:2px;background:#c5a6ef;margin:4px}
-.sheet span{font-size:9px;color:var(--muted);font-weight:800}
-.num{position:absolute;top:10px;left:10px;background:white;padding:4px 8px;
-border-radius:5px;font-size:11px;font-weight:800}
-.info{padding:15px}
-.category{font-size:12px;color:var(--purple);font-weight:800;letter-spacing:.8px}
-.info h4{font-size:21px;line-height:1.3;margin:5px 0}
-.info .style{font-size:15px;color:var(--muted);margin:0 0 8px}
-.price{font-size:21px;color:var(--deep);font-weight:900;margin:7px 0 14px}
-.price small{display:block;font-size:12px;font-weight:600;color:var(--muted)}
-.cardactions{display:grid;gap:8px}
-.cardactions a{display:flex;justify-content:center;align-items:center;text-align:center;
-border:2px solid var(--purple);color:var(--purple);border-radius:8px;padding:10px 5px;
-font-size:14px;font-weight:800}
-.cardactions a:first-child{background:var(--purple);color:white}
-.empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}
-.custom{max-width:none;background:linear-gradient(135deg,#eee4ff,#d8c2ff);text-align:center;padding:65px 20px}
-.custominner{max-width:800px;margin:auto}
-.custom p{font-size:18px;color:#5f4b75}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:25px}
-.step{background:white;border:1px solid var(--line);border-radius:13px;padding:22px}
-.step b{font-size:32px;color:var(--purple)}
-.step h3{font-size:20px;margin:8px 0}
-.step p{font-size:16px;color:var(--muted);margin:0}
-details{border-bottom:1px solid var(--line);padding:18px 0}
-summary{cursor:pointer;font-size:18px;font-weight:800}
-details p{font-size:16px;color:var(--muted)}
-footer{background:var(--deep);color:white;padding:45px 25px}
-.footerinner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
-footer .logo{color:white}
-footer p{font-size:15px;color:#dfd0f1}
-.socials{display:flex;gap:10px;flex-wrap:wrap}
-.socials a{border:1px solid #9b7bbd;border-radius:8px;padding:10px 14px;font-size:15px;font-weight:800}
-.floatwa{position:fixed;z-index:15;bottom:17px;right:17px;border-radius:50px;background:#54258f;
-color:white;padding:14px 18px;font-size:15px;font-weight:800;box-shadow:0 8px 25px #32165340}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+img { max-width: 100%; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(247,246,242,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: 1280px;
+  margin: auto;
+  padding: 15px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 23px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  color: var(--dark);
+}
+
+.logo span { color: var(--gold); }
+
+.navlinks {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.navlinks a { transition: color .2s; }
+.navlinks a:hover { color: var(--gold-dark); }
+
+.hero {
+  max-width: 1280px;
+  margin: auto;
+  padding: 68px 28px 55px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--gold-dark);
+  font-weight: 800;
+}
+
+h1, h2, .showcase h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(43px, 5vw, 66px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+  margin: 18px 0;
+}
+
+h1 em {
+  color: var(--gold-dark);
+  font-weight: 400;
+}
+
+.hero p {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 550px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  font-weight: 800;
+  border: 1px solid var(--dark);
+  transition: .2s;
+}
+
+.btn:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--dark);
+  border-color: #c9c5ba;
+}
+
+.btn.outline:hover {
+  background: var(--gold-light);
+  border-color: var(--gold);
+}
+
+.heroart {
+  min-height: 350px;
+  background: linear-gradient(135deg, #e8e2d4, #d4c3a0);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border: 1px solid #ffffffa8;
+  border-radius: 50%;
+}
+
+.orb.one {
+  width: 320px;
+  height: 320px;
+  right: -100px;
+  top: -125px;
+}
+
+.orb.two {
+  width: 240px;
+  height: 240px;
+  left: -85px;
+  bottom: -115px;
+}
+
+.showcase {
+  position: relative;
+  background: #fff;
+  padding: 28px;
+  width: 72%;
+  max-width: 330px;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px #25252224;
+  transform: rotate(-2deg);
+}
+
+.showcase small {
+  color: var(--gold-dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.showcase h2 {
+  font-size: 37px;
+  line-height: 1.12;
+  margin: 17px 0;
+}
+
+.showcase p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stats {
+  max-width: 1224px;
+  margin: 0 auto 25px;
+  padding: 23px 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.stats > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.stats strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  line-height: 1.3;
+  color: var(--gold-dark);
+}
+
+.stats span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+section {
+  max-width: 1280px;
+  margin: auto;
+  padding: 58px 28px;
+}
+
+h2 {
+  font-size: clamp(30px, 3.5vw, 40px);
+  line-height: 1.2;
+  margin: 8px 0 12px;
+}
+
+.muted, .intro {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+  align-items: center;
+}
+
+.search {
+  flex: 1;
+  min-width: 220px;
+  background: white;
+  border: 1px solid #d9d5c9;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.search:focus {
+  outline: 2px solid #d9c59d;
+  border-color: var(--gold);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.filter {
+  padding: 10px 13px;
+  border: 1px solid #d9d5c9;
+  background: white;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  transition: .2s;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: white;
+}
+
+.cat {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 22px 0;
+}
+
+.cat.bio { background: #fbfaf7; }
+.cat.digital { background: #f3f0e8; }
+
+.cathead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.cathead h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.cathead p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 3px 0 0;
+}
+
+.count {
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: var(--gold-dark);
+  background: var(--gold-light);
+  padding: 6px 9px;
+  border-radius: 5px;
+}
+
+/* KARTU TEMPLATE KECIL BERBENTUK KOTAK */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.card {
+  min-width: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Thumbnail sengaja dibuat kotak, bukan banner */
+.cover {
+  width: 100%;
+  height: 175px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee9df;
+}
+
+.c1  { background: linear-gradient(135deg,#e9e4d8,#cfc1a4); }
+.c2  { background: linear-gradient(135deg,#292a28,#67645c); }
+.c3  { background: linear-gradient(135deg,#f4f0e8,#ddd5c4); }
+.c4  { background: linear-gradient(135deg,#f3e7e3,#dfc0b6); }
+.c5  { background: linear-gradient(135deg,#e5e7e4,#b9c1b8); }
+.c6  { background: linear-gradient(135deg,#eee2c7,#c4a66e); }
+.c7  { background: linear-gradient(135deg,#ecebe5,#d4d1c6); }
+.c8  { background: linear-gradient(135deg,#e8e4d9,#c9c1ae); }
+.c9  { background: linear-gradient(135deg,#e4e7e3,#bdc8bd); }
+.c10 { background: linear-gradient(135deg,#f0e5d6,#d5bca1); }
+.c11 { background: linear-gradient(135deg,#e6e0d7,#b8aa96); }
+
+.cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.cover:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 160%;
+  border: 1px solid #ffffff90;
+  border-radius: 50%;
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.cover:has(img):before { display: none; }
+
+.sheet {
+  position: relative;
+  z-index: 1;
+  width: 68%;
+  height: 76%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px #25252220;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.sheet small {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--gold-dark);
+  font-weight: 800;
+}
+
+.sheet strong {
+  font: 21px Georgia, serif;
+  line-height: 1.1;
+  margin: 9px 0;
+  overflow-wrap: anywhere;
+}
+
+.sheet i {
+  width: 45%;
+  height: 2px;
+  background: var(--gold);
+  margin: 3px;
+}
+
+.sheet span {
+  font-size: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 3;
+  background: rgba(255,255,255,.95);
+  color: var(--dark);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.info { padding: 13px; }
+
+.category {
+  font-size: 10px;
+  color: var(--gold-dark);
+  font-weight: 800;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.info h4 {
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.info .style {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 8px;
+  min-height: 20px;
+}
+
+.price {
+  font-size: 17px;
+  color: var(--dark);
+  font-weight: 900;
+  margin: 8px 0 12px;
+}
+
+.price small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.cardactions {
+  display: grid;
+  gap: 7px;
+}
+
+.cardactions a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+  border-radius: 6px;
+  padding: 9px 4px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.cardactions a:first-child {
+  background: var(--dark);
+  color: white;
+}
+
+.cardactions a:hover {
+  background: var(--gold-dark);
+  color: white;
+  border-color: var(--gold-dark);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 35px;
+  color: var(--muted);
+}
+
+/* CUSTOM WEBSITE */
+.custom {
+  max-width: none;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.custom .eyebrow { color: #d8c49a; }
+.custominner { max-width: 760px; margin: auto; }
+
+.custom h2 { color: white; }
+
+.custom p {
+  font-size: 15px;
+  color: #d0cfc8;
+  margin-bottom: 24px;
+}
+
+.custom .btn {
+  background: var(--gold);
+  color: #24231f;
+  border-color: var(--gold);
+}
+
+.custom .btn:hover {
+  background: #d2bd91;
+  border-color: #d2bd91;
+}
+
+/* CARA ORDER */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.step {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 22px;
+}
+
+.step b {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: var(--gold-dark);
+}
+
+.step h3 { font-size: 17px; margin: 8px 0; }
+
+.step p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* FAQ */
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 17px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+details p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* FOOTER */
+footer {
+  background: #20211f;
+  color: white;
+  padding: 40px 28px;
+}
+
+.footerinner {
+  max-width: 1224px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+footer .logo { color: white; }
+
+footer p {
+  font-size: 13px;
+  color: #c8c7c0;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  border: 1px solid #65645c;
+  border-radius: 6px;
+  padding: 8px 11px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.socials a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+/* WHATSAPP */
+.floatwa {
+  position: fixed;
+  z-index: 25;
+  bottom: 17px;
+  right: 17px;
+  border-radius: 50px;
+  background: #292a27;
+  color: white;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 7px 22px #0002;
+  border: 1px solid #b69a64;
+}
+
+.floatwa:hover { background: var(--gold-dark); }
+
 /* DEMO PREVIEW */
-.modal{display:none;position:fixed;inset:0;z-index:100;background:#1b1028dd;
-padding:15px;align-items:center;justify-content:center}
-.modal.open{display:flex}
-.modalbox{width:min(1150px,100%);height:94vh;background:white;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.modalhead{padding:12px 15px;background:#f2eaff;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.modalhead strong{font-size:17px}
-.modalhead button{background:var(--purple);color:white;border:0;border-radius:7px;padding:9px 12px;font-weight:800}
-.modalhead a{color:var(--purple);font-size:14px;font-weight:800}
-.modaltools{display:flex;gap:12px;align-items:center}
-#demoFrame{width:100%;flex:1;border:0;background:white}
-#demoHelp{padding:25px;text-align:center;color:var(--muted)}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){
- body{font-size:17px}
- .nav{padding:13px 15px}.logo{font-size:21px}.navlinks{gap:12px;font-size:13px}
- .navlinks a:nth-child(3){display:none}
- .hero{grid-template-columns:1fr;padding:45px 17px;gap:25px}
- h1{font-size:47px}.hero p{font-size:18px}.heroart{min-height:285px}
- .showcase h2{font-size:36px}
- .stats{margin:0 10px 12px;padding:16px 4px}.stats strong{font-size:27px}.stats span{font-size:10px}
- section{padding:52px 15px}
- .toolbar{display:block}.search{width:100%;margin-bottom:12px}
- .filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
- .filter{font-size:13px;padding:11px 5px}
- .cat{padding:12px;margin:20px 0}
- .cathead h3{font-size:23px}.cathead p{font-size:15px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
- .cover{min-height:135px}.sheet{width:67%;padding:7px}
- .sheet strong{font-size:21px;margin:7px 0}.sheet small,.sheet span{font-size:7px}
- .num{font-size:9px;padding:4px 6px}
- .info{padding:10px}.info h4{font-size:18px}.info .style{font-size:13px}
- .price{font-size:18px}.cardactions a{font-size:12px;padding:9px 3px}
- .steps{grid-template-columns:1fr}
- .modal{padding:5px}.modalbox{height:95vh}
- .modalhead{padding:9px}.modalhead strong{font-size:14px}
- .modalhead button{font-size:12px;padding:8px}
- .modaltools{gap:8px}.modalhead a{font-size:12px}
- .floatwa{right:10px;bottom:10px;padding:12px 14px;font-size:13px}
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #171714e8;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open { display: flex; }
+
+.modalbox {
+  width: min(1150px, 100%);
+  height: 94vh;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalhead {
+  padding: 12px 15px;
+  background: #f3f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modalhead strong { font-size: 14px; }
+
+.modalhead button {
+  background: var(--dark);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.modalhead a {
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.modaltools {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#demoFrame {
+  width: 100%;
+  flex: 1;
+  border: 0;
+  background: white;
+}
+
+#demoHelp {
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero { gap: 30px; }
+  .cover { height: 165px; }
+}
+
+/* HP */
+@media (max-width: 650px) {
+  body { font-size: 14px; }
+
+  .nav { padding: 12px 15px; }
+  .logo { font-size: 19px; letter-spacing: 2px; }
+  .navlinks { gap: 13px; font-size: 12px; }
+  .navlinks a:nth-child(3) { display: none; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 42px 17px 32px;
+    gap: 25px;
+  }
+
+  h1 { font-size: 44px; }
+  .hero p { font-size: 14px; }
+  .heroart { min-height: 260px; }
+  .showcase { padding: 22px; }
+  .showcase h2 { font-size: 33px; }
+
+  .stats {
+    margin: 0 12px 15px;
+    padding: 15px 3px;
+  }
+
+  .stats strong { font-size: 25px; }
+  .stats span { font-size: 9px; letter-spacing: .5px; }
+
+  section { padding: 42px 14px; }
+  .toolbar { display: block; }
+  .search { width: 100%; margin-bottom: 10px; }
+
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter { font-size: 11px; padding: 10px 5px; }
+
+  .cat { padding: 11px; margin: 17px 0; }
+  .cathead h3 { font-size: 22px; }
+  .cathead p { font-size: 12px; }
+  .count { font-size: 9px; }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .cover {
+    height: 145px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cover img { padding: 5px; }
+  .sheet { width: 70%; padding: 6px; }
+  .sheet strong { font-size: 18px; margin: 6px 0; }
+  .sheet small, .sheet span { font-size: 7px; }
+  .num { font-size: 8px; padding: 3px 5px; }
+
+  .info { padding: 9px; }
+  .category { font-size: 9px; }
+  .info h4 { font-size: 15px; }
+  .info .style { font-size: 11px; min-height: 18px; }
+  .price { font-size: 15px; }
+  .price small { font-size: 9px; }
+  .cardactions a { font-size: 10px; padding: 9px 2px; }
+
+  .custom { padding: 45px 18px; }
+  .custom p { font-size: 13px; }
+  .steps { grid-template-columns: 1fr; gap: 10px; }
+  .step { padding: 18px; }
+
+  footer { padding: 32px 17px; }
+  .footerinner { gap: 18px; }
+  .socials a { font-size: 11px; }
+
+  .modal { padding: 5px; }
+  .modalbox { height: 95vh; }
+  .modalhead { padding: 9px; }
+  .modalhead strong { font-size: 12px; }
+  .modalhead button { font-size: 11px; padding: 7px; }
+  .modaltools { gap: 9px; }
+  .modalhead a { font-size: 11px; }
+
+  .floatwa {
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 12px;
+    font-size: 11px;
+  }
 }
 </style>
 </head>
+
 <body>
-<nav><div class="nav">
-  <a class="logo" href="#">VELORA<span>.</span></a>
-  <div class="navlinks">
-    <a href="#koleksi">Koleksi</a>
-    <a href="#custom">Custom</a>
-    <a href="#kontak">Kontak</a>
+
+<nav>
+  <div class="nav">
+    <a class="logo" href="#">VELORA<span>.</span></a>
+    <div class="navlinks">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#custom">Custom</a>
+      <a href="#kontak">Kontak</a>
+    </div>
   </div>
-</div></nav>
+</nav>
 
 <header class="hero">
   <div>
@@ -196,11 +898,14 @@ padding:15px;align-items:center;justify-content:center}
       <a class="btn outline" href="#kontak">HUBUNGI KAMI</a>
     </div>
   </div>
-  <div class="heroart"><div class="orb one"></div><div class="orb two"></div>
+
+  <div class="heroart">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
     <div class="showcase">
       <small>THE VELORA COLLECTION</small>
       <h2>Make your<br>own story.</h2>
-      <div style="height:3px;background:#e9ddff;margin:18px 0"></div>
+      <div style="height:2px;background:#b69a64;margin:17px 0"></div>
       <p>Modern websites. Beautiful details. Made for you.</p>
     </div>
   </div>
@@ -216,6 +921,7 @@ padding:15px;align-items:center;justify-content:center}
   <div class="eyebrow">FIND YOUR STYLE</div>
   <h2>Our Template Collection</h2>
   <p class="intro">Pilih template, lihat demonya, cek harga, lalu booking langsung melalui WhatsApp.</p>
+
   <div class="toolbar">
     <input id="search" class="search" type="search" placeholder="Cari template atau kategori..." aria-label="Cari template">
     <div class="filters">
@@ -225,19 +931,24 @@ padding:15px;align-items:center;justify-content:center}
       <button class="filter" data-cat="Katalog Digital">Katalog Digital</button>
     </div>
   </div>
+
   <div id="catalogGrid"></div>
 </section>
 
-<div class="custom" id="custom"><div class="custominner">
-  <div class="eyebrow">MADE JUST FOR YOU</div>
-  <h2>Want a Custom Design?</h2>
-  <p>Punya warna, fitur, atau referensi sendiri? Yuk, konsultasikan kebutuhan website custom kamu bersama kami.</p>
-  <a class="btn" id="customWA" href="#">KONSULTASI VIA WHATSAPP ↗</a>
-</div></div>
+<div class="custom" id="custom">
+  <div class="custominner">
+    <div class="eyebrow">MADE JUST FOR YOU</div>
+    <h2>Want a Custom Design?</h2>
+    <p>Punya warna, fitur, atau referensi sendiri? Yuk, konsultasikan kebutuhan website custom kamu bersama kami.</p>
+    <a class="btn" id="customWA" href="#">KONSULTASI VIA WHATSAPP ↗</a>
+  </div>
+</div>
 
 <section>
-  <div class="eyebrow">SIMPLE & EASY</div><h2>How to Order</h2>
+  <div class="eyebrow">SIMPLE & EASY</div>
+  <h2>How to Order</h2>
   <p class="intro">Tiga langkah praktis untuk memesan template pilihanmu.</p>
+
   <div class="steps">
     <div class="step"><b>01</b><h3>Pilih Template</h3><p>Lihat demo dan pilih desain yang paling cocok.</p></div>
     <div class="step"><b>02</b><h3>Booking</h3><p>Klik WhatsApp untuk konfirmasi harga dan kebutuhan.</p></div>
@@ -246,44 +957,65 @@ padding:15px;align-items:center;justify-content:center}
 </section>
 
 <section>
-  <div class="eyebrow">FREQUENTLY ASKED QUESTIONS</div><h2>Things to Know</h2>
-  <details><summary>Apakah harga sudah termasuk custom?</summary><p>Harga yang ditampilkan adalah harga awal paket. Pastikan detail personalisasi, revisi, dan fitur tambahan dikonfirmasi melalui WhatsApp.</p></details>
-  <details><summary>Bagaimana cara melihat demo?</summary><p>Klik Lihat Demo. Website akan ditampilkan dalam jendela preview jika halaman mengizinkan pemuatan melalui iframe. Kamu juga bisa membukanya di tab baru.</p></details>
-  <details><summary>Bagaimana cara memesan?</summary><p>Klik Booking WhatsApp pada template yang kamu pilih. Pesan akan terisi otomatis dengan nama template.</p></details>
+  <div class="eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+  <h2>Things to Know</h2>
+
+  <details>
+    <summary>Apakah harga sudah termasuk custom?</summary>
+    <p>Harga yang ditampilkan adalah harga awal paket. Pastikan detail personalisasi, revisi, dan fitur tambahan dikonfirmasi melalui WhatsApp.</p>
+  </details>
+
+  <details>
+    <summary>Bagaimana cara melihat demo?</summary>
+    <p>Klik Lihat Demo. Website akan ditampilkan dalam jendela preview jika halaman mengizinkan pemuatan melalui iframe. Kamu juga bisa membukanya di tab baru.</p>
+  </details>
+
+  <details>
+    <summary>Bagaimana cara memesan?</summary>
+    <p>Klik Booking WhatsApp pada template yang kamu pilih. Pesan akan terisi otomatis dengan nama template.</p>
+  </details>
 </section>
 
-<footer id="kontak"><div class="footerinner">
-  <div><a class="logo" href="#">VELORA<span>.</span></a>
-    <p>Your Ideas, Beautifully Online.</p>
-    <p>Template digital dengan sentuhan modern.</p>
-  </div>
-  <div><strong style="font-size:20px">LET'S CONNECT</strong>
-    <p>Hubungi kami untuk booking dan konsultasi.</p>
-    <div class="socials">
-      <a id="instagram" href="#" target="_blank" rel="noopener">◎ Instagram ↗</a>
-      <a id="tiktok" href="#" target="_blank" rel="noopener">♪ TikTok ↗</a>
-      <a id="footerWA" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+<footer id="kontak">
+  <div class="footerinner">
+    <div>
+      <a class="logo" href="#">VELORA<span>.</span></a>
+      <p>Your Ideas, Beautifully Online.</p>
+      <p>Template digital dengan sentuhan modern.</p>
     </div>
-    <p>© <span id="year"></span> Velora Studio</p>
+
+    <div>
+      <strong style="font-size:17px;letter-spacing:1px">LET'S CONNECT</strong>
+      <p>Hubungi kami untuk booking dan konsultasi.</p>
+      <div class="socials">
+        <a id="instagram" href="#" target="_blank" rel="noopener">◎ Instagram ↗</a>
+        <a id="tiktok" href="#" target="_blank" rel="noopener">♪ TikTok ↗</a>
+        <a id="footerWA" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+      <p>© <span id="year"></span> Velora Studio</p>
+    </div>
   </div>
-</div></footer>
+</footer>
+
 <a class="floatwa" id="floatWA" href="#" target="_blank" rel="noopener">☏ Booking WhatsApp</a>
 
 <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-label="Preview website">
- <div class="modalbox">
-  <div class="modalhead">
-   <strong id="demoTitle">Preview Template</strong>
-   <div class="modaltools">
-    <a id="openFull" href="#" target="_blank" rel="noopener">Buka Tab</a>
-    <a id="demoOrder" href="#" target="_blank" rel="noopener">Booking</a>
-    <button id="closeDemo" type="button">Tutup ✕</button>
-   </div>
+  <div class="modalbox">
+    <div class="modalhead">
+      <strong id="demoTitle">Preview Template</strong>
+      <div class="modaltools">
+        <a id="openFull" href="#" target="_blank" rel="noopener">Buka Tab ↗</a>
+        <a id="demoOrder" href="#" target="_blank" rel="noopener">Booking</a>
+        <button id="closeDemo" type="button">Tutup ✕</button>
+      </div>
+    </div>
+
+    <div id="demoHelp" hidden style="padding:25px;text-align:center">
+      Link repository belum diatur. Edit GITHUB_BASE di bagian konfigurasi.
+    </div>
+
+    <iframe id="demoFrame" title="Demo website template"></iframe>
   </div>
-  <div id="demoHelp" hidden style="padding:25px;text-align:center">
-    <p>Link repository belum diatur. Edit GITHUB_BASE di bagian konfigurasi.</p>
-  </div>
-  <iframe id="demoFrame" title="Demo website template"></iframe>
- </div>
 </div>
 
 <script>
@@ -294,46 +1026,44 @@ const WHATSAPP = "6282143513272";
 const INSTAGRAM = "https://www.instagram.com/mrs.arjuna__/";
 const TIKTOK = "https://www.tiktok.com/@capriwhere/";
 
-// Contoh: https://laamila.github.io/velora/
+// Alamat utama GitHub Pages kamu
 const GITHUB_BASE = "https://laamila.github.io/";
 
 // =======================================
 // 29 TEMPLATE + HARGA
-// Harga bisa diubah sesuai kebutuhan.
-// Path harus cocok dengan folder GitHub.
 // =======================================
 const templates = [
- {category:"CV Online",name:"Sage",style:"Professional & Clean",price:35000,path:"cv/template01.html",image:"cv-template01.png"},
- {category:"CV Online",name:"Noir",style:"Bold & Elegant",price:50000,path:"cv/template02.html",image:"cv-template02.png"},
- {category:"CV Online",name:"Ivory",style:"Minimal & Timeless",price:35000,path:"cv/template03.html",image:"cv-template03.png"},
- {category:"CV Online",name:"Bloom",style:"Soft & Feminine",price:40000,path:"cv/template04.html",image:"cv-template04.png"},
- {category:"CV Online",name:"Corporate",style:"Modern Business",price:50000,path:"cv/template05.html",image:"cv-template05.png"},
- {category:"CV Online",name:"Goldline",style:"Premium & Refined",price:50000,path:"cv/template06.html",image:"cv-template06.png"},
- {category:"CV Online",name:"Minimal",style:"Simple & Modern",price:35000,path:"cv/template07.html",image:"cv-template07.png"},
+  {category:"CV Online",name:"Sage",style:"Professional & Clean",price:35000,path:"cv/template01.html",image:"cv-template01.png"},
+  {category:"CV Online",name:"Noir",style:"Bold & Elegant",price:50000,path:"cv/template02.html",image:"cv-template02.png"},
+  {category:"CV Online",name:"Ivory",style:"Minimal & Timeless",price:35000,path:"cv/template03.html",image:"cv-template03.png"},
+  {category:"CV Online",name:"Bloom",style:"Soft & Feminine",price:40000,path:"cv/template04.html",image:"cv-template04.png"},
+  {category:"CV Online",name:"Corporate",style:"Modern Business",price:50000,path:"cv/template05.html",image:"cv-template05.png"},
+  {category:"CV Online",name:"Goldline",style:"Premium & Refined",price:50000,path:"cv/template06.html",image:"cv-template06.png"},
+  {category:"CV Online",name:"Minimal",style:"Simple & Modern",price:35000,path:"cv/template07.html",image:"cv-template07.png"},
 
- {category:"Link in Bio",name:"Affliate Pick",style:"Personal Branding",price:30000,path:"link-bio/affiliate-pick/"},
- {category:"Link in Bio",name:"Blue",style:"Soft & Feminine",price:25000,path:"link-bio/blue-authority/"},
- {category:"Link in Bio",name:"Blush Pink",style:"Content Creator",price:35000,path:"link-bio/blush-pink/"},
- {category:"Link in Bio",name:"Mocha",style:"Elegant & Personal",price:30000,path:"link-bio/bold-mocha/"},
- {category:"Link in Bio",name:"Freelance Pro",style:"Dark & Modern",price:35000,path:"link-bio/freelance-pro/"},
- {category:"Link in Bio",name:"Fuschia",style:"Beauty & Lifestyle",price:30000,path:"link-bio/fuschia-pop/"},
- {category:"Link in Bio",name:"Lavender",style:"Creative Portfolio",price:35000,path:"link-bio/lavender-dream/"},
- {category:"Link in Bio",name:"Midnight Noir",style:"Pastel & Sweet",price:25000,path:"link-bio/midnight-noir/"},
- {category:"Link in Bio",name:"Sage",style:"Professional Profile",price:35000,path:"link-bio/sage-studio/"},
- {category:"Link in Bio",name:"Shop Boutique",style:"Portfolio & Projects",price:35000,path:"link-bio/shop-boutique/"},
- {category:"Link in Bio",name:"Shop",style:"Social Media Hub",price:30000,path:"link-bio/shop-boutique-v2/"},
+  {category:"Link in Bio",name:"Affiliate Pick",style:"Personal Branding",price:30000,path:"link-bio/affiliate-pick/"},
+  {category:"Link in Bio",name:"Blue",style:"Soft & Feminine",price:25000,path:"link-bio/blue-authority/"},
+  {category:"Link in Bio",name:"Blush Pink",style:"Content Creator",price:35000,path:"link-bio/blush-pink/"},
+  {category:"Link in Bio",name:"Mocha",style:"Elegant & Personal",price:30000,path:"link-bio/bold-mocha/"},
+  {category:"Link in Bio",name:"Freelance Pro",style:"Dark & Modern",price:35000,path:"link-bio/freelance-pro/"},
+  {category:"Link in Bio",name:"Fuschia",style:"Beauty & Lifestyle",price:30000,path:"link-bio/fuschia-pop/"},
+  {category:"Link in Bio",name:"Lavender",style:"Creative Portfolio",price:35000,path:"link-bio/lavender-dream/"},
+  {category:"Link in Bio",name:"Midnight Noir",style:"Dark & Elegant",price:25000,path:"link-bio/midnight-noir/"},
+  {category:"Link in Bio",name:"Sage",style:"Professional Profile",price:35000,path:"link-bio/sage-studio/"},
+  {category:"Link in Bio",name:"Shop Boutique",style:"Portfolio & Projects",price:35000,path:"link-bio/shop-boutique/"},
+  {category:"Link in Bio",name:"Shop",style:"Social Media Hub",price:30000,path:"link-bio/shop-boutique-v2/"},
 
- {category:"Katalog Digital",name:"Burgundy",style:"Fashion & Apparel",price:75000,path:"katalog/burgundy/"},
- {category:"Katalog Digital",name:"Elan Beauty",style:"Beauty & Nail Art",price:75000,path:"katalog/elan-beauty/"},
- {category:"Katalog Digital",name:"Florist",style:"Flower & Hampers",price:75000,path:"katalog/flower-shop/"},
- {category:"Katalog Digital",name:"Maison",style:"Luxury & Elegant",price:100000,path:"katalog/maison/"},
- {category:"Katalog Digital",name:"Noire Terra",style:"Food & Dessert",price:75000,path:"katalog/noire-terracota/"},
- {category:"Katalog Digital",name:"Noire",style:"Home & Living",price:75000,path:"katalog/noire/"},
- {category:"Katalog Digital",name:"Novs",style:"Property & Real Estate",price:100000,path:"katalog/nova/"},
- {category:"Katalog Digital",name:"Popora",style:"Travel & Tour",price:100000,path:"katalog/popora/"},
- {category:"Katalog Digital",name:"Real Estate",style:"Muslim Fashion",price:75000,path:"katalog/real-estate/"},
- {category:"Katalog Digital",name:"Terracotta",style:"Gift & Hampers",price:75000,path:"katalog/terracota/"},
- {category:"Katalog Digital",name:"Travel & Tour",style:"UMKM & General Store",price:75000,path:"katalog/travel-tour/"}
+  {category:"Katalog Digital",name:"Burgundy",style:"Fashion & Apparel",price:75000,path:"katalog/burgundy/"},
+  {category:"Katalog Digital",name:"Elan Beauty",style:"Beauty & Nail Art",price:75000,path:"katalog/elan-beauty/"},
+  {category:"Katalog Digital",name:"Florist",style:"Flower & Hampers",price:75000,path:"katalog/flower-shop/"},
+  {category:"Katalog Digital",name:"Maison",style:"Luxury & Elegant",price:100000,path:"katalog/maison/"},
+  {category:"Katalog Digital",name:"Noire Terra",style:"Food & Dessert",price:75000,path:"katalog/noire-terracota/"},
+  {category:"Katalog Digital",name:"Noire",style:"Home & Living",price:75000,path:"katalog/noire/"},
+  {category:"Katalog Digital",name:"Novs",style:"Property & Real Estate",price:100000,path:"katalog/nova/"},
+  {category:"Katalog Digital",name:"Popora",style:"Travel & Tour",price:100000,path:"katalog/popora/"},
+  {category:"Katalog Digital",name:"Real Estate",style:"Muslim Fashion",price:75000,path:"katalog/real-estate/"},
+  {category:"Katalog Digital",name:"Terracotta",style:"Gift & Hampers",price:75000,path:"katalog/terracota/"},
+  {category:"Katalog Digital",name:"Travel & Tour",style:"UMKM & General Store",price:75000,path:"katalog/travel-tour/"}
 ];
 
 const grid = document.getElementById("catalogGrid");
@@ -341,135 +1071,197 @@ const search = document.getElementById("search");
 let activeCat = "Semua";
 let previousFocus = null;
 
-function rupiah(value){
- return "Rp" + value.toLocaleString("id-ID");
-}
-function demoUrl(item){
- return GITHUB_BASE.replace(/\/?$/,"/") + item.path;
-}
-function waLink(text){
- return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
-}
-function bookingMessage(item){
- return "Halo Velora Studio! Saya ingin booking template "+item.name+
- " ("+item.category+") dengan harga "+rupiah(item.price)+
- ". Mohon informasi detail paket dan proses pengerjaannya.";
+function rupiah(value) {
+  return "Rp" + value.toLocaleString("id-ID");
 }
 
-function render(){
- const q = search.value.toLowerCase().trim();
- const filtered = templates.filter(t =>
-  (activeCat==="Semua" || t.category===activeCat) &&
-  (t.name.toLowerCase().includes(q) ||
-   t.category.toLowerCase().includes(q) ||
-   t.style.toLowerCase().includes(q))
- );
- const categories = [
-  {name:"CV Online",desc:"Tampilkan profil dan pengalamanmu secara profesional.",cls:"cv"},
-  {name:"Link in Bio",desc:"Satukan tautan media sosial dalam satu halaman.",cls:"bio"},
-  {name:"Katalog Digital",desc:"Tampilkan produk dan layanan bisnismu.",cls:"digital"}
- ];
- let html = "";
+function demoUrl(item) {
+  return GITHUB_BASE.replace(/\/?$/, "/") + item.path;
+}
 
- categories.forEach(cat=>{
-  if(activeCat!=="Semua" && activeCat!==cat.name) return;
-  const items = filtered.filter(t=>t.category===cat.name);
-  if(!items.length) return;
-  html += `<div class="cat ${cat.cls}">
-   <div class="cathead"><div><h3>${cat.name}</h3><p>${cat.desc}</p></div>
-   <span class="count">${items.length} TEMPLATE</span></div>
-   <div class="grid">`;
+function waLink(message) {
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
+}
 
-  items.forEach(t=>{
-   const index = templates.indexOf(t);
-   const num = String(index+1).padStart(2,"0");
-   const palette = "c"+((index%11)+1);
-   html += `<article class="card">
-    <div class="cover ${palette}">
-  <span class="num">DESIGN ${num}</span>
-  ${t.image
-    ? `<img
-  src="${t.image}"
-  alt="Preview ${t.name}"
-  loading="lazy"
-  style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;">`
-    : `<div class="sheet">
-         <small>VELORA STUDIO</small>
-         <strong>${t.name}</strong>
-         <i></i>
-         <span>${t.category.toUpperCase()}</span>
-       </div>`}
-       </div>
-    </div>
-    <div class="info">
-     <div class="category">${t.category}</div>
-     <h4>${t.name}</h4><p class="style">${t.style}</p>
-     <div class="price">${rupiah(t.price)}<small>Harga awal · per website</small></div>
-     <div class="cardactions">
-      <a href="${demoUrl(t)}" data-demo="${index}">Lihat Demo ↗</a>
-      <a href="${waLink(bookingMessage(t))}" target="_blank" rel="noopener">Booking WhatsApp</a>
-     </div>
-    </div>
-   </article>`;
+function bookingMessage(item) {
+  return "Halo Velora Studio! Saya ingin booking template " +
+    item.name + " (" + item.category + ") dengan harga " +
+    rupiah(item.price) +
+    ". Mohon informasi detail paket dan proses pengerjaannya.";
+}
+
+function render() {
+  const q = search.value.toLowerCase().trim();
+
+  const filtered = templates.filter(t =>
+    (activeCat === "Semua" || t.category === activeCat) &&
+    (
+      t.name.toLowerCase().includes(q) ||
+      t.category.toLowerCase().includes(q) ||
+      t.style.toLowerCase().includes(q)
+    )
+  );
+
+  const categories = [
+    {name:"CV Online",desc:"Tampilkan profil dan pengalamanmu secara profesional.",cls:"cv"},
+    {name:"Link in Bio",desc:"Satukan tautan media sosial dalam satu halaman.",cls:"bio"},
+    {name:"Katalog Digital",desc:"Tampilkan produk dan layanan bisnismu.",cls:"digital"}
+  ];
+
+  let html = "";
+
+  categories.forEach(cat => {
+    if (activeCat !== "Semua" && activeCat !== cat.name) return;
+
+    const items = filtered.filter(t => t.category === cat.name);
+    if (!items.length) return;
+
+    html += `
+      <div class="cat ${cat.cls}">
+        <div class="cathead">
+          <div>
+            <h3>${cat.name}</h3>
+            <p>${cat.desc}</p>
+          </div>
+          <span class="count">${items.length} TEMPLATE</span>
+        </div>
+        <div class="grid">
+    `;
+
+    items.forEach(t => {
+      const index = templates.indexOf(t);
+      const num = String(index + 1).padStart(2, "0");
+      const palette = "c" + ((index % 11) + 1);
+
+      html += `
+        <article class="card">
+          <div class="cover ${palette}">
+            <span class="num">DESIGN ${num}</span>
+            ${
+              t.image
+                ? `<img src="${t.image}" alt="Preview ${t.name}" loading="lazy">`
+                : `<div class="sheet">
+                    <small>VELORA STUDIO</small>
+                    <strong>${t.name}</strong>
+                    <i></i>
+                    <span>${t.category.toUpperCase()}</span>
+                  </div>`
+            }
+          </div>
+
+          <div class="info">
+            <div class="category">${t.category}</div>
+            <h4>${t.name}</h4>
+            <p class="style">${t.style}</p>
+
+            <div class="price">
+              ${rupiah(t.price)}
+              <small>Harga awal · per website</small>
+            </div>
+
+            <div class="cardactions">
+              <a href="${demoUrl(t)}" data-demo="${index}">Lihat Demo ↗</a>
+              <a href="${waLink(bookingMessage(t))}" target="_blank" rel="noopener">Booking WhatsApp</a>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+
+    html += `</div></div>`;
   });
-  html += "</div></div>";
- });
- grid.innerHTML = html || '<div class="empty">Template tidak ditemukan. Coba kata kunci lain.</div>';
+
+  grid.innerHTML = html ||
+    '<div class="empty">Template tidak ditemukan. Coba kata kunci lain.</div>';
 }
 
-grid.addEventListener("click",e=>{
- const link=e.target.closest("[data-demo]");
- if(!link)return;
- e.preventDefault();
- const t=templates[Number(link.dataset.demo)];
- if(!t)return;
+// BUKA DEMO
+grid.addEventListener("click", e => {
+  const link = e.target.closest("[data-demo]");
+  if (!link) return;
 
- const configured = !GITHUB_BASE.includes("laamila.github.io/nama-repository");
- const url=demoUrl(t);
- previousFocus=link;
- document.getElementById("demoTitle").textContent=t.name+" — Preview Demo";
- document.getElementById("openFull").href=url;
- document.getElementById("demoOrder").href=waLink(bookingMessage(t));
- document.getElementById("demoHelp").hidden=configured;
- document.getElementById("demoFrame").hidden=!configured;
- document.getElementById("demoFrame").src=configured?url:"about:blank";
- document.getElementById("demoModal").classList.add("open");
- document.body.style.overflow="hidden";
- document.getElementById("closeDemo").focus();
+  e.preventDefault();
+
+  const t = templates[Number(link.dataset.demo)];
+  if (!t) return;
+
+  const url = demoUrl(t);
+  previousFocus = link;
+
+  document.getElementById("demoTitle").textContent =
+    t.name + " — Preview Demo";
+
+  document.getElementById("openFull").href = url;
+  document.getElementById("demoOrder").href = waLink(bookingMessage(t));
+
+  document.getElementById("demoHelp").hidden = true;
+  document.getElementById("demoFrame").hidden = false;
+  document.getElementById("demoFrame").src = url;
+
+  document.getElementById("demoModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("closeDemo").focus();
 });
 
-function closeDemo(){
- document.getElementById("demoModal").classList.remove("open");
- document.body.style.overflow="";
- document.getElementById("demoFrame").src="about:blank";
- if(previousFocus)previousFocus.focus();
+// TUTUP DEMO
+function closeDemo() {
+  document.getElementById("demoModal").classList.remove("open");
+  document.body.style.overflow = "";
+  document.getElementById("demoFrame").src = "about:blank";
+
+  if (previousFocus) previousFocus.focus();
 }
-document.getElementById("closeDemo").addEventListener("click",closeDemo);
-document.getElementById("demoModal").addEventListener("click",e=>{
- if(e.target.id==="demoModal")closeDemo();
-});
-document.addEventListener("keydown",e=>{
- if(e.key==="Escape")closeDemo();
+
+document.getElementById("closeDemo").addEventListener("click", closeDemo);
+
+document.getElementById("demoModal").addEventListener("click", e => {
+  if (e.target.id === "demoModal") closeDemo();
 });
 
-document.querySelectorAll(".filter").forEach(b=>{
- b.addEventListener("click",()=>{
-  activeCat=b.dataset.cat;
-  document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));
-  render();
- });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeDemo();
 });
-search.addEventListener("input",render);
 
-document.getElementById("instagram").href=INSTAGRAM;
-document.getElementById("tiktok").href=TIKTOK;
-["customWA","footerWA","floatWA"].forEach(id=>{
- const el=document.getElementById(id);
- el.href=waLink("Halo Velora Studio! Saya ingin konsultasi dan booking jasa website.");
- if(id!=="customWA"){el.target="_blank";el.rel="noopener";}
+// FILTER KATEGORI
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    activeCat = button.dataset.cat;
+
+    document.querySelectorAll(".filter").forEach(item => {
+      item.classList.toggle("active", item === button);
+    });
+
+    render();
+  });
 });
-document.getElementById("year").textContent=new Date().getFullYear();
+
+// PENCARIAN
+search.addEventListener("input", render);
+
+// TAUTAN SOSIAL MEDIA
+document.getElementById("instagram").href = INSTAGRAM;
+document.getElementById("tiktok").href = TIKTOK;
+
+// TAUTAN WHATSAPP
+["customWA", "footerWA", "floatWA"].forEach(id => {
+  const element = document.getElementById(id);
+
+  element.href = waLink(
+    "Halo Velora Studio! Saya ingin konsultasi dan booking jasa website."
+  );
+
+  if (id !== "customWA") {
+    element.target = "_blank";
+    element.rel = "noopener";
+  }
+});
+
+// TAHUN OTOMATIS
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// TAMPILKAN KATALOG
 render();
 </script>
+
 </body>
 </html>
