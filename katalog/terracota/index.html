@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b85f43">
+  <meta name="description" content="TERRA — Objects for slower, softer living.">
+  <title>TERRA — Objects for Living</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <span>MADE FOR YOUR EVERYDAY</span>
+    <span>Thoughtful objects, warmer spaces.</span>
+    <a href="#collection">SHOP THE EDIT ↗</a>
+  </div>
+
+  <header class="header">
+    <a href="#home" class="brand">terra<span>®</span><small>OBJECTS FOR LIVING</small></a>
+    <nav id="navigation">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#journal">Our Journal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button id="favoritesToggle" class="icon-button" aria-label="Lihat produk favorit">♡ <span id="favoriteCount">0</span></button>
+      <button id="cartToggle" class="cart-button">Bag <span id="cartCount">0</span></button>
+      <button id="menuToggle" class="menu-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> THE WARM LIVING EDITION · 2026</div>
+        <h1>Make room<br>for <em>the good</em><br>things.</h1>
+        <p>Everyday essentials with a little more soul. Thoughtfully selected for the spaces you love and the life you live.</p>
+        <div class="hero-buttons">
+          <a href="#collection" class="button button-dark">Explore collection <span>↗</span></a>
+          <a href="#journal" class="under-link">Our point of view</a>
+        </div>
+        <div class="hero-bottom">
+          <div class="avatars"><span>T</span><span>♡</span><span>+</span></div>
+          <p><strong>Small things, big feeling.</strong><br>Find your everyday favorite.</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1200&q=85" alt="Interior hangat dengan dekorasi natural">
+        </div>
+        <div class="floating-note">
+          <span class="note-icon">✳</span>
+          <div><strong>THE SLOW EDIT</strong><small>Objects to live with</small></div>
+        </div>
+        <span class="hero-index">01 / 04</span>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <span>LIVE A LITTLE SLOWER</span><b>✳</b>
+      <span>CHOOSE WITH INTENTION</span><b>✳</b>
+      <span>LOVE YOUR EVERYDAY</span><b>✳</b>
+    </section>
+
+    <section class="collection section-pad" id="collection">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE OBJECT LIBRARY</p>
+          <h2>Things worth <em>keeping.</em></h2>
+          <p class="muted">A little something for every corner of your world.</p>
+        </div>
+        <div class="collection-number"><strong>10</strong><span>SELECTED<br>OBJECTS</span></div>
+      </div>
+
+      <div class="toolbar">
+        <div id="categoryFilters" class="chips">
+          <button class="chip active" data-category="Semua">Everything</button>
+          <button class="chip" data-category="Home">Home</button>
+          <button class="chip" data-category="Lifestyle">Lifestyle</button>
+          <button class="chip" data-category="Fashion">Fashion</button>
+          <button class="chip" data-category="Beauty">Beauty</button>
+        </div>
+        <div class="toolbar-right">
+          <input id="searchInput" type="search" placeholder="Search objects..." aria-label="Cari produk">
+          <select id="sortSelect" aria-label="Urutkan produk">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-line">
+        <span><strong id="productCount">10</strong> objects to discover</span>
+        <button id="clearFilters" class="clear-button">Reset filters ↺</button>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+      <p id="emptyState" class="empty-state" hidden>No objects found. Try another search.</p>
+    </section>
+
+    <section class="manifesto" id="journal">
+      <div class="manifesto-photo">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85" alt="Interior natural yang nyaman" loading="lazy">
+        <span>ROOM TO BREATHE · Nº 01</span>
+      </div>
+      <div class="manifesto-copy">
+        <p class="eyebrow">A NOTE ON SLOW LIVING</p>
+        <h2>Less noise.<br>More <em>meaning.</em></h2>
+        <p>We believe the things around us should feel as good as they look. Natural textures, thoughtful details, and everyday pieces that make ordinary moments feel special.</p>
+        <a href="#collection" class="under-link">Find your kind of comfort ↗</a>
+        <div class="manifesto-mark">t.</div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div>
+        <p class="eyebrow">A LITTLE NOTE FROM TERRA</p>
+        <h2>Good things, <em>occasionally.</em></h2>
+        <p>Leave us a message and let’s help you find something lovely.</p>
+      </div>
+      <a id="newsletterButton" href="#" class="button button-light" target="_blank" rel="noopener">Say hello on WhatsApp ↗</a>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">LET'S MAKE IT YOURS</p>
+      <h2>Something caught<br>your <em>eye?</em></h2>
+      <p>Ask about a product, build your wishlist, or send your selected items straight to us.</p>
+      <button id="checkoutButton" class="button button-dark">Send my selection <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand">terra<span>®</span><small>OBJECTS FOR LIVING</small></a>
+    <p>Thoughtful objects for everyday living.</p>
+    <span>© <span id="year"></span> TERRA STUDIO</span>
+  </footer>
+
+  <dialog id="productDialog" class="product-dialog">
+    <button id="dialogClose" class="dialog-close" aria-label="Tutup">×</button>
+    <img id="dialogImage" src="" alt="">
+    <div class="dialog-content">
+      <p id="dialogCategory" class="eyebrow"></p>
+      <h2 id="dialogName"></h2>
+      <p id="dialogDescription"></p>
+      <strong id="dialogPrice"></strong>
+      <button id="addToBagButton" class="button button-dark">Add to bag +</button>
+      <button id="dialogFavoriteButton" class="under-link favorite-action">♡ Save to favorites</button>
+    </div>
+  </dialog>
+
+  <dialog id="bagDialog" class="bag-dialog">
+    <div class="bag-head">
+      <div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag<span>.</span></h2></div>
+      <button id="bagClose" class="dialog-close" aria-label="Tutup keranjang">×</button>
+    </div>
+    <div id="bagItems" class="bag-items"></div>
+    <div class="bag-footer">
+      <div class="bag-total"><span>Estimated total</span><strong id="bagTotal">Rp0</strong></div>
+      <button id="bagCheckout" class="button button-dark">Order via WhatsApp ↗</button>
+      <p>Order details will be sent to WhatsApp for confirmation.</p>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
