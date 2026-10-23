@@ -427,6 +427,50 @@ h2 {
 
 .cover:has(img):before { display: none; }
 
+/* BADGE PROMO — tambahan tanpa mengubah desain utama */
+.promo-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--dark);
+  color: #fff;
+  border: 1px solid #d9a9b8;
+  border-radius: 5px;
+  padding: 5px 7px;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .3px;
+  box-shadow: 0 3px 9px #451b2930;
+}
+
+.price .original-price {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: line-through;
+  margin-bottom: 1px;
+}
+
+.price .promo-price {
+  display: block;
+  color: var(--dark);
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.price .promo-note {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
 .sheet {
   position: relative;
   z-index: 1;
@@ -1105,6 +1149,11 @@ function rupiah(value) {
   return "Rp" + value.toLocaleString("id-ID");
 }
 
+/* Harga promo otomatis 20% lebih rendah, dibulatkan ke Rp1.000 terdekat */
+function promoPrice(item) {
+  return Math.round((item.price * 0.5) / 1000) * 1000;
+}
+
 function demoUrl(item) {
   return GITHUB_BASE.replace(/\/?$/, "/") + item.path;
 }
@@ -1115,8 +1164,8 @@ function waLink(message) {
 
 function bookingMessage(item) {
   return "Halo Velora Studio! Saya ingin booking template " +
-    item.name + " (" + item.category + ") dengan harga " +
-    rupiah(item.price) +
+    item.name + " (" + item.category + "). Harga asli " +
+    rupiah(item.price) + ", harga promo " + rupiah(promoPrice(item)) +
     ". Mohon informasi detail paket dan proses pengerjaannya.";
 }
 
@@ -1167,6 +1216,7 @@ function render() {
         <article class="card">
           <div class="cover ${palette}">
             <span class="num">DESIGN ${num}</span>
+            <span class="promo-badge">🏷️ PROMO</span>
             ${
               t.image
                 ? `<img src="${t.image}" alt="Preview ${t.name}" loading="lazy">`
@@ -1185,8 +1235,9 @@ function render() {
             <p class="style">${t.style}</p>
 
             <div class="price">
-              ${rupiah(t.price)}
-              <small>Harga awal · per website</small>
+              <span class="original-price">${rupiah(t.price)}</span>
+              <span class="promo-price">${rupiah(promoPrice(t))}</span>
+              <small class="promo-note">Harga promo · per website</small>
             </div>
 
             <div class="cardactions">
