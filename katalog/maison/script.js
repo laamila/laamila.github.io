@@ -80,6 +80,7 @@ const PRODUCTS = [
 // ELEMENTS
 // ==========================================
 
+
 const productGrid = document.getElementById("productGrid");
 const categoryList = document.getElementById("categoryList");
 const searchInput = document.getElementById("searchInput");
