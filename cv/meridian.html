@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#657565">
+<title>MERIDIAN | Professional CV</title>
+<style>
+:root{--accent:#657565;--accent2:#dce4d8;--bg:#f5f4ef;--paper:#fffefa;--text:#292e29;--muted:#73786f;--line:#e2e4dc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.7 Arial,sans-serif}
+button,a{font:inherit}
+.topbar{max-width:1050px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-weight:800;letter-spacing:3px;color:var(--accent)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--accent);padding:9px 14px;border-radius:5px;text-decoration:none;cursor:pointer;background:var(--accent);color:white;font-size:13px}
+.btn.light{background:transparent;color:var(--accent)}
+.cv{max-width:1000px;margin:12px auto 50px;background:var(--paper);padding:58px 66px;box-shadow:0 15px 50px #27332712}
+.hero{border-bottom:2px solid var(--accent);padding-bottom:28px;display:flex;justify-content:space-between;gap:24px;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-size:11px;font-weight:bold}
+h1{font-size:clamp(32px,5vw,49px);line-height:1.12;margin:10px 0}
+.role{font-size:18px;color:var(--accent);font-weight:600}
+.contact{font-size:12px;color:var(--muted);margin-top:14px;overflow-wrap:anywhere}
+.photo{width:116px;height:136px;flex-shrink:0;object-fit:cover;border-radius:8px;background:var(--accent2)}
+section{margin-top:30px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--line);margin:0 0 16px}
+p{margin:6px 0}
+.entry{margin-bottom:20px;break-inside:avoid}
+.entry-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+h3{margin:0;font-size:16px}
+.date{font-size:12px;color:var(--muted);white-space:normal;text-align:right}
+.org{color:var(--accent);font-weight:600;font-size:13px}
+ul{padding-left:19px;margin:8px 0}
+li{margin:3px 0}
+.skills{display:flex;gap:8px;flex-wrap:wrap}
+.skill{background:var(--accent2);color:#364537;padding:6px 11px;border-radius:4px;font-size:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:12px}
+@media(max-width:650px){.cv{margin:0;padding:30px 22px}.topbar{padding:14px 16px;align-items:flex-start}.hero{align-items:flex-start}.photo{width:82px;height:100px}.entry-head{display:block}.date{text-align:left}.two{grid-template-columns:1fr}.footer{display:block}}
+@media print{
+@page{size:A4;margin:15mm}
+body{background:#fff;color:#222;font-size:10.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topbar,.no-print{display:none!important}
+.cv{width:auto;max-width:none;margin:0;padding:0;box-shadow:none;background:white}
+.hero{break-inside:avoid}
+section{margin-top:22px}
+h2{break-after:avoid}
+.entry{break-inside:avoid}
+.skill{border:1px solid #ddd}
+a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="brand">MERIDIAN</div>
+<div class="actions no-print">
+<button class="btn light" onclick="editCV()">Edit contoh</button>
+<button class="btn" onclick="window.print()">Unduh CV PDF</button>
+</div>
+</header>
+<main class="cv">
+<header class="hero">
+<div>
+<div class="kicker">Curriculum Vitae</div>
+<h1 id="name">Adelia Putri</h1>
+<div class="role" id="role">Human Resources & General Affairs</div>
+<div class="contact" id="contact">Lumajang, Jawa Timur · 08xxxxxxxxxx · email@example.com</div>
+</div>
+<img class="photo" id="photo" alt="Foto profil" src="https://placehold.co/300x400/e0e7dc/526552?text=Your+Photo">
+</header>
+<section>
+<h2>Profil Profesional</h2>
+<p id="summary">Profesional administrasi dan sumber daya manusia yang teliti, terorganisir, dan berorientasi pada hasil. Memiliki pengalaman dalam pengelolaan dokumen, administrasi karyawan, pelaporan, serta koordinasi operasional. Terbiasa bekerja dengan tenggat waktu dan menjaga akurasi data.</p>
+</section>
+<section>
+<h2>Pengalaman Kerja</h2>
+<div class="entry"><div class="entry-head"><h3>HR & General Affairs Staff</h3><span class="date">2024 – Sekarang</span></div><div class="org">PT Contoh Perusahaan · Lumajang</div><ul><li>Mengelola administrasi karyawan, absensi, cuti, dan dokumentasi personalia.</li><li>Membantu proses rekrutmen, orientasi karyawan, serta penyusunan laporan HR bulanan.</li><li>Mengembangkan rekap data menggunakan Excel dan Google Sheets untuk meningkatkan ketepatan pelaporan.</li></ul></div>
+<div class="entry"><div class="entry-head"><h3>Administration Staff</h3><span class="date">2022 – 2024</span></div><div class="org">CV Contoh Usaha</div><ul><li>Mengelola arsip, surat-menyurat, data transaksi, dan laporan operasional.</li><li>Berkoordinasi dengan tim internal untuk memastikan kelengkapan dokumen dan ketepatan data.</li></ul></div>
+</section>
+<section>
+<h2>Pendidikan</h2>
+<div class="entry"><div class="entry-head"><h3>S1 Manajemen</h3><span class="date">2018 – 2022</span></div><div class="org">Universitas Contoh · IPK 3,65/4,00</div><p>Mempelajari manajemen organisasi, sumber daya manusia, administrasi bisnis, dan analisis data.</p></div>
+</section>
+<section>
+<h2>Kompetensi Utama</h2>
+<div class="skills"><span class="skill">Administrasi HR</span><span class="skill">Rekrutmen</span><span class="skill">Payroll</span><span class="skill">Microsoft Excel</span><span class="skill">Google Workspace</span><span class="skill">Pengarsipan</span><span class="skill">Pelaporan</span><span class="skill">Komunikasi</span></div>
+</section>
+<div class="two">
+<section><h2>Sertifikasi</h2><div class="entry"><h3>Microsoft Excel for Business</h3><div class="org">Lembaga Pelatihan Contoh · 2023</div></div><div class="entry"><h3>Human Resource Fundamentals</h3><div class="org">Pelatihan Profesional · 2024</div></div></section>
+<section><h2>Informasi Tambahan</h2><p><strong>Bahasa:</strong> Indonesia, Inggris dasar</p><p><strong>Minat:</strong> Pengembangan SDM, sistem administrasi, efisiensi kerja</p><p><strong>Referensi:</strong> Tersedia jika diminta</p></section>
+</div>
+<footer class="footer"><span>MERIDIAN · Professional CV</span><span>Dokumen diperbarui: 2026</span></footer>
+</main>
+<script>
+function editCV(){
+const n=prompt("Nama lengkap:",document.getElementById("name").textContent);if(n!==null&&n.trim())document.getElementById("name").textContent=n.trim();
+const r=prompt("Jabatan profesional:",document.getElementById("role").textContent);if(r!==null&&r.trim())document.getElementById("role").textContent=r.trim();
+const c=prompt("Kontak (kota, telepon, email):",document.getElementById("contact").textContent);if(c!==null)document.getElementById("contact").textContent=c;
+const s=prompt("Ringkasan profesional:",document.getElementById("summary").textContent);if(s!==null)document.getElementById("summary").textContent=s;
+}
+</script>
+</body>
+</html>
