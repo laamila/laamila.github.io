@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172b46">
+<title>SUMMIT | Finance & Management CV</title>
+<style>
+:root{--navy:#172b46;--blue:#304c70;--gold:#b99a5d;--ink:#27313e;--muted:#6b7480;--line:#dfe4ea}
+*{box-sizing:border-box}
+body{margin:0;background:#edf0f4;color:var(--ink);font:14px/1.65 Arial,sans-serif}
+.topbar{max-width:1040px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-weight:800;letter-spacing:3px;color:var(--navy)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button{cursor:pointer;font:inherit}
+.btn{background:var(--navy);color:#fff;border:1px solid var(--navy);padding:9px 14px;border-radius:3px;font-size:13px}
+.btn.alt{background:transparent;color:var(--navy)}
+.cv{max-width:1000px;margin:12px auto 50px;background:white;box-shadow:0 12px 40px #172b4612}
+.hero{background:var(--navy);color:white;padding:44px 56px;display:flex;justify-content:space-between;align-items:center;gap:22px;border-bottom:5px solid var(--gold)}
+.kicker{color:#d9c18d;letter-spacing:3px;text-transform:uppercase;font-size:11px;font-weight:bold}
+h1{font-size:clamp(32px,5vw,46px);line-height:1.15;margin:10px 0}
+.role{font-size:17px;color:#dce4ef}
+.contact{font-size:12px;color:#d0d9e4;margin-top:14px;overflow-wrap:anywhere}
+.photo{width:110px;height:136px;object-fit:cover;background:#fff;flex-shrink:0;border:2px solid var(--gold)}
+.content{padding:38px 56px}
+section{margin-bottom:28px}
+h2{color:var(--navy);font-size:13px;text-transform:uppercase;letter-spacing:2px;margin:0 0 15px;display:flex;align-items:center;gap:10px}
+h2:after{content:"";height:1px;background:var(--gold);flex:1}
+p{margin:6px 0}
+.entry{margin-bottom:21px;break-inside:avoid}
+.head{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+h3{margin:0;font-size:15px}
+.date{color:var(--muted);font-size:12px;text-align:right}
+.org{color:var(--blue);font-size:13px;font-weight:bold}
+ul{padding-left:19px;margin:7px 0}
+li{margin:3px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.skillrow{margin-bottom:12px}
+.skilltop{display:flex;justify-content:space-between;font-size:12px;font-weight:bold;margin-bottom:5px}
+.track{height:5px;background:#e8ecf0}
+.fill{height:100%;background:var(--blue)}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-size:12px;padding:5px 9px;border:1px solid #d7dfe8;border-left:3px solid var(--gold)}
+.footer{background:#f6f7f9;border-top:1px solid var(--line);padding:15px 56px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:12px}
+@media(max-width:650px){.topbar{padding:14px 16px;align-items:flex-start}.hero{padding:28px 22px;align-items:flex-start}.photo{width:78px;height:98px}.content{padding:28px 22px}.head{display:block}.date{text-align:left}.grid{grid-template-columns:1fr}.footer{padding:15px 22px;display:block}}
+@media print{
+@page{size:A4;margin:13mm}
+body{background:#fff;font-size:10pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topbar,.no-print{display:none!important}
+.cv{margin:0;max-width:none;box-shadow:none}
+.hero{padding:25px 30px;break-inside:avoid}
+.content{padding:25px 30px}
+h2{break-after:avoid}
+.entry{break-inside:avoid}
+a{color:inherit;text-decoration:none}
+.footer{padding:12px 30px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand">SUMMIT</div><div class="actions no-print"><button class="btn alt" onclick="editCV()">Edit profil</button><button class="btn" onclick="window.print()">Unduh CV PDF</button></div></header>
+<main class="cv">
+<header class="hero">
+<div><div class="kicker">Professional Curriculum Vitae</div><h1 id="name">Adelia Putri</h1><div class="role" id="role">Finance & Accounting Specialist</div><div class="contact" id="contact">Lumajang, Jawa Timur · 08xxxxxxxxxx · email@example.com</div></div>
+<img class="photo" alt="Foto profil" src="https://placehold.co/300x400/edf0f4/172b46?text=Profile">
+</header>
+<div class="content">
+<section><h2>Professional Summary</h2><p id="summary">Profesional administrasi keuangan dengan pengalaman dalam pengolahan data, rekonsiliasi, pelaporan, dan pengelolaan dokumen. Teliti dalam menjaga akurasi angka, mampu bekerja dengan tenggat waktu, serta terbiasa menggunakan spreadsheet untuk mendukung efisiensi proses bisnis.</p></section>
+<section><h2>Work Experience</h2>
+<div class="entry"><div class="head"><h3>Finance & Accounting Staff</h3><span class="date">2024 – Sekarang</span></div><div class="org">PT Contoh Perusahaan · Lumajang</div><ul><li>Menyusun laporan transaksi, rekap pengeluaran, dan dokumentasi keuangan secara berkala.</li><li>Melakukan pengecekan kelengkapan dokumen serta pencocokan data transaksi.</li><li>Mengoptimalkan rekapitulasi data menggunakan Microsoft Excel untuk mempercepat proses pelaporan.</li></ul></div>
+<div class="entry"><div class="head"><h3>Administration Staff</h3><span class="date">2022 – 2024</span></div><div class="org">CV Contoh Usaha</div><ul><li>Mengelola arsip, data penjualan, dokumen operasional, dan administrasi harian.</li><li>Mendukung koordinasi lintas bagian dan menyiapkan dokumen untuk kebutuhan evaluasi internal.</li></ul></div>
+</section>
+<section><h2>Key Competencies</h2><div class="grid">
+<div>
+<div class="skillrow"><div class="skilltop"><span>Microsoft Excel & Reporting</span><span>90%</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+<div class="skillrow"><div class="skilltop"><span>Data Accuracy</span><span>90%</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+<div class="skillrow"><div class="skilltop"><span>Financial Administration</span><span>85%</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+</div><div class="chips"><span class="chip">Financial Reporting</span><span class="chip">Reconciliation</span><span class="chip">Documentation</span><span class="chip">Tax Administration</span><span class="chip">Problem Solving</span><span class="chip">Coordination</span></div>
+</div></section>
+<section><h2>Education</h2><div class="entry"><div class="head"><h3>S1 Akuntansi</h3><span class="date">2018 – 2022</span></div><div class="org">Universitas Contoh · IPK 3,60/4,00</div><p>Fokus studi: akuntansi keuangan, perpajakan, audit, dan sistem informasi akuntansi.</p></div></section>
+<div class="grid">
+<section><h2>Certifications</h2><div class="entry"><h3>Excel for Business Reporting</h3><div class="org">Pelatihan Profesional · 2024</div></div><div class="entry"><h3>Fundamentals of Taxation</h3><div class="org">Lembaga Pelatihan · 2023</div></div></section>
+<section><h2>Additional Information</h2><p><strong>Languages:</strong> Indonesia, Inggris dasar</p><p><strong>Tools:</strong> Excel, Word, Google Sheets</p><p><strong>References:</strong> Available upon request</p></section>
+</div>
+</div>
+<footer class="footer"><span>SUMMIT · Finance & Management</span><span>Professional Profile</span></footer>
+</main>
+<script>
+function editCV(){
+for(const [id,label] of [["name","Nama lengkap"],["role","Jabatan profesional"],["contact","Kontak"],["summary","Ringkasan profesional"]]){
+const el=document.getElementById(id),v=prompt(label,el.textContent);if(v!==null&&v.trim())el.textContent=v.trim();
+}}
+</script>
+</body>
+</html>
