@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#343b46">
+<title>CORE | Universal Professional CV</title>
+<style>
+:root{--ink:#343b46;--accent:#4f7195;--muted:#747b84;--line:#e0e4e9;--bg:#f1f3f5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 Arial,sans-serif}
+.topbar{max-width:1000px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:18px;font-weight:800;letter-spacing:4px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button{cursor:pointer;font:inherit}
+.btn{padding:9px 14px;background:var(--ink);color:white;border:1px solid var(--ink);border-radius:4px;font-size:13px}
+.btn.alt{background:transparent;color:var(--ink)}
+.cv{max-width:960px;margin:12px auto 50px;background:white;padding:50px 60px;box-shadow:0 12px 40px #18202b10}
+.hero{display:flex;align-items:center;gap:25px;padding-bottom:27px;border-bottom:2px solid var(--ink)}
+.photo{width:104px;height:124px;object-fit:cover;background:#e7ebef;border-radius:3px}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-weight:bold}
+h1{font-size:clamp(32px,5vw,44px);line-height:1.15;margin:7px 0}
+.role{font-size:16px;color:var(--accent);font-weight:bold}
+.contact{font-size:12px;color:var(--muted);margin-top:12px;overflow-wrap:anywhere}
+section{margin-top:26px}
+h2{font-size:13px;letter-spacing:1.7px;text-transform:uppercase;margin:0 0 13px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+p{margin:5px 0}
+.entry{margin-bottom:19px;break-inside:avoid}
+.head{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+h3{font-size:15px;margin:0}
+.date{font-size:12px;color:var(--muted);text-align:right}
+.org{font-size:13px;color:var(--accent);font-weight:bold}
+ul{padding-left:19px;margin:7px 0}
+li{margin:3px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.tags{display:flex;gap:7px;flex-wrap:wrap}
+.tag{border:1px solid var(--line);border-radius:3px;padding:5px 9px;font-size:12px}
+.footer{margin-top:30px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px}
+
+/* POP-UP PEMESANAN */
+.order-overlay{position:fixed;inset:0;background:rgba(22,29,39,.68);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999;backdrop-filter:blur(4px)}
+.order-overlay.show{display:flex}
+.order-modal{position:relative;width:100%;max-width:420px;background:#fff;border-radius:12px;padding:32px 25px;text-align:center;box-shadow:0 20px 60px #0003;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.order-icon{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;background:#edf2f7;display:flex;align-items:center;justify-content:center;font-size:27px}
+.order-modal h2{font-size:20px;letter-spacing:0;text-transform:none;border:0;padding:0;margin:0 0 12px}
+.order-modal p{font-size:13px;line-height:1.8;color:#747b84;margin:0 0 22px}
+.order-primary{display:block;width:100%;padding:12px 16px;background:var(--ink);color:#fff;border:1px solid var(--ink);border-radius:5px;font-size:13px;font-weight:bold;text-decoration:none}
+.order-secondary{width:100%;padding:10px;margin-top:8px;background:transparent;color:var(--muted);border:0;font-size:12px}
+.order-close{position:absolute;right:12px;top:10px;width:32px;height:32px;border:0;border-radius:50%;background:#f1f3f5;color:var(--ink);font-size:20px;line-height:1}
+.order-note{font-size:11px!important;margin-top:14px!important;margin-bottom:0!important}
+
+@media(max-width:620px){
+.topbar{padding:14px 16px;align-items:flex-start}
+.cv{padding:28px 21px;margin:0}
+.hero{align-items:flex-start;gap:15px}
+.photo{width:76px;height:94px}
+.head{display:block}
+.date{text-align:left}
+.grid{grid-template-columns:1fr}
+.footer{display:block}
+.order-modal{padding:30px 21px}
+}
+@media print{
+@page{size:A4;margin:14mm}
+body{background:white;font-size:10.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topbar,.no-print,.order-overlay{display:none!important}
+.cv{margin:0;max-width:none;padding:0;box-shadow:none}
+.hero{break-inside:avoid}
+section{margin-top:20px}
+h2{break-after:avoid}
+.entry{break-inside:avoid}
+a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<div class="brand">CORE</div>
+<div class="actions no-print">
+<button class="btn alt" onclick="editCV()">Edit profil</button>
+<button class="btn" onclick="openOrderModal()">Unduh CV PDF</button>
+</div>
+</header>
+
+<main class="cv">
+<header class="hero">
+<img class="photo" id="photo" alt="Foto profil opsional" src="https://placehold.co/300x400/e9edf2/4f7195?text=Photo">
+<div>
+<div class="kicker">Curriculum Vitae</div>
+<h1 id="name">Adelia Putri</h1>
+<div class="role" id="role">Professional Position</div>
+<div class="contact" id="contact">Lumajang, Jawa Timur · 08xxxxxxxxxx · email@example.com · linkedin.com/in/username</div>
+</div>
+</header>
+
+<section>
+<h2>Ringkasan Profesional</h2>
+<p id="summary">Individu yang terorganisir, komunikatif, dan berorientasi pada kualitas kerja. Memiliki kemampuan analisis, pengelolaan informasi, serta koordinasi pekerjaan. Siap berkontribusi melalui pemecahan masalah, kolaborasi tim, dan peningkatan proses kerja secara berkelanjutan.</p>
+</section>
+
+<section>
+<h2>Pengalaman Kerja</h2>
+<div class="entry">
+<div class="head"><h3>Staff Administrasi</h3><span class="date">2024 – Sekarang</span></div>
+<div class="org">PT Contoh Perusahaan</div>
+<ul>
+<li>Mengelola dokumen, data operasional, dan laporan rutin sesuai prosedur perusahaan.</li>
+<li>Memastikan kelengkapan informasi serta berkoordinasi dengan bagian terkait untuk menyelesaikan kebutuhan administrasi.</li>
+<li>Menyusun rekap data dan mendukung perbaikan proses dokumentasi kerja.</li>
+</ul>
+</div>
+<div class="entry">
+<div class="head"><h3>Administrative Intern</h3><span class="date">2023 – 2024</span></div>
+<div class="org">CV Contoh Usaha</div>
+<ul>
+<li>Mendukung pengarsipan, penginputan data, dan persiapan dokumen kerja.</li>
+<li>Membantu tim menyelesaikan tugas harian secara akurat dan tepat waktu.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Pendidikan</h2>
+<div class="entry">
+<div class="head"><h3>S1 Administrasi Bisnis</h3><span class="date">2019 – 2023</span></div>
+<div class="org">Universitas Contoh</div>
+<p>Relevansi studi: administrasi organisasi, komunikasi bisnis, manajemen, dan pengolahan data.</p>
+</div>
+</section>
+
+<section>
+<h2>Keahlian</h2>
+<div class="tags">
+<span class="tag">Microsoft Office</span>
+<span class="tag">Google Workspace</span>
+<span class="tag">Administrasi</span>
+<span class="tag">Analisis Data</span>
+<span class="tag">Komunikasi</span>
+<span class="tag">Manajemen Waktu</span>
+<span class="tag">Kerja Tim</span>
+<span class="tag">Problem Solving</span>
+</div>
+</section>
+
+<div class="grid">
+<section>
+<h2>Proyek / Pencapaian</h2>
+<div class="entry"><h3>Digitalisasi Rekap Data</h3><p>Membuat format rekap terstruktur untuk membantu pencatatan dan pemantauan data tim.</p></div>
+<div class="entry"><h3>Penghargaan / Pencapaian</h3><p>Isi dengan pencapaian yang relevan dan dapat diverifikasi.</p></div>
+</section>
+<section>
+<h2>Sertifikasi</h2>
+<div class="entry"><h3>Microsoft Office Productivity</h3><div class="org">Pelatihan Profesional · 2024</div></div>
+<h2>Informasi Tambahan</h2>
+<p><strong>Bahasa:</strong> Indonesia, Inggris dasar</p>
+<p><strong>Referensi:</strong> Tersedia jika diminta</p>
+</section>
+</div>
+
+<footer class="footer">
+<span>CORE · Universal Professional CV</span>
+<span>Professional Profile</span>
+</footer>
+</main>
+
+<!-- POP-UP PEMESANAN CV -->
+<div class="order-overlay" id="orderOverlay" onclick="closeOrderOutside(event)">
+<div class="order-modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+<button class="order-close" onclick="closeOrderModal()" aria-label="Tutup pop-up">&times;</button>
+<div class="order-icon">✉</div>
+<h2 id="orderTitle">CV Profesionalmu Dimulai di Sini!</h2>
+<p>Ingin memiliki CV profesional dengan desain seperti ini? Klik tombol di bawah untuk memesan. Kami akan membantu menyesuaikan CV sesuai kebutuhanmu.</p>
+<a href="#" class="order-primary" onclick="orderCV(event)">Pesan CV Sekarang ↗</a>
+<button class="order-secondary" onclick="closeOrderModal()">Nanti Saja</button>
+<p class="order-note">Pemesanan akan dilanjutkan melalui WhatsApp.</p>
+</div>
+</div>
+
+<script>
+/* GANTI DENGAN NOMOR WHATSAPP BISNIS KAMU */
+const ORDER_WHATSAPP = "628XXXXXXXXXX";
+
+function editCV(){
+for(const [id,label] of [
+["name","Nama lengkap"],
+["role","Jabatan yang dilamar"],
+["contact","Kontak"],
+["summary","Ringkasan profesional"]
+]){
+const el=document.getElementById(id);
+const v=prompt(label,el.textContent);
+if(v!==null&&v.trim())el.textContent=v.trim();
+}
+}
+
+function openOrderModal(){
+document.getElementById("orderOverlay").classList.add("show");
+document.body.style.overflow="hidden";
+}
+
+function closeOrderModal(){
+document.getElementById("orderOverlay").classList.remove("show");
+document.body.style.overflow="";
+}
+
+function closeOrderOutside(event){
+if(event.target===document.getElementById("orderOverlay")){
+closeOrderModal();
+}
+}
+
+function orderCV(event){
+event.preventDefault();
+
+if(!/^62\d{8,15}$/.test(ORDER_WHATSAPP)){
+alert("Nomor WhatsApp belum diatur. Silakan ganti ORDER_WHATSAPP dengan nomor WhatsApp bisnis kamu.");
+return;
+}
+
+const message="Halo, saya tertarik memesan CV profesional dengan template CORE. Boleh minta informasi harga dan cara pemesanannya?";
+const url="https://wa.me/"+ORDER_WHATSAPP+"?text="+encodeURIComponent(message);
+window.open(url,"_blank","noopener,noreferrer");
+}
+
+document.addEventListener("keydown",function(event){
+if(event.key==="Escape")closeOrderModal();
+});
+</script>
+</body>
+</html>
