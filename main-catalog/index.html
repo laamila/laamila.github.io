@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#451b29">
-<meta name="description" content="Velora Studio menyediakan template website profesional, CV online, link in bio, dan katalog digital untuk personal branding dan bisnis.">
-<title>VELORA STUDIO — Digital Template</title>
+<meta name="description" content="Felmiora Studio menyediakan template website profesional, CV online, link in bio, dan katalog digital untuk personal branding dan bisnis.">
+<title>FELMIORA STUDIO — Digital Template</title>
 
 <style>
 :root {
@@ -953,11 +953,11 @@ footer p {
 
 <nav>
   <div class="nav">
-    <a class="logo" href="#">VELORA<span>.</span></a>
+    <a class="logo" href="#">FELMIORA<span>.</span></a>
     <div class="navlinks">
-      <a href="#koleksi">Koleksi</a>
-      <a href="#custom">Custom</a>
-      <a href="#kontak">Kontak</a>
+      <a href="#koleksi">KOLEKSI</a>
+      <a href="#custom">CUSTOM</a>
+      <a href="#kontak">KONTAK</a>
     </div>
   </div>
 </nav>
@@ -966,7 +966,7 @@ footer p {
   <div>
     <div class="eyebrow">DIGITAL CREATIVE STUDIO</div>
     <h1>Your Digital Look,<br><em>Reimagined.</em></h1>
-    <p>Website cantik, profesional, dan siap membantu kamu tampil lebih percaya diri. Temukan template favoritmu dan wujudkan ide digitalmu bersama Velora Studio.</p>
+    <p>Website cantik, profesional, dan siap membantu kamu tampil lebih percaya diri. Temukan template favoritmu dan wujudkan ide digitalmu bersama Felmiora Studio.</p>
     <div class="actions">
       <a class="btn" href="#koleksi">JELAJAHI TEMPLATE ↗</a>
       <a class="btn outline" href="#kontak">HUBUNGI KAMI</a>
@@ -977,7 +977,7 @@ footer p {
     <div class="orb one"></div>
     <div class="orb two"></div>
     <div class="showcase">
-      <small>THE VELORA COLLECTION</small>
+      <small>THE FELMIORA COLLECTION</small>
       <h2>Make your<br>own story.</h2>
       <div style="height:2px;background:#8b3448;margin:17px 0"></div>
       <p>Modern websites. Beautiful details. Made for you.</p>
@@ -1053,7 +1053,7 @@ footer p {
 <footer id="kontak">
   <div class="footerinner">
     <div>
-      <a class="logo" href="#">VELORA<span>.</span></a>
+      <a class="logo" href="#">FELMIORA<span>.</span></a>
       <p>Your Ideas, Beautifully Online.</p>
       <p>Template digital dengan sentuhan modern.</p>
     </div>
@@ -1066,7 +1066,7 @@ footer p {
         <a id="tiktok" href="#" target="_blank" rel="noopener">♪ TikTok ↗</a>
         <a id="footerWA" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
       </div>
-      <p>© <span id="year"></span> Velora Studio</p>
+      <p>© <span id="year"></span> Felmiora Studio</p>
     </div>
   </div>
 </footer>
@@ -1130,7 +1130,7 @@ const templates = [
   {category:"Katalog Digital",name:"Burgundy",style:"Fashion & Apparel",price:80000,path:"katalog/burgundy/",image:"katalog-burgundy.png"},
   {category:"Katalog Digital",name:"Elan Beauty",style:"Beauty & Nail Art",price:50000,path:"katalog/elan-beauty/",image:"katalog-elan-beauty.png"},
   {category:"Katalog Digital",name:"Florist",style:"Flower & Hampers",price:70000,path:"katalog/flower-shop/",image:"katalog-flower-shop.png"},
-  {category:"Katalog Digital",name:"Maison",style:"Luxury & Elegant",price:6000,path:"katalog/maison/",image:"katalog-maison.png"},
+  {category:"Katalog Digital",name:"Maison",style:"Luxury & Elegant",price:55000,path:"katalog/maison/",image:"katalog-maison.png"},
   {category:"Katalog Digital",name:"Noire Terra",style:"Food & Dessert",price:80000,path:"katalog/noire-terracota/",image:"katalog-noire-terracota.png"},
   {category:"Katalog Digital",name:"Noire",style:"Home & Living",price:80000,path:"katalog/noire/",image:"katalog-noire.png"},
   {category:"Katalog Digital",name:"Nova",style:"Property & Real Estate",price:100000,path:"katalog/nova/",image:"katalog-nova.png"},
@@ -1163,7 +1163,7 @@ function waLink(message) {
 }
 
 function bookingMessage(item) {
-  return "Halo Velora Studio! Saya ingin booking template " +
+  return "Halo Felmiora Studio! Saya ingin booking template " +
     item.name + " (" + item.category + "). Harga asli " +
     rupiah(item.price) + ", harga promo " + rupiah(promoPrice(item)) +
     ". Mohon informasi detail paket dan proses pengerjaannya.";
@@ -1221,7 +1221,7 @@ function render() {
               t.image
                 ? `<img src="${t.image}" alt="Preview ${t.name}" loading="lazy">`
                 : `<div class="sheet">
-                    <small>VELORA STUDIO</small>
+                    <small>FELMIORA STUDIO</small>
                     <strong>${t.name}</strong>
                     <i></i>
                     <span>${t.category.toUpperCase()}</span>
@@ -1328,7 +1328,7 @@ document.getElementById("tiktok").href = TIKTOK;
   const element = document.getElementById(id);
 
   element.href = waLink(
-    "Halo Velora Studio! Saya ingin konsultasi dan booking jasa website."
+    "Halo Felmiora Studio! Saya ingin konsultasi dan booking jasa website."
   );
 
   if (id !== "customWA") {
