@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#182d49">
+<meta name="description" content="Portfolio CV profesional dengan desain navy, cream, dan gold.">
+<title>Portfolio | CV Profesional</title>
+
+<style>
+:root {
+  --navy: #182d49;
+  --cream: #f7f2e9;
+  --gold: #b69a72;
+  --ink: #273447;
+  --muted: #718096;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: #e8eaf0;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; cursor: pointer; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 7%;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #e4e7ed;
+}
+
+.brand {
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font-size: 15px;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.navlinks a {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.navlinks a:hover { color: var(--gold); }
+
+.download {
+  border: 0;
+  border-radius: 7px;
+  padding: 13px 16px;
+  color: white;
+  background: var(--navy);
+  transition: background .25s, transform .25s;
+}
+
+.download:hover {
+  background: #344966;
+  transform: translateY(-2px);
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  max-width: 1050px;
+  margin: 35px auto;
+  background: white;
+  box-shadow: 0 15px 55px #182d4918;
+}
+
+aside {
+  padding: 34px 25px;
+  color: white;
+  background: var(--navy);
+}
+
+.avatar {
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  background: #344966;
+  color: #fff;
+  font-size: 38px;
+}
+
+.name {
+  text-align: center;
+  font-size: 27px;
+  margin: 0;
+}
+
+.role {
+  text-align: center;
+  color: #d5c4a7;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin: 10px 0 28px;
+}
+
+.side-title {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin: 25px 0 12px;
+  font-weight: 700;
+}
+
+.contact, .skill {
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  color: #ffffff;
+}
+
+.contact p { color: #ffffff; }
+
+.skill { margin-bottom: 13px; }
+
+.track {
+  height: 4px;
+  margin-top: 5px;
+  background: #ffffff35;
+  border-radius: 9px;
+}
+
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 9px;
+}
+
+main {
+  padding: 42px;
+  min-width: 0;
+}
+
+.eyebrow {
+  color: #9b8058;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--navy);
+  font-size: 23px;
+  margin: 9px 0 18px;
+}
+
+section {
+  margin-bottom: 34px;
+  scroll-margin-top: 85px;
+}
+
+p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #5c6879;
+}
+
+.job {
+  border-left: 2px solid var(--gold);
+  padding: 0 0 6px 19px;
+  margin: 23px 0;
+  position: relative;
+}
+
+.job:before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.job h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.meta {
+  color: #9b8058;
+  font-size: 11px;
+}
+
+ul { padding-left: 17px; }
+
+li {
+  color: #5c6879;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.education {
+  padding: 17px;
+  background: var(--cream);
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* SOSIAL MEDIA */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+}
+
+.social-links a,
+#socmed a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 14px 12px;
+  border: 1px solid #ffffff25;
+  border-radius: 8px;
+  color: #f5f7fb;
+  font-size: 10px;
+  text-decoration: none;
+  transition: background .25s, transform .25s;
+}
+
+.social-links a:hover,
+#socmed a:hover {
+  background: #ffffff16;
+  transform: translateX(4px);
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  border-radius: 6px;
+  background: #ffffff18;
+  color: #e0c69c;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.social-links a > span:nth-child(2),
+#socmed a > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.social-arrow {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: #d5c4a7;
+  font-size: 12px;
+}
+
+/* POP-UP PEMESANAN */
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 28, 46, .72);
+  backdrop-filter: blur(5px);
+}
+
+.order-modal.show {
+  display: flex;
+  animation: modalFade .25s ease;
+}
+
+.order-box {
+  position: relative;
+  width: 100%;
+  max-width: 410px;
+  padding: 34px 27px;
+  border: 1px solid #d8c6a5;
+  border-radius: 18px;
+  background: #fffdf9;
+  text-align: center;
+  box-shadow: 0 25px 80px #00000035;
+  animation: modalRise .3s ease;
+}
+
+.order-icon {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 20px;
+  border: 1px solid #d9c6a3;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 29px;
+}
+
+.order-box h2 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: 24px;
+}
+
+.order-box p {
+  margin: 0 0 23px;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.order-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-primary {
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #182d49, #344966);
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.order-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #182d4928;
+}
+
+.order-secondary {
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: #718096;
+  font-size: 12px;
+}
+
+.order-secondary:hover { color: var(--navy); }
+
+.order-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: #f0ece5;
+  color: var(--navy);
+  font-size: 21px;
+}
+
+.order-close:hover { background: #e4d9c8; }
+
+@keyframes modalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media(max-width:700px) {
+  nav {
+    padding: 13px 4%;
+    flex-wrap: wrap;
+  }
+
+  .navlinks {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 8px 0;
+  }
+
+  .page {
+    grid-template-columns: 1fr;
+    margin: 12px;
+  }
+
+  aside { padding: 28px 24px; }
+
+  main { padding: 30px 23px; }
+
+  .avatar {
+    width: 95px;
+    height: 95px;
+  }
+
+  .brand { font-size: 17px; }
+
+  .download {
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body { background: white; }
+
+  nav, footer, .order-modal {
+    display: none !important;
+  }
+
+  .page {
+    margin: 0;
+    max-width: none;
+    box-shadow: none;
+  }
+
+  aside {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .education, .track, .job:before {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  section { break-inside: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home" class="brand">MY PORTFOLIO.</a>
+
+  <div class="navlinks">
+    <a href="#about">TENTANG</a>
+    <a href="#experience">PENGALAMAN</a>
+    <a href="#education">PENDIDIKAN</a>
+    <a href="#skill">KETERAMPILAN</a>
+    <a href="#socmed">SOSIAL MEDIA</a>
+  </div>
+
+  <button class="download" onclick="openOrderModal()">
+    Download PDF ↓
+  </button>
+</nav>
+
+<div class="page" id="home">
+  <aside>
+    <div class="avatar">AA</div>
+    <h1 class="name">Arachelli Arjuna</h1>
+    <div class="role">HR &amp; ADMINISTRATION</div>
+
+    <div class="side-title">KONTAK</div>
+    <div class="contact">
+      <p>✉ arachelliarjuna@gmail.com</p>
+      <p>☎ 082143513272</p>
+      <p>⌖ Lumajang, Jawa Timur</p>
+      <p>↗ linkedin.com/in/AracheliArjuna</p>
+    </div>
+
+    <div class="side-title">KETERAMPILAN</div>
+
+    <div id="skill" class="skill">
+      Microsoft Excel
+      <div class="track"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="skill">
+      Administrasi &amp; Dokumen
+      <div class="track"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="skill">
+      Payroll &amp; Reporting
+      <div class="track"><span style="width:85%"></span></div>
+    </div>
+
+    <div class="skill">
+      Google Workspace
+      <div class="track"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="side-title">KOMPETENSI</div>
+    <div class="contact">
+      • Komunikasi<br>
+      • Manajemen waktu<br>
+      • Problem solving<br>
+      • Ketelitian dan tanggung jawab
+    </div>
+
+    <div class="side-title">SOSIAL MEDIA</div>
+
+    <div class="social-links" id="socmed">
+      <a href="https://www.instagram.com/username"
+         target="_blank" rel="noopener noreferrer">
+        <span class="social-icon">◎</span>
+        <span>Instagram</span>
+        <span class="social-arrow">↗</span>
+      </a>
+
+      <a href="https://www.tiktok.com/@username"
+         target="_blank" rel="noopener noreferrer">
+        <span class="social-icon">♪</span>
+        <span>TikTok</span>
+        <span class="social-arrow">↗</span>
+      </a>
+
+      <a href="https://www.facebook.com/username"
+         target="_blank" rel="noopener noreferrer">
+        <span class="social-icon">f</span>
+        <span>Facebook</span>
+        <span class="social-arrow">↗</span>
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about">
+      <div class="eyebrow">PROFIL PROFESIONAL</div>
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya merupakan profesional administrasi dengan pengalaman
+        dalam pengelolaan dokumen, penyusunan laporan, pengolahan
+        data, payroll, serta dukungan operasional perusahaan.
+        Memiliki kemampuan analisis yang baik, teliti, disiplin,
+        dan mampu bekerja secara mandiri maupun dalam tim.
+      </p>
+    </section>
+
+    <section id="experience">
+      <div class="eyebrow">PERJALANAN KARIER</div>
+      <h2>Pengalaman Kerja</h2>
+
+      <div class="job">
+        <h3>Koordinator Bagian Umum</h3>
+        <div class="meta">Nama Perusahaan · Tahun — Sekarang</div>
+        <ul>
+          <li>Mengoordinasikan administrasi dan kebutuhan operasional.</li>
+          <li>Menyusun laporan rutin serta mengelola dokumen perusahaan.</li>
+          <li>Memastikan pekerjaan selesai sesuai tenggat waktu.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Staff Administrasi / HR</h3>
+        <div class="meta">Nama Perusahaan · Tahun — Tahun</div>
+        <ul>
+          <li>Mengelola data karyawan, dokumen, dan surat-menyurat.</li>
+          <li>Membantu perhitungan payroll dan penyusunan laporan.</li>
+          <li>Mendukung proses rekrutmen serta administrasi personalia.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="eyebrow">LATAR BELAKANG AKADEMIK</div>
+      <h2>Pendidikan</h2>
+
+      <div class="education">
+        <h3>S1 Matematika</h3>
+        <p>Fakultas MIPA · Universitas Jember</p>
+        <div class="meta">Tahun masuk — Tahun lulus</div>
+      </div>
+    </section>
+
+    <section id="achievement">
+      <div class="eyebrow">NILAI TAMBAH</div>
+      <h2>Pencapaian &amp; Keahlian</h2>
+
+      <div class="job">
+        <h3>Best Employee 2023</h3>
+        <p>
+          Tuliskan alasan penghargaan, kontribusi, atau pencapaian
+          terukur yang paling relevan dengan posisi yang dilamar.
+        </p>
+      </div>
+
+      <p>
+        <b>Tools:</b> Microsoft Word, Excel, PowerPoint,
+        Google Sheets, Google Forms, dan Google Drive.
+      </p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  © <span id="year"></span> Nama Kamu · Professional Portfolio
+</footer>
+
+<!-- POP-UP PEMESANAN PDF -->
+<div
+  class="order-modal"
+  id="orderModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="orderTitle"
+  aria-hidden="true"
+  onclick="closeOrderModalOutside(event)"
+>
+  <div class="order-box">
+    <button
+      class="order-close"
+      onclick="closeOrderModal()"
+      aria-label="Tutup pop-up"
+    >×</button>
+
+    <div class="order-icon">♙</div>
+
+    <h2 id="orderTitle">CV Siap untuk Kamu!</h2>
+
+    <p>
+      Ingin memiliki CV profesional seperti ini?
+      Fitur download PDF tersedia setelah kamu melakukan
+      pemesanan. Hubungi kami untuk mendapatkan CV versi
+      personal sesuai kebutuhanmu.
+    </p>
+
+    <div class="order-actions">
+      <button class="order-primary" onclick="orderCV()">
+        Pesan CV Sekarang ↗
+      </button>
+
+      <button class="order-secondary" onclick="closeOrderModal()">
+        Nanti Saja
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// GANTI DENGAN NOMOR WHATSAPP BISNIS KAMU.
+// Gunakan kode negara 62 tanpa angka 0 di depan.
+const ORDER_WHATSAPP = "628XXXXXXXXXX";
+
+function openOrderModal() {
+  const modal = document.getElementById("orderModal");
+
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  const closeButton = modal.querySelector(".order-close");
+  closeButton.focus();
+}
+
+function closeOrderModal() {
+  const modal = document.getElementById("orderModal");
+
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  document.querySelector(".download").focus();
+}
+
+function closeOrderModalOutside(event) {
+  if (event.target.id === "orderModal") {
+    closeOrderModal();
+  }
+}
+
+function orderCV() {
+  const phone = ORDER_WHATSAPP.replace(/\D/g, "");
+
+  if (!phone || phone === "628XXXXXXXXXX") {
+    alert(
+      "Silakan ganti nomor WhatsApp pada kode ORDER_WHATSAPP terlebih dahulu."
+    );
+    return;
+  }
+
+  const message =
+    "Halo, saya tertarik memesan CV profesional dari demo Portfolio Arachelli Arjuna. Saya ingin mengetahui pilihan paket, harga, dan proses pemesanan.";
+
+  const url =
+    "https://wa.me/" + phone +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    const modal = document.getElementById("orderModal");
+
+    if (modal.classList.contains("show")) {
+      closeOrderModal();
+    }
+  }
+});
+</script>
+
+</body>
+</html>
